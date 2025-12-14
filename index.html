@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,27 +18,38 @@
 <body>
 
     <header class="hero-section">
-        <div class="hero-layout">
-            <div class="hero-image-container">
-                <img src="./images/hero-image-new.png" alt="自然光の入るキッチンに置かれたSKETTO">
-            </div>
-            <div class="hero-text-block anim-fade-in">
-                <p class="catchphrase">もう、生ゴミのにおいに悩まない。</p>
-                <h1>使えば使うほど、<br>わたしのSKETTO。</h1>
-                <p class="subtitle">におわず、手間なく、汚れも目立たず。<br>家事をそっと支える“静かな助っ人”が、ここにいます。</p>
-                <div class="cta-area">
-                    <a href="https://lin.ee/ZL02vDf" target="_blank" class="cta-button main-cta">LINEでつながりませんか？</a>
-                    <p class="cta-subtext">暮らしが少しうれしくなるお知らせをお届けします。</p>
+        <div class="hero-fullscreen">
+            <img src="./images/hero (2).JPG" alt="SKETTOのある暮らし" class="hero-bg-image">
+
+            <!-- ① 左上：キャッチコピー（明朝体・斜体風） -->
+            <p class="hero-catchcopy anim-fade-in">もう、ニオイに悩まない。</p>
+
+            <!-- 中央テキストエリア -->
+            <div class="hero-text-center">
+                <!-- ② 商品名（最大・中央） -->
+                <h1 class="hero-product-name anim-fade-in">SKETTO</h1>
+                <p class="hero-product-category anim-fade-in">キッチン用ゴミ箱</p>
+
+                <!-- ③ 商品の特徴 -->
+                <div class="hero-features anim-fade-in">
+                    <p>におわず、手間なく、汚れも目立たず</p>
+                    <p>家事をそっと支える"助っ人"です</p>
                 </div>
             </div>
         </div>
+
         <div class="achievements-area">
-            <div class="container text-center">
-                <ul class="achievements-list">
-                    <li><span class="award-icon">🏆</span> 東京都立産業技術研究センター 優秀賞受賞</li>
-                    <li><span class="award-icon">✨</span> ウーマンズビジネスグランプリ ファイナリスト</li>
-                    <li><span class="award-icon">📢</span> SKETTO開発モニター10名限定 LINEで募集中</li>
-                </ul>
+            <div class="achievement-item achievement-trophy">
+                <span class="award-icon icon-trophy">🏆</span>
+                <span class="achievement-text">東京都立産業技術研究センター<br>ものづくりmovement入賞</span>
+            </div>
+            <div class="achievement-item achievement-heart">
+                <span class="award-icon icon-heart">💗</span>
+                <span class="achievement-text">ウーマンズビジネスグランプリ<br>ファイナリスト（最終審査中）</span>
+            </div>
+            <div class="achievement-item achievement-house">
+                <span class="award-icon icon-house">🏠</span>
+                <span class="achievement-text">ホームユースモニター募集中<br>10名限定 LINEでご応募下さい</span>
             </div>
         </div>
     </header>
@@ -46,17 +57,81 @@
     <section id="odor-cause" class="odor-cause-section">
         <div class="container">
             <h2 class="section-title text-center">におう原因は「密閉」と「プラスチック」</h2>
-            <div class="media-layout media-left">
-                <div class="media-element">
+
+            <div class="odor-cause-layout">
+                <!-- 左：図解 -->
+                <div class="odor-diagram">
                     <img src="./images/スクリーンショット 2025-12-07 002317.png" alt="嫌気性微生物のイラスト">
                 </div>
-                <div class="text-content">
-                    <p>生ゴミのニオイの原因は、実は嫌気性微生物によるいたずら※。</p>
-                    <p>彼らの好きな環境は、栄養（生ゴミ）水分、温度、酸素が少ないこと、この4つ。そう、常識である「密閉」は逆効果です。</p>
-                    <p>そして、プラスチックはニオイを吸着するためどんどんニオイは取れなくなってしまうのです。</p>
-                    <hr>
-                    <p class="small-text">※匂いの素＝生ゴミの成分の分解物です。酸素が少ない状況下になると嫌気性微生物（バクテリア）によ発酵（腐敗）が進み、生ゴミの成分が分解され、匂いの素となる有機酸や硫化水素が生じます。</p>
-                    <p class="author-text">嫌気性微生物研究者 国立高等専門学校教授より</p>
+
+                <!-- 右：説明テキスト -->
+                <div class="odor-right-content">
+                    <p class="odor-intro">生ゴミのニオイの原因は、<br>実は嫌気性微生物によるいたずら※</p>
+
+                    <p class="odor-detail">彼らの好きな環境は<br>栄養、水分、温度、酸素が少ないこと、この4つ<br>そう、常識である「密閉」は逆効果です</p>
+
+                    <p class="odor-detail">そして、プラスチックはニオイを吸着するため<br>どんどんニオイは取れなくなってしまうのです</p>
+                </div>
+            </div>
+
+            <!-- 注釈 -->
+            <div class="odor-footnote">
+                <p class="small-text">
+                    ※匂いの素＝生ゴミの成分の分解物です。<br>酸素が少ない状況下になると嫌気性微生物（バクテリア）によ発酵（腐敗）が進み、生ゴミの成分が分解され、匂いの素となる有機酸や硫化水素が生じます。</p>
+                <p class="author-text">嫌気性微生物研究者　国立高等専門学校教授より</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション3: におう原因を排除したSKETTO -->
+    <section id="sketto-solution" class="sketto-solution-section">
+        <div class="container">
+            <h2 class="section-title text-center">におう原因を排除したSKETTO</h2>
+
+            <div class="sketto-solution-layout">
+                <!-- 左：SKETTO画像 -->
+                <div class="sketto-image">
+                    <img src="./images/niowanai.png" alt="SKETTOの通気構造 - 特許出願中">
+                </div>
+
+                <!-- 右：説明テキスト -->
+                <div class="sketto-features">
+                    <p class="feature-text">SKETTOはフタをしていても生ゴミが新鮮な空気に触れ<br>水分の蒸発も起こります</p>
+
+                    <p class="feature-text">庫内も換気が自然に起きるよう設計、熱がこもりません</p>
+
+                    <p class="feature-text">さらに金属の熱伝導率により温度が下がり<br>嫌気性微生物の活性化を防ぎます</p>
+
+                    <p class="feature-highlight">生ゴミを腐らせないため、コバエの発生も防げます</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション4: 一生モノを新潟から。 -->
+    <section id="niigata" class="niigata-section">
+        <div class="container">
+            <h2 class="section-title text-center">一生モノを新潟から。</h2>
+
+            <div class="niigata-layout">
+                <!-- 左：職人画像とロゴ -->
+                <div class="niigata-image-area">
+                    <img src="./images/niigata.jpg" alt="足立製作所の職人" class="craftsman-image">
+                    <div class="factory-info">
+                        <img src="./images/adati.png" alt="adachi factory ロゴ" class="factory-logo">
+                        <p class="factory-name">株式会社　足立製作所</p>
+                    </div>
+                </div>
+
+                <!-- 右：説明テキスト -->
+                <div class="niigata-content">
+                    <p class="niigata-text">SKETTOは、燕三条のおとなり 新潟市で<br>細かなところまで丁寧に作り上げています。</p>
+
+                    <p class="niigata-highlight">いわば、「ザ、日本の職人仕事」</p>
+
+                    <p class="niigata-text">頼もしいながらも</p>
+
+                    <p class="niigata-highlight">「日本の道具のやさしさ」を感じられるSKETTOです</p>
                 </div>
             </div>
         </div>
@@ -65,182 +140,187 @@
     <main>
     </main>
 
-        <section id="story" class="story-section">
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-layout">
+                <div class="story-text">
+                    <h2 class="section-title">コスパ研究室とは</h2>
+                    <p>家事のノウハウや自分たちの暮らしから見つけた "ほんとうにいいもの"
+                        を伝えてきたYouTubeチャンネルです。「ここなら信じられる」と思ってもらえる場所でありたいという想いから、企業からのタイアップ広告や案件は一切お受けしていません。</p>
+                    <p>良いものとは、ひっそりと誠実に存在していることが多いから。本当に自分が欲しいものでなければ、誰かに薦めることはできない——そう考えています。</p>
+                    <p>SKETTOの開発もその延長にあり、「密閉が常識」の市場に疑問を持ったことが出発点でした。ニオイ対策の動画で「フタがないと不安」という声を受け、“通気するゴミ箱”がないなら作ろう、という使命感が生まれます。
+                    </p>
+                    <p>「密閉という悪循環を終わりにする」というゴールを掲げ、現在も開発を続けています。</p>
+                </div>
+                <div class="story-image">
+                    <img src="./images/about-cospa.png" alt="コスパ研究室のイメージ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title text-center">SKETTOが叶える、5つの快適</h2>
+        </div>
+
+        <div class="feature-item">
             <div class="container">
-                <div class="story-layout">
-                    <div class="story-text">
-                        <h2 class="section-title">コスパ研究室とは</h2>
-                        <p>家事のノウハウや自分たちの暮らしから見つけた "ほんとうにいいもの"
-                            を伝えてきたYouTubeチャンネルです。「ここなら信じられる」と思ってもらえる場所でありたいという想いから、企業からのタイアップ広告や案件は一切お受けしていません。</p>
-                        <p>良いものとは、ひっそりと誠実に存在していることが多いから。本当に自分が欲しいものでなければ、誰かに薦めることはできない——そう考えています。</p>
-                        <p>SKETTOの開発もその延長にあり、「密閉が常識」の市場に疑問を持ったことが出発点でした。ニオイ対策の動画で「フタがないと不安」という声を受け、“通気するゴミ箱”がないなら作ろう、という使命感が生まれます。
+                <div class="media-layout media-left">
+                    <div class="media-element">
+                        <img src="./images/evidence-graph.png" alt="通気構造によるニオイ抑制効果の検証グラフ" class="img-sm">
+                    </div>
+                    <div class="text-content">
+                        <h3>1. 嫌なニオイがしないって、こんなに快適。</h3>
+                        <p>毎日ためても、空気がすっきり。特殊な通気構造で、湿気を逃がしながらニオイをこもらせません。密閉しないのに臭わないなんて、ちょっと不思議で気持ちいい。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="container">
+                <div class="media-layout media-right">
+                    <div class="media-element">
+                        <img src="./images/feature-2-bag.jpg" alt="SKETTOのフタを横にかけて袋を交換している様子">
+                    </div>
+                    <div class="text-content">
+                        <h3>2. 袋交換もラクラク。小さなストレスがなくなる道具。</h3>
+                        <p>フタは、そっと横にかけられる仕様。全開にして使うときも、ゴミ袋を替えるときも、動作がスムーズ。当たり前に感じてた小さなストレスが、ラクになるうれしさ。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="container">
+                <div class="media-layout media-left">
+                    <div class="media-element">
+                        <img src="./images/feature-3-stable.png" alt="ペットがいるリビングに置かれたSKETTO">
+                    </div>
+                    <div class="text-content">
+                        <h3>3. 倒れにくくて、静かに頼れる。</h3>
+                        <p>少しぶつかっても倒れないから、ペットと一緒でも安心。重さと安定感のバランスがちょうどいい。細かなところまで丁寧に仕上げられた、ザ・日本の職人仕事。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="container">
+                <div class="media-layout media-right">
+                    <div class="media-element">
+                        <img src="./images/feature-4-durable.jpg" alt="SKETTOの金属の質感がわかるクローズアップ">
+                    </div>
+                    <div class="text-content">
+                        <h3>4. 一生モノだから、高コスパ。</h3>
+                        <p>錆びにくく、汚れが目立たない金属素材だから、ずっときれい。丈夫さは、もう“ゴミ箱ジプシー”にならない安心感を与えてくれる。そんな道具がひとつあると、暮らしが少し整う。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="container">
+                <div class="media-layout media-left">
+                    <div class="media-element">
+                        <img src="./images/feature-5-design.png" alt="空間に溶け込むSKETTOのデザイン">
+                    </div>
+                    <div class="text-content">
+                        <h3>5. 関博旨氏デザイン。日本らしい、誠実なかたち。</h3>
+                        <p>派手さはないけれど、どんなキッチンにも自然になじむ。余計な装飾も、主張もない。だけど、見るたびに"ちゃんとしてる"って思える。空間にとけこむ美しさって、こういうことなんだと思う。
                         </p>
-                        <p>「密閉という悪循環を終わりにする」というゴールを掲げ、現在も開発を続けています。</p>
-                    </div>
-                    <div class="story-image">
-                        <img src="./images/about-cospa.png" alt="コスパ研究室のイメージ">
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="features" class="features-section">
-            <div class="container">
-                <h2 class="section-title text-center">SKETTOが叶える、5つの快適</h2>
-            </div>
-
-            <div class="feature-item">
-                <div class="container">
-                    <div class="media-layout media-left">
-                        <div class="media-element">
-                            <img src="./images/evidence-graph.png" alt="通気構造によるニオイ抑制効果の検証グラフ" class="img-sm">
-                        </div>
-                        <div class="text-content">
-                            <h3>1. 嫌なニオイがしないって、こんなに快適。</h3>
-                            <p>毎日ためても、空気がすっきり。特殊な通気構造で、湿気を逃がしながらニオイをこもらせません。密閉しないのに臭わないなんて、ちょっと不思議で気持ちいい。</p>
-                        </div>
+    <section id="voices" class="voices-section">
+        <div class="container">
+            <h2 class="section-title text-center">モニターの皆様から、感動の声が届いています</h2>
+            <div class="voices-list">
+                <!-- Voice 1 -->
+                <div class="voice-item">
+                    <div class="voice-image">
+                        <img src="./images/スクリーンショット 2025-12-07 002801.png" alt="40代女性の人物画像">
                     </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="container">
-                    <div class="media-layout media-right">
-                        <div class="media-element">
-                            <img src="./images/feature-2-bag.jpg" alt="SKETTOのフタを横にかけて袋を交換している様子">
-                        </div>
-                        <div class="text-content">
-                            <h3>2. 袋交換もラクラク。小さなストレスがなくなる道具。</h3>
-                            <p>フタは、そっと横にかけられる仕様。全開にして使うときも、ゴミ袋を替えるときも、動作がスムーズ。当たり前に感じてた小さなストレスが、ラクになるうれしさ。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="container">
-                    <div class="media-layout media-left">
-                        <div class="media-element">
-                            <img src="./images/feature-3-stable.png" alt="ペットがいるリビングに置かれたSKETTO">
-                        </div>
-                        <div class="text-content">
-                            <h3>3. 倒れにくくて、静かに頼れる。</h3>
-                            <p>少しぶつかっても倒れないから、ペットと一緒でも安心。重さと安定感のバランスがちょうどいい。細かなところまで丁寧に仕上げられた、ザ・日本の職人仕事。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="container">
-                    <div class="media-layout media-right">
-                        <div class="media-element">
-                            <img src="./images/feature-4-durable.jpg" alt="SKETTOの金属の質感がわかるクローズアップ">
-                        </div>
-                        <div class="text-content">
-                            <h3>4. 一生モノだから、高コスパ。</h3>
-                            <p>錆びにくく、汚れが目立たない金属素材だから、ずっときれい。丈夫さは、もう“ゴミ箱ジプシー”にならない安心感を与えてくれる。そんな道具がひとつあると、暮らしが少し整う。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="feature-item">
-                <div class="container">
-                    <div class="media-layout media-left">
-                        <div class="media-element">
-                            <img src="./images/feature-5-design.png" alt="空間に溶け込むSKETTOのデザイン">
-                        </div>
-                        <div class="text-content">
-                            <h3>5. 関博旨氏デザイン。日本らしい、誠実なかたち。</h3>
-                            <p>派手さはないけれど、どんなキッチンにも自然になじむ。余計な装飾も、主張もない。だけど、見るたびに"ちゃんとしてる"って思える。空間にとけこむ美しさって、こういうことなんだと思う。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="voices" class="voices-section">
-            <div class="container">
-                <h2 class="section-title text-center">モニターの皆様から、感動の声が届いています</h2>
-                <div class="voices-list">
-                    <!-- Voice 1 -->
-                    <div class="voice-item">
-                        <div class="voice-image">
-                            <img src="./images/スクリーンショット 2025-12-07 002801.png" alt="40代女性の人物画像">
-                        </div>
-                        <div class="voice-content">
-                            <p class="voice-author voice-author-left">モニターAさん<br>
+                    <div class="voice-content">
+                        <p class="voice-author voice-author-left">モニターAさん<br>
                             清潔感があってうれしい<br>
                             <span class="star-rating">★★★★★</span><br>
                             40代 女性<br>
                             顔をつっこんでも全く臭わないから感動しちゃう。<br>
                             ステンレスが希望だったけど、汚れが目立たないし、さらっとしてるので使ってみて分かる良さでした。<br>
                             意外に白いキッチンに合って上品で気に入っています。
-                            </p>
-                        </div>
+                        </p>
                     </div>
+                </div>
 
-                    <!-- Voice 2 -->
-                    <div class="voice-item">
-                        <div class="voice-image">
-                            <img src="./images/スクリーンショット 2025-12-07 002811.png" alt="30代女性の人物画像">
-                        </div>
-                        <div class="voice-content">
-                            <p class="voice-author voice-author-left">モニターBさん<br>とっても気持ちがいい<br><span class="star-rating">★★★★★</span><br>30代 女性<br>スライド式のフタがスーッと開いて、とっても気持ちがいい。ニオイも汚れも気にしなくていいって、こんなに楽なんだと感動。地味にフタをひっかけられるのが便利。</p>
-                        </div>
+                <!-- Voice 2 -->
+                <div class="voice-item">
+                    <div class="voice-image">
+                        <img src="./images/スクリーンショット 2025-12-07 002811.png" alt="30代女性の人物画像">
                     </div>
+                    <div class="voice-content">
+                        <p class="voice-author voice-author-left">モニターBさん<br>とっても気持ちがいい<br><span
+                                class="star-rating">★★★★★</span><br>30代
+                            女性<br>スライド式のフタがスーッと開いて、とっても気持ちがいい。ニオイも汚れも気にしなくていいって、こんなに楽なんだと感動。地味にフタをひっかけられるのが便利。</p>
+                    </div>
+                </div>
 
-                    <!-- Voice 3 (Originally 4) -->
-                    <div class="voice-item">
-                        <div class="voice-image">
-                            <img src="./images/スクリーンショット 2025-12-07 002821.png" alt="30代男性の人物画像">
-                        </div>
-                        <div class="voice-content">
-                            <p class="voice-author voice-author-left">モニターCさん<br>見て気持ちよいゴミ箱<br><span class="star-rating">★★★★★</span><br>30代 男性<br>見て気持ちよいゴミ箱って初めてかも。我が家は生ゴミはあまり出なくて、お弁当のプラがよくでるから、大きく開く45ℓがぴったりでした。プラゴミのニオイも気にならなくてうれしい。</p>
-                        </div>
+                <!-- Voice 3 (Originally 4) -->
+                <div class="voice-item">
+                    <div class="voice-image">
+                        <img src="./images/スクリーンショット 2025-12-07 002821.png" alt="30代男性の人物画像">
+                    </div>
+                    <div class="voice-content">
+                        <p class="voice-author voice-author-left">モニターCさん<br>見て気持ちよいゴミ箱<br><span
+                                class="star-rating">★★★★★</span><br>30代
+                            男性<br>見て気持ちよいゴミ箱って初めてかも。我が家は生ゴミはあまり出なくて、お弁当のプラがよくでるから、大きく開く45ℓがぴったりでした。プラゴミのニオイも気にならなくてうれしい。
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
-        <section id="closing" class="closing-section">
-            <div class="container text-center">
-                <p class="closing-text">丁寧に、日本でつくっています。<br>
-                    だから、少しお値段はします。<br>
-                    けれど、一生モノと考えたら——一日あたり、ほんの数円。<br>
-                    そう考えると、コスパ的にはとてもおすすめ。<br>
-                    そう、心からそう思える道具なんです。</p>
-                <h2 class="closing-headline">さあ、あなたのキッチンにも。<br>"静かな助っ人"を迎えませんか？</h2>
-                <div class="cta-area">
-                    <a href="#" class="cta-button">今後の発売情報を受け取る (LINE登録)</a>
-                    <p class="cta-subtext">Makuakeでの先行発売など、最新情報をお届けします。</p>
-                </div>
+    <section id="closing" class="closing-section">
+        <div class="container text-center">
+            <p class="closing-text">丁寧に、日本でつくっています。<br>
+                だから、少しお値段はします。<br>
+                けれど、一生モノと考えたら——一日あたり、ほんの数円。<br>
+                そう考えると、コスパ的にはとてもおすすめ。<br>
+                そう、心からそう思える道具なんです。</p>
+            <h2 class="closing-headline">さあ、あなたのキッチンにも。<br>"静かな助っ人"を迎えませんか？</h2>
+            <div class="cta-area">
+                <a href="#" class="cta-button">今後の発売情報を受け取る (LINE登録)</a>
+                <p class="cta-subtext">Makuakeでの先行発売など、最新情報をお届けします。</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="faq" class="faq-section">
-            <div class="container narrow">
-                <h2 class="section-title text-center">よくあるご質問</h2>
-                <div class="faq-list">
-                    <details class="faq-item">
-                        <summary>発売時期はいつですか？</summary>
-                        <p>2026年7月頃のMakuakeでの先行発売を予定しています。最新情報はLINE公式アカウントにてお知らせいたしますので、ぜひご登録ください。</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>試作品のモニターに応募したいです</summary>
-                        <p>モニター募集はLINE公式アカウントにて不定期に行っております。募集の際は改めて告知いたします。</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>実際に商品を見れますか？</summary>
-                        <p>2025年12月5日～2026年2月5日まで東京イノベーションベースで試作品を展示しております。また、2026年5月頃に蔦屋家電＋さんでの展示も予定しています。</p>
-                    </details>
-                </div>
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2 class="section-title text-center">よくあるご質問</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>発売時期はいつですか？</summary>
+                    <p>2026年7月頃のMakuakeでの先行発売を予定しています。最新情報はLINE公式アカウントにてお知らせいたしますので、ぜひご登録ください。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>試作品のモニターに応募したいです</summary>
+                    <p>モニター募集はLINE公式アカウントにて不定期に行っております。募集の際は改めて告知いたします。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>実際に商品を見れますか？</summary>
+                    <p>2025年12月5日～2026年2月5日まで東京イノベーションベースで試作品を展示しております。また、2026年5月頃に蔦屋家電＋さんでの展示も予定しています。</p>
+                </details>
             </div>
-        </section>
+        </div>
+    </section>
 
     </main>
 
