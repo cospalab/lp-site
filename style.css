@@ -1705,8 +1705,13 @@ p {
 }
 
 .cospalab-logo {
-    max-width: 200px;
+    max-width: 350px;
     height: auto;
+    transition: opacity 0.3s;
+}
+
+.cospalab-logo:hover {
+    opacity: 0.8;
 }
 
 .video-origin {
@@ -1714,7 +1719,7 @@ p {
 }
 
 .origin-video-img {
-    max-width: 180px;
+    max-width: 320px;
     height: auto;
     border-radius: 4px;
 }
@@ -1737,10 +1742,8 @@ p {
 }
 
 .founder-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+    max-width: 350px;
+    height: auto;
 }
 
 .founder-bio {
