@@ -17,6 +17,18 @@
 
 <body>
 
+    <!-- ナビゲーションヘッダー -->
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="#sketto-solution" class="nav-link">SKETTOとは</a>
+            <a href="#odor-cause" class="nav-link">ニオワセナイ仕組み</a>
+            <a href="#material" class="nav-link">仕様</a>
+            <a href="#voices" class="nav-link">レビュー</a>
+            <a href="#" class="nav-link nav-disabled">検査データ</a>
+            <a href="#designer" class="nav-link">製造デザイン</a>
+        </div>
+    </nav>
+
     <header class="hero-section">
         <div class="hero-fullscreen">
             <img src="./images/hero (2).JPG" alt="SKETTOのある暮らし" class="hero-bg-image">
@@ -163,6 +175,59 @@
         </div>
     </section>
 
+    <!-- セクション: 調理に寄り添う仕様 -->
+    <section id="cooking-spec" class="cooking-spec-section">
+        <div class="container">
+            <h2 class="section-title-green">調理に寄り添う仕様</h2>
+
+            <div class="cooking-layout">
+                <!-- 左：SKETTO画像 -->
+                <div class="cooking-image">
+                    <img src="./images/tegatodoku.jpg" alt="SKETTOのサイズ感">
+                    <p class="image-note">穴の面積はより小さく<br>穴のデザインも軽やかに変更予定です。</p>
+                </div>
+
+                <!-- 右：説明テキスト -->
+                <div class="cooking-content">
+                    <p class="cooking-text">SKETTOの高さは、かがまず、ゴミが捨てられるサイズ感</p>
+
+                    <p class="cooking-text">ロック付き滑らかなキャスターで、調理時はスッと脇へ<br>いつでも最適ポジションに</p>
+
+                    <p class="cooking-text">フタは片側開けでも全開でも、邪魔にならないから<br>自分仕様にお使いいただけます※</p>
+
+                    <p class="cooking-note">
+                        ※常時解放も可能ですが、<br>フタをしていた方が金属の熱伝導率により庫内の温度は下がります。<br>ご使用にならない時はフタを閉めることをおすすめいたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション: 袋交換、お手入れラクラク -->
+    <section id="bag-change" class="bag-change-section">
+        <div class="container">
+            <h2 class="section-title-green">袋交換、お手入れラクラク</h2>
+
+            <div class="bag-change-layout">
+                <!-- 左：YouTube動画サムネイル -->
+                <div class="video-thumbnail">
+                    <a href="https://youtu.be/cTvht8lHZUw" target="_blank" rel="noopener noreferrer">
+                        <img src="https://img.youtube.com/vi/cTvht8lHZUw/maxresdefault.jpg" alt="SKETTOの袋交換動画">
+                        <span class="play-button">▶</span>
+                    </a>
+                </div>
+
+                <!-- 右：説明テキスト -->
+                <div class="bag-change-content">
+                    <p class="bag-change-text">袋は動くバーでサッと交換<br>磁石でピタッと留まって、ずり落ち知らず</p>
+
+                    <p class="bag-change-text">消臭剤もフィルターも不要<br>お手入れは袋を替えるだけ</p>
+
+                    <p class="bag-change-highlight">手垢が目立ちにくい素材で、「ラクして清潔」を叶えます</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- セクション6: ゴミのかさが減り、お財布にも環境にも優しい -->
     <section id="eco" class="eco-section">
         <div class="container">
@@ -181,6 +246,51 @@
                     <p class="eco-text">かさが減るSKETTOは袋代を節約</p>
 
                     <p class="eco-text">水分を減らし、焼却炉の負担を軽減<br>環境にもやさしい商品です</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション: 嫌気性微生物検査データ -->
+    <section id="bacteria-data" class="bacteria-data-section">
+        <div class="container">
+            <h2 class="section-title">嫌気性微生物検査データ</h2>
+
+            <div class="bacteria-layout">
+                <!-- 左：検査レポート画像 -->
+                <div class="report-image">
+                    <img src="./images/kenkibiseibutu (2).png" alt="嫌気性微生物検査結果">
+                </div>
+
+                <!-- 右：説明と比較グラフ -->
+                <div class="bacteria-content">
+                    <p class="bacteria-text">本製品は、臭いの元を作る可能性がある嫌気性<br>細菌の数を、密閉状態に比べて 大幅に下げる<br>ことができました</p>
+
+                    <div class="inspection-info">
+                        <p><span class="info-label">検査時期</span>2025年11月23〜29日</p>
+                        <p><span class="info-label">室内温度</span>19℃〜24℃</p>
+                    </div>
+
+                    <!-- 比較グラフ -->
+                    <div class="comparison-chart">
+                        <div class="chart-item resin">
+                            <div class="chart-label">ロングセラー<br>樹脂製</div>
+                        </div>
+                        <div class="chart-item sketto">
+                            <div class="chart-label-sketto">SKETTO</div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-numbers">
+                        <div class="number-item">
+                            <span class="number-label">1gあたり</span>
+                            <span class="number-value">32,000,000匹</span>
+                        </div>
+                        <div class="number-item">
+                            <span class="number-label">1gあたり</span>
+                            <span class="number-value">810,000,000匹</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -260,6 +370,7 @@
         </div>
     </section>
 
+    <!--
     <section id="features" class="features-section">
         <div class="container">
             <h2 class="section-title text-center">SKETTOが叶える、5つの快適</h2>
@@ -316,7 +427,7 @@
                     </div>
                     <div class="text-content">
                         <h3>4. 一生モノだから、高コスパ。</h3>
-                        <p>錆びにくく、汚れが目立たない金属素材だから、ずっときれい。丈夫さは、もう“ゴミ箱ジプシー”にならない安心感を与えてくれる。そんな道具がひとつあると、暮らしが少し整う。</p>
+                        <p>錆びにくく、汚れが目立たない金属素材だから、ずっときれい。丈夫さは、もう"ゴミ箱ジプシー"にならない安心感を与えてくれる。そんな道具がひとつあると、暮らしが少し整う。</p>
                     </div>
                 </div>
             </div>
@@ -337,10 +448,39 @@
             </div>
         </div>
     </section>
+    -->
 
     <section id="voices" class="voices-section">
         <div class="container">
             <h2 class="section-title text-center">モニターの皆様から、感動の声が届いています</h2>
+
+            <!-- メインストーリー -->
+            <div class="main-story">
+                <h3 class="story-headline">朝、ふと気づく —— あっ、匂わない。</h3>
+
+                <div class="story-content">
+                    <p>昨晩、ゴミを入れっぱなしだったのに。<br>気持ちよく料理を始められて、ちょっとうれしい。</p>
+
+                    <p>息を止めて、そっとゴミを捨てていた日々。<br>そんな小さな気合が、もういらない。</p>
+
+                    <p>もう、コバエの心配も、消臭剤を交換する手間もない。<br>密閉していたのが、逆効果だったなんて、早く知りたかったな。</p>
+
+                    <p>思えば、自分は"ゴミ箱ジプシー"だった。<br>デザイン、ニオイ、使いやすさ——どこかがしっくりこない。<br>でも、このゴミ箱に出会ってからは、そんな迷いがすっと消えた。</p>
+
+                    <p>どっしりとした金属の質感は、どこか昭和の日本のものづくりを思い出させる。<br>うちのココア（愛犬4歳）が突撃しても倒れない。</p>
+
+                    <p>丁寧で、誠実で、長く使える道具がそこにある安心感。<br>キッチンに立つたびに、ちょっとほっとする。</p>
+
+                    <p>控えめなデザインで主張しないのに<br>毎日の家事をそっと支えてくれる存在。</p>
+
+                    <p>だから、SKETTO。<br>うん、まさに、家事の助っ人。</p>
+
+                    <p>そして、もーついいこと。そうか、生ゴミは小さくなるのね。<br>これって焼却炉の負担を結構減らすんですって。</p>
+
+                    <p>楽してるのに、いいことしてるみたいで、うれしいなんて。<br>ちょっとずるいかな。</p>
+                </div>
+            </div>
+
             <div class="voices-list">
                 <!-- Voice 1 -->
                 <div class="voice-item">
@@ -401,6 +541,7 @@
     </section>
 
 
+    <!--
     <section id="closing" class="closing-section">
         <div class="container text-center">
             <p class="closing-text">丁寧に、日本でつくっています。<br>
@@ -415,6 +556,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- 雪景色ポエムセクション -->
     <section id="snow-message" class="snow-message-section">
@@ -444,6 +586,11 @@
                 <details class="faq-item">
                     <summary>実際に商品を見れますか？</summary>
                     <p>2025年12月5日～2026年2月5日まで東京イノベーションベースで試作品を展示しております。また、2026年5月頃に蔦屋家電＋さんでの展示も予定しています。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>どんな色味のキッチンに合いますか？</summary>
+                    <p>はい、マットなシルバーのため、控えめな印象の淡いシルバーです。白を基調としてインテリアにはもちろん、ダークなインテリアともマッチしてお使いいただけます。<br>（トップページの部屋は、ステンレスキッチン、ダークブラウンの背面収納、前面は白の壁、床はコンクリートモルタル仕上げです。どの角度からも相性良く映りました）
+                    </p>
                 </details>
             </div>
         </div>
