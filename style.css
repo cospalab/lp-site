@@ -664,6 +664,313 @@ p {
     }
 }
 
+/* --- Designer Section --- */
+.designer-section {
+    padding: 80px 0;
+    background-color: #FAFAFA;
+}
+
+.designer-section .section-title {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin-bottom: 2em;
+    color: #4A4A4A;
+    letter-spacing: 0.1em;
+}
+
+.designer-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: flex-start;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.designer-profile {
+    position: relative;
+}
+
+.profile-text-left {
+    position: absolute;
+    left: -10px;
+    top: 20px;
+    z-index: 5;
+}
+
+.profile-career {
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #5A5A5A;
+    margin-bottom: 1em;
+}
+
+.profile-image-wrapper {
+    position: relative;
+    margin-left: 100px;
+    max-width: 200px;
+}
+
+.designer-image {
+    width: 100%;
+    height: auto;
+}
+
+.design-lab-text {
+    position: absolute;
+    top: 10px;
+    right: -50px;
+    font-size: 0.7rem;
+    color: #6A7D8A;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+}
+
+.designer-name {
+    font-family: var(--font-sans);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #4A4A4A;
+    margin: 15px 0 0;
+    letter-spacing: 0.02em;
+}
+
+.designer-content {
+    padding-top: 20px;
+}
+
+.designer-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #4A4A4A;
+    margin-bottom: 1.8em;
+}
+
+.designer-name-inline {
+    font-weight: 700;
+    color: #6A7D8A;
+}
+
+@media (max-width: 767px) {
+    .designer-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .profile-text-left {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin-bottom: 20px;
+    }
+
+    .profile-image-wrapper {
+        margin-left: 0;
+        max-width: 180px;
+        margin: 0 auto;
+    }
+
+    .design-lab-text {
+        right: -40px;
+    }
+
+    .designer-name {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .designer-content {
+        padding-top: 0;
+    }
+}
+
+/* --- Eco Section --- */
+.eco-section {
+    padding: 80px 0;
+    background-color: #FFFFFF;
+}
+
+.eco-section .section-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2em;
+    color: #4A4A4A;
+    letter-spacing: 0.08em;
+}
+
+.eco-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.eco-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eco-image img {
+    max-width: 220px;
+    height: auto;
+}
+
+.eco-content {
+    padding-left: 10px;
+}
+
+.eco-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #5A5A5A;
+    margin-bottom: 1.8em;
+}
+
+.eco-text:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .eco-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .eco-image img {
+        max-width: 180px;
+    }
+
+    .eco-content {
+        padding-left: 0;
+        text-align: left;
+    }
+}
+
+/* --- Material Comparison Section --- */
+.material-section {
+    padding: 80px 0;
+    background-color: #FAFAFA;
+}
+
+.material-section .section-title {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 2em;
+    color: #4A4A4A;
+    letter-spacing: 0.08em;
+}
+
+.comparison-table-wrapper {
+    overflow-x: auto;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 18px 15px;
+    vertical-align: middle;
+}
+
+/* ヘッダースタイル */
+.feature-header {
+    width: 20%;
+    background-color: transparent;
+}
+
+.sketto-header {
+    background-color: #E8D992;
+    color: #5A5A5A;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 8px 8px 0 0;
+    width: 26.6%;
+}
+
+.plastic-header {
+    background-color: #B8B8B8;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 8px 8px 0 0;
+    width: 26.6%;
+}
+
+.stainless-header {
+    background-color: #4A5D6A;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-radius: 8px 8px 0 0;
+    width: 26.6%;
+}
+
+/* 行のスタイル */
+.comparison-table tbody tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+    background-color: #F0F0F0;
+}
+
+.feature-name {
+    font-weight: 700;
+    color: #5A5A5A;
+    text-align: left;
+    font-size: 0.9rem;
+    padding-left: 20px;
+}
+
+/* 結果シンボル */
+.result-good {
+    font-size: 1.8rem;
+    color: #7A7A7A;
+}
+
+.result-bad {
+    font-size: 1.6rem;
+    color: #7A7A7A;
+}
+
+.result-fair {
+    font-size: 1.6rem;
+    color: #7A7A7A;
+}
+
+.result-text {
+    font-size: 0.85rem;
+    color: #5A5A5A;
+    line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 12px 8px;
+        font-size: 0.8rem;
+    }
+
+    .result-good,
+    .result-bad,
+    .result-fair {
+        font-size: 1.4rem;
+    }
+
+    .feature-name {
+        padding-left: 10px;
+        font-size: 0.8rem;
+    }
+}
+
 /* --- Story Section --- */
 .story-section {
     padding: var(--section-padding) 0;
@@ -871,6 +1178,59 @@ p {
 
 .closing-headline {
     margin: 1.5em 0;
+}
+
+/* --- Snow Message Section --- */
+.snow-message-section {
+    position: relative;
+    padding: 100px 0;
+    background-image: url('./images/yuki.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.snow-content {
+    text-align: center;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.snow-text {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #4A4A4A;
+    margin-bottom: 2em;
+    letter-spacing: 0.05em;
+}
+
+.snow-text-highlight {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 2;
+    color: #3A3A3A;
+    margin-bottom: 0;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 767px) {
+    .snow-message-section {
+        padding: 60px 20px;
+        min-height: 400px;
+    }
+
+    .snow-text {
+        font-size: 1rem;
+    }
+
+    .snow-text-highlight {
+        font-size: 1.1rem;
+    }
 }
 
 
