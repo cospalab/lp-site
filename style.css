@@ -185,20 +185,15 @@ p {
     z-index: 1;
 }
 
-/* ① キャッチコピー（中央上・明朝体・斜体） */
+/* ① キャッチコピー（中央・SKETTOの上） */
 .hero-catchcopy {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
     font-family: var(--font-serif);
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
     font-weight: 400;
     font-style: italic;
     color: var(--color-text-primary);
-    z-index: 10;
     letter-spacing: 0.1em;
-    margin: 0;
+    margin: 0 0 0.5em;
     text-align: center;
 }
 
@@ -302,9 +297,11 @@ p {
     z-index: 10;
 }
 
-.award-medal {
-    font-size: 2.5rem;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+.award-medal-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
 .award-badge-text {
@@ -339,9 +336,7 @@ p {
     }
 
     .hero-catchcopy {
-        top: 5%;
-        left: 50%;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .hero-product-name {
@@ -367,8 +362,8 @@ p {
         gap: 8px;
     }
 
-    .award-medal {
-        font-size: 2rem;
+    .award-medal-img {
+        height: 50px;
     }
 
     .award-year {
