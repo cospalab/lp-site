@@ -389,6 +389,14 @@ p {
     flex-shrink: 0;
 }
 
+/* 画像アイコン用 */
+.award-icon-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 /* トロフィーアイコン - 黄色/金色 */
 .icon-trophy {
     filter: hue-rotate(-10deg) saturate(1.5) brightness(0.9);

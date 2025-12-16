@@ -13,6 +13,26 @@
         href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17717805415"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-17717805415');
+    </script>
+    <!-- クリック用 -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('[href*="lin.ee"]').forEach(function (element) {
+                element.addEventListener('click', function () {
+                    gtag('event', 'conversion', { 'send_to': 'AW-17717805415/2Cl3CPDxkdAbEOeCwYBC' });
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -52,15 +72,15 @@
 
         <div class="achievements-area">
             <div class="achievement-item achievement-trophy">
-                <span class="award-icon icon-trophy">🏆</span>
+                <img src="./images/obi1.png" alt="トロフィー" class="award-icon-img">
                 <span class="achievement-text">東京都立産業技術研究センター<br>ものづくりmovement入賞</span>
             </div>
             <div class="achievement-item achievement-heart">
-                <span class="award-icon icon-heart">💗</span>
+                <img src="./images/obi2.png" alt="ハート" class="award-icon-img">
                 <span class="achievement-text">ウーマンズビジネスグランプリ<br>ファイナリスト（最終審査中）</span>
             </div>
             <div class="achievement-item achievement-house">
-                <span class="award-icon icon-house">🏠</span>
+                <img src="./images/obi3.png" alt="家" class="award-icon-img">
                 <span class="achievement-text">ホームユースモニター募集中<br>10名限定 LINEでご応募下さい</span>
             </div>
         </div>
