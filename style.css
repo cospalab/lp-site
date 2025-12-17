@@ -338,34 +338,61 @@ p {
 }
 
 .award-medal-img {
-    height: 60px;
+    height: 50px;
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
 .award-badge-text {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.award-year {
-    font-family: 'BIZ UDGothic', 'Noto Sans JP', sans-serif;
-    font-size: 1.4rem;
+    font-family: var(--font-sans);
+    font-size: 1rem;
     font-weight: 700;
     color: #B8860B;
-    line-height: 1;
+    letter-spacing: 0.05em;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.award-title {
+/* 下部情報エリア */
+.hero-bottom-info {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    z-index: 10;
+}
+
+.hero-size-type {
     font-family: var(--font-sans);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #5A4A2A;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555;
     letter-spacing: 0.05em;
+}
+
+.hero-made-in-japan {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.japan-flag {
+    font-size: 1.5rem;
+}
+
+.made-in-text {
+    font-family: 'BIZ UDGothic', 'Noto Sans JP', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     line-height: 1.3;
+    text-align: left;
+    color: #333;
 }
 
 /* モバイル対応 */
@@ -547,8 +574,8 @@ p {
     width: 100%;
     position: relative;
     background-image: url('./images/sketto.jpeg');
-    background-size: contain;
-    background-position: left center;
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
     background-color: #f5f3ef;
     min-height: 550px;
@@ -842,7 +869,7 @@ p {
 
 .niigata-layout {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
     max-width: 900px;
@@ -946,7 +973,7 @@ p {
 
 .designer-layout {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: flex-start;
     max-width: 950px;
