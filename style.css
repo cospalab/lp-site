@@ -31,6 +31,7 @@ body {
     font-family: var(--font-sans);
     margin: 0;
     padding: 0;
+    padding-top: 55px;
     color: var(--color-text-secondary);
     background-color: var(--color-bg-base);
     -webkit-font-smoothing: antialiased;
@@ -101,7 +102,11 @@ p {
 
 /* --- Site Navigation --- */
 .site-nav {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     background-color: #FFFFFF;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -140,6 +145,29 @@ p {
     pointer-events: none;
 }
 
+/* LINEボタン */
+.nav-line-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    margin-left: 20px;
+    background-color: #06c755;
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s;
+    white-space: nowrap;
+}
+
+.nav-line-btn:hover {
+    background-color: #05b04c;
+    transform: scale(1.02);
+}
+
 @media (max-width: 767px) {
     .nav-container {
         overflow-x: auto;
@@ -149,6 +177,12 @@ p {
 
     .nav-link {
         padding: 14px 12px;
+        font-size: 0.75rem;
+    }
+
+    .nav-line-btn {
+        padding: 8px 16px;
+        margin-left: 10px;
         font-size: 0.75rem;
     }
 }
