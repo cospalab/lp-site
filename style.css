@@ -754,6 +754,43 @@ p {
     margin-bottom: 0;
 }
 
+/* 画像と重なる注釈エリア */
+.odor-image-footnote {
+    position: relative;
+    margin-top: 50px;
+}
+
+.matigaedarake-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.footnote-overlay {
+    position: absolute;
+    bottom: 8%;
+    left: 3%;
+    max-width: 60%;
+    padding: 25px 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+}
+
+.footnote-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #4A4A4A;
+    margin-bottom: 1em;
+}
+
+.footnote-author {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    margin: 0;
+    font-weight: 500;
+}
+
 /* モバイル対応 */
 @media (max-width: 767px) {
     .odor-cause-layout {
@@ -876,13 +913,26 @@ p {
     margin: 0 auto;
 }
 
-.niigata-image-area {
-    position: relative;
-    max-width: 320px;
+/* 画像だけを表示するスタイル */
+.niigata-image-only {
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-.craftsman-image {
-    width: 100%;
+.niigata-full-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.niigata-image-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.niigata-full-image {
+    max-width: 100%;
     height: auto;
     border-radius: 4px;
 }
@@ -918,21 +968,25 @@ p {
 
 .niigata-content {
     padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .niigata-text {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 1.15rem;
+    line-height: 1.9;
     color: #4A4A4A;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.8em;
 }
 
 .niigata-highlight {
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 400;
     line-height: 1.8;
     color: #4A4A4A;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.8em;
+    white-space: nowrap;
 }
 
 @media (max-width: 767px) {
@@ -1030,13 +1084,17 @@ p {
 
 .designer-content {
     padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .designer-text {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    font-weight: 400;
     color: #4A4A4A;
-    margin-bottom: 1.8em;
+    margin-bottom: 1em;
 }
 
 .designer-name-inline {
@@ -1479,6 +1537,16 @@ p {
     letter-spacing: 0.08em;
 }
 
+.comparison-image-wrapper {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.comparison-image {
+    max-width: 100%;
+    height: auto;
+}
+
 .comparison-table-wrapper {
     overflow-x: auto;
     max-width: 900px;
@@ -1829,9 +1897,10 @@ p {
 
 .voice-author {
     text-align: right;
-    font-weight: 700;
-    color: #888;
-    font-size: 0.9rem;
+    font-weight: 400;
+    color: #5A5A5A;
+    font-size: 1.2rem;
+    line-height: 1.8;
 }
 
 .voice-author-left {
