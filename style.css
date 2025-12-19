@@ -1855,18 +1855,34 @@ p {
 
 .voice-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 15px;
+    max-width: 500px;
 }
 
-/* Zigzag Layout: Even items reversed */
+/* 奇数：左寄せ */
+.voice-item:nth-child(odd) {
+    margin-right: auto;
+    margin-left: 0;
+    align-items: center;
+}
+
+/* 偶数：右寄せ */
 .voice-item:nth-child(even) {
-    flex-direction: row-reverse;
+    margin-left: auto;
+    margin-right: 0;
+    align-items: center;
 }
 
 .voice-image {
-    flex: 0 0 40%;
-    /* Image takes 40% width */
+    width: 350px;
+    text-align: center;
+}
+
+.voice-image img {
+    max-width: 100%;
+    height: auto;
 }
 
 .placeholder-image {
@@ -1890,23 +1906,22 @@ p {
 }
 
 .voice-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.8;
     margin-bottom: 1em;
 }
 
 .voice-author {
-    text-align: right;
+    text-align: left;
     font-weight: 400;
     color: #5A5A5A;
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 .voice-author-left {
     text-align: left;
-    margin-right: 20%;
-    /* Pushes the text block away from the right edge */
+    margin-right: 0;
 }
 
 .star-rating {
