@@ -232,7 +232,7 @@ p {
     font-weight: 400;
     color: var(--color-text-primary);
     letter-spacing: 0.1em;
-    margin: 0 0 0.5em;
+    margin: 30px 0 0.5em;
     text-align: center;
 }
 
@@ -245,7 +245,7 @@ p {
 /* 中央テキストエリア */
 .hero-text-center {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -264,6 +264,25 @@ p {
     margin: 0 0 0.1em;
     line-height: 1.1;
     white-space: nowrap;
+}
+
+/* 商品名画像版 */
+.hero-product-name-wrapper {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+    line-height: 1;
+}
+
+.hero-product-name-img {
+    height: clamp(80px, 15vw, 180px);
+    width: auto;
+}
+
+.hero-product-name-wrapper .trademark {
+    font-size: clamp(1rem, 3vw, 2rem);
+    margin-left: 5px;
 }
 
 /* 商品カテゴリー */
@@ -633,7 +652,7 @@ p {
 }
 
 .sketto-brand-image {
-    height: clamp(200px, 30vw, 400px);
+    height: clamp(80px, 15vw, 180px);
     width: auto;
 }
 
