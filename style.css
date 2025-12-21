@@ -306,6 +306,21 @@ p {
     border-radius: 4px;
 }
 
+/* B: 左上 MADE IN JAPAN */
+.hero-made-in-japan-top {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    border-radius: 4px;
+}
+
 .japan-flag {
     font-size: 1.2rem;
 }
@@ -631,6 +646,7 @@ p {
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-top: 30px;
     margin-left: auto;
     width: 50%;
     padding-right: 50px;
@@ -1394,13 +1410,13 @@ p {
 
 /* --- Bacteria Data Section --- */
 .bacteria-data-section {
-    padding: 80px 0;
+    padding: 30px 0;
     background-color: #FFFFFF;
 }
 
 .bacteria-data-section .section-title {
     font-size: clamp(1.5rem, 3.5vw, 2rem);
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     color: #4A4A4A;
     letter-spacing: 0.08em;
     text-align: left;
@@ -1410,14 +1426,14 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    align-items: flex-start;
+    align-items: flex-end;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .report-image img {
     width: 100%;
-    max-width: 380px;
+    max-width: 450px;
     height: auto;
 }
 
@@ -1786,6 +1802,21 @@ p {
 .voices-section {
     padding: var(--section-padding) 0;
     background-color: var(--color-bg-voices);
+}
+
+/* --- Story Essay Section (別セクション: 朝、ふと気づく) --- */
+.story-essay-section {
+    padding: var(--section-padding) 0;
+    background: linear-gradient(135deg, rgba(180, 220, 180, 0.3) 0%, rgba(200, 230, 200, 0.25) 50%, rgba(220, 240, 220, 0.2) 100%);
+}
+
+/* Main Story in Essay Section */
+.story-essay-section .main-story {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
 }
 
 /* Main Story in Voices Section */
