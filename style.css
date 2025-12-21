@@ -498,18 +498,18 @@ p {
     display: flex;
     flex-direction: row;
     gap: 0;
-    background-color: #E5E5E5;
+    background-color: #3A3A3A;
 }
 
 .achievement-item {
     flex: 1;
-    background-color: #E5E5E5;
+    background-color: #3A3A3A;
     padding: 20px 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    border-right: 1px solid #D0D0D0;
+    border-right: none;
 }
 
 .achievement-item:last-child {
@@ -517,11 +517,11 @@ p {
 }
 
 .achievement-item:nth-child(odd) {
-    background-color: #E5E5E5;
+    background-color: #3A3A3A;
 }
 
 .achievement-item:nth-child(even) {
-    background-color: #DEDEDE;
+    background-color: #3A3A3A;
 }
 
 .award-icon {
@@ -558,7 +558,7 @@ p {
     font-family: var(--font-sans);
     font-weight: 700;
     font-size: 0.85rem;
-    color: #4A4A4A;
+    color: #FFFFFF;
     line-height: 1.4;
     text-align: left;
 }
@@ -569,14 +569,16 @@ p {
         flex-direction: row;
         flex-wrap: nowrap;
         overflow-x: auto;
+        background-color: #3A3A3A;
     }
 
     .achievement-item {
         padding: 10px 15px;
         gap: 8px;
-        border-right: 1px solid #D0D0D0;
+        border-right: none;
         border-bottom: none;
         flex-shrink: 0;
+        background-color: #3A3A3A;
     }
 
     .achievement-item:last-child {
@@ -589,6 +591,7 @@ p {
 
     .achievement-text {
         font-size: 0.75rem;
+        color: #FFFFFF;
     }
 }
 
@@ -708,6 +711,11 @@ p {
 .odor-cause-section {
     padding: 60px 0 80px 0;
     background-color: #FFFFFF;
+    overflow: visible;
+}
+
+.odor-cause-section .container {
+    overflow: visible;
 }
 
 .odor-cause-section .section-title {
@@ -733,6 +741,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible;
 }
 
 .odor-diagram img {
@@ -740,6 +749,7 @@ p {
     height: auto;
     border-radius: 0;
     box-shadow: none;
+    overflow: visible;
 }
 
 /* 右側：説明テキスト */
@@ -791,6 +801,7 @@ p {
 .odor-image-footnote {
     position: relative;
     margin-top: 50px;
+    overflow: visible;
 }
 
 .matigaedarake-image {
@@ -801,12 +812,12 @@ p {
 
 .footnote-overlay {
     position: absolute;
-    bottom: 8%;
-    left: 3%;
-    max-width: 60%;
-    padding: 25px 30px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
+    bottom: 12%;
+    left: 5%;
+    max-width: 55%;
+    padding: 20px;
+    background: transparent;
+    border-radius: 0;
 }
 
 .footnote-text {
