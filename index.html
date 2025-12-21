@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=BIZ+UDPMincho&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -641,55 +641,65 @@
     <!-- セクション: コスパ研究室とは -->
     <section id="cospalab" class="cospalab-section">
         <div class="container">
-            <h2 class="section-title">コスパ研究室とは</h2>
+            <!-- ヘッダー：ロゴとタイトル -->
+            <div class="cospalab-header">
+                <a href="https://www.youtube.com/@cospalab" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/cospalab.png" alt="cospalab ロゴ" class="cospalab-logo">
+                </a>
+                <h2 class="section-title cospalab-title">コスパ研究室とは</h2>
+            </div>
 
-            <div class="cospalab-layout">
-                <!-- 左側：ロゴと動画サムネイル -->
-                <div class="cospalab-left">
-                    <a href="https://www.youtube.com/@cospalab" target="_blank" rel="noopener noreferrer">
-                        <img src="./images/cospalab.png" alt="cospalab ロゴ" class="cospalab-logo">
-                    </a>
+            <!-- メインコンテンツ：テキスト中央寄せ -->
+            <div class="cospalab-content">
+                <p>家事のノウハウ、自分の暮らしから見つけた<br>"本当にいいもの" を伝えてきたYouTubeチャンネルです。</p>
 
+                <p>「ここなら信じられる」<br>と思ってもらえる場所でありたい——</p>
+
+                <p>その想いから、「案件」はお受けしていません。</p>
+
+                <p>本当に自分が使ってきて「良い」と判断したものしか<br>誰かに薦めることはできない、そう考えています。</p>
+
+                <p>SKETTOの開発も、その延長にあります。</p>
+
+                <p>「これだ」と思えるゴミ箱に出会えず<br>傘立てを加工していました。</p>
+
+                <p>"密閉"は間違えなのに、とやきもき。<br>市場に増えるのは、樹脂製品や、ハイスペック系。<br>機能は増えても<br>暮らしの快適さはどこか置き去りになっている——<br>そんな気がしていました。
+                </p>
+
+                <!-- 通気するゴミ箱と動画画像を横並び -->
+                <div class="cospalab-video-row">
+                    <div class="cospalab-text-left">
+                        <p>通気するゴミ箱、あったらいいのに。<br>理想的なゴミ箱、作ってみたいな。</p>
+                    </div>
                     <div class="video-origin">
                         <img src="./images/namagomi.png" alt="生ごみのにおい対策動画" class="origin-video-img">
                         <p class="origin-text">SKETTOはこの動画から生まれました。</p>
                     </div>
-
-                    <div class="founder-profile">
-                        <img src="./images/satie.png" alt="ケチエ" class="founder-image">
-                    </div>
                 </div>
 
-                <!-- 右側：説明テキスト -->
-                <div class="cospalab-right">
-                    <p>家事のノウハウや自分の暮らしから見つけた<br>"本当にいいもの、いいこと"<br>を伝えてきたYouTubeチャンネルです。</p>
+                <p>それが、SKETTOの第一歩です。</p>
 
-                    <p>「ここなら信じられる」と思ってもらえる場所でありたい——</p>
+                <p>「密閉という悪循環を終わりにする」</p>
 
-                    <p>その想いから、「案件」はお受けしていません。</p>
+                <p>そんな使命感を持って、ゴミ箱を開発しています。</p>
 
-                    <p>良いものとは、ひっそりと誠実に存在していることが多くて。</p>
+                <p>動画の反響に背中を押していただき<br>開発に挑戦することができました。</p>
 
-                    <p>本当に自分が欲しいものでなければ<br>誰かに薦めることはできない、そう考えています。</p>
+                <p>フォロワーのみなさん、いいねくださった方、コメントくださった方、心から感謝しています。</p>
 
-                    <p>SKETTOの開発も、その延長にあります。</p>
-
-                    <p>「これだ」と思えるゴミ箱に出会えず<br>傘立てを加工していました。</p>
-
-                    <p>"密閉"は間違えなのに、どうして。<br>市場に増えるのは、樹脂製品や、ハイスペック系。<br>機能は増えても<br>暮らしの快適さはどこか置き去りになっている——<br>そんな気がしていました。
+                <!-- ケチエプロフィール（一番下） -->
+                <div class="founder-profile">
+                    <div class="founder-header">
+                        <img src="./images/satie.png" alt="ケチエ" class="founder-image">
+                        <h3 class="founder-name">ケチエkechie</h3>
+                    </div>
+                    <p class="founder-bio">
+                        幼いころから常識に疑問を抱き、立教大学でメディア論を学ぶ中で「情報の怖さ」を知る。<br>
+                        以来、自分の感覚を大切に生きるように。<br>
+                        子育て期に「常識にとらわれない家事」をYouTubeで発信し共感を集める。<br>
+                        2023年からものづくりに挑戦、2025年「ものづくりムーブメント」で入賞。<br>
+                        "ケチの知恵"をヒントに、ムダなく心地よい暮らしを探求している。
                     </p>
-
-                    <p>通気するゴミ箱、あったらいいのに。<br>理想的なゴミ箱、作ってみたいな。</p>
-
-                    <p>それが、SKETTOの第一歩です。</p>
-
-                    <p>「密閉という悪循環を終わりにする」</p>
-
-                    <p>そんな使命感を持って、ゴミ箱を開発しています。</p>
-
-                    <p>動画の反響に背中を押していただき<br>開発に挑戦することができました。</p>
-
-                    <p>フォロワーのみなさん、いいねくださった方、コメントくださった方、心から感謝しています。</p>
                 </div>
             </div>
         </div>
