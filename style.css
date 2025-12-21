@@ -2424,7 +2424,7 @@ p {
 .cospalab-video-row {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 40px;
     margin: 1em 0;
 }
@@ -2440,6 +2440,7 @@ p {
 .video-origin {
     text-align: center;
     flex-shrink: 0;
+    margin-right: -150px;
 }
 
 .origin-video-img {
