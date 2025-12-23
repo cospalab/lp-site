@@ -40,14 +40,21 @@
     <!-- ナビゲーションヘッダー -->
     <nav class="site-nav">
         <div class="nav-container">
-            <a href="#sketto-solution" class="nav-link">SKETTOとは</a>
+            <a href="#cospalab" class="nav-logo-link">
+                <img src="./images/cospalab.png" alt="コスパ研究室" class="nav-logo-img">
+            </a>
             <a href="#odor-cause" class="nav-link">ニオワセナイ仕組み</a>
-            <a href="#material" class="nav-link">仕様</a>
-            <a href="#voices" class="nav-link">レビュー</a>
             <a href="#bacteria-data" class="nav-link">検査データ</a>
-            <a href="#designer" class="nav-link">製造デザイン</a>
-            <a href="https://lin.ee/xxxxxxx" class="nav-line-btn" target="_blank"
-                rel="noopener noreferrer">LINEで情報を得る</a>
+            <a href="#material" class="nav-link">素材</a>
+            <a href="#faq" class="nav-link">Q&A</a>
+            <a href="#voices" class="nav-link">レビュー</a>
+            <a href="#niigata" class="nav-link">製造デザイン</a>
+            <a href="https://lin.ee/xxxxxxx" class="nav-line-btn" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                </svg>
+            </a>
         </div>
     </nav>
 
@@ -55,36 +62,19 @@
         <div class="hero-fullscreen">
             <img src="./images/hreopage.png" alt="SKETTOのある暮らし" class="hero-bg-image">
 
-            <!-- 中央テキストエリア -->
-            <div class="hero-text-center">
-                <!-- ① キャッチコピー（中央・SKETTOの上） -->
+            <!-- テキストエリア（背景のSKETTOに合わせて配置） -->
+            <div class="hero-text-area">
+                <!-- キャッチコピー -->
                 <p class="hero-catchcopy anim-fade-in">もう、ニオイに悩まない。</p>
 
-                <!-- ② 商品名（最大・中央） -->
-                <div class="hero-product-name-wrapper anim-fade-in">
-                    <img src="./images/SKETTO.png" alt="SKETTO" class="hero-product-name-img">
-                    <sup class="trademark">®</sup>
-                </div>
+                <!-- 商品カテゴリー -->
                 <p class="hero-product-category anim-fade-in">キッチン用ゴミ箱</p>
 
-                <!-- ③ 商品の特徴 -->
+                <!-- 商品の特徴 -->
                 <div class="hero-features anim-fade-in">
                     <p>におわず、手間なく、汚れも目立たず</p>
                     <p>家事をそっと支える"助っ人"です</p>
                 </div>
-            </div>
-
-            <!-- B: 左上：MADE IN JAPAN（非表示）
-            <div class="hero-made-in-japan-top anim-fade-in">
-                <span class="japan-flag">🇯🇵</span>
-                <span class="made-in-text">MADE IN<br>JAPAN</span>
-            </div>
-            -->
-
-            <!-- ④ 左下：受賞バッジ -->
-            <div class="hero-award-badge anim-fade-in">
-                <img src="./images/2025.png" alt="ものづくりmovement受賞" class="award-medal-img">
-                <span class="award-badge-text">ものづくりmovement受賞プロダクト</span>
             </div>
 
             <!-- 下部の情報エリア -->
@@ -93,6 +83,7 @@
             </div>
         </div>
 
+        <!--
         <div class="achievements-area">
             <div class="achievement-item achievement-trophy">
                 <img src="./images/obi1.png" alt="トロフィー" class="award-icon-img">
@@ -107,28 +98,30 @@
                 <span class="achievement-text">ホームユースモニター募集中<br>10名限定 LINEでご応募下さい</span>
             </div>
         </div>
+        -->
     </header>
 
-    <!-- セクション2: SKETTOセクション画像 -->
-    <section id="sketto-section-image" class="sketto-section-image">
-        <img src="./images/SKETTOsection.png" alt="SKETTOセクション" class="sketto-section-img">
-    </section>
+    <!-- NEWS帯 -->
+    <div class="news-bar">
+        <span class="news-label">NEWS</span>
+        <span class="news-text">〇有楽町TIBにて試作品展示中</span>
+        <span class="news-text">〇ホームユースモニター募集中</span>
+    </div>
 
-    <!-- セクション: SKETTO 助っ人の特徴 -->
+    <!-- セクション: SKETTO 特徴 -->
     <section id="sketto-features" class="sketto-features-section">
-        <div class="sketto-features-overlay">
-            <div class="sketto-features-header">
-                <img src="./images/SKETTO.png" alt="SKETTO" class="sketto-brand-image">
-                <span class="sketto-subtitle">助っ人の特徴</span>
+        <div class="sketto-features-content">
+            <p class="sketto-catchcopy">もう、においに悩まない。</p>
+            <div class="sketto-logo-wrapper">
+                <img src="./images/SKETTO.png" alt="SKETTO" class="sketto-logo-img">
+                <sup class="sketto-trademark">®</sup>
             </div>
             <ul class="sketto-features-list">
-                <li>におう原因をもとから排除</li>
-                <li>金属製でニオイ吸着ゼロ</li>
-                <li>汚れや手垢が目立ちにくい</li>
-                <li>ランニングコストゼロ</li>
-                <li>ゴミ袋交換がらく</li>
-                <li>元無印デザイナー</li>
-                <li>燕三条のおとなりで製造</li>
+                <li>ゴミ箱のフタを開けるのが、怖くなくなります</li>
+                <li>手間をかけずに、清潔を保てます</li>
+                <li>袋の交換もスムーズで、家事の時短に</li>
+                <li>暮らしになじむ、控えめなデザインもうれしい</li>
+                <li>末永くお使いいただける、安心の日本製です</li>
             </ul>
         </div>
     </section>
@@ -153,14 +146,15 @@
                 </div>
             </div>
 
-            <!-- 画像と重なる注釈エリア -->
-            <div class="odor-image-footnote">
-                <img src="./images/matigaedarake.png" alt="間違えだらけの生ごみ対策" class="matigaedarake-image">
-                <div class="footnote-overlay">
-                    <p class="footnote-text">
-                        においの素＝生ゴミの成分の分解物です。<br>酸素が少ない状況下になると嫌気性微生物（バクテリア）<br>による発酵（腐敗）が進み、生ゴミの成分が分解され<br>においの素となる有機酸や硫化水素が生じます。
+            <!-- 教授エリア：テキスト左、画像右 -->
+            <div class="professor-section">
+                <div class="professor-text">
+                    <p>においの素＝生ゴミの成分の分解物です。<br>酸素が少ない状況下になると嫌気性微生物（バクテリア）<br>による発酵（腐敗）が進み、生ゴミの成分が分解され<br>においの素となる有機酸や硫化水素が生じます。
                     </p>
-                    <p class="footnote-author">嫌気性微生物研究者　国立高等専門学校教授より</p>
+                    <p class="professor-author">嫌気性微生物研究者　国立高等専門学校教授より</p>
+                </div>
+                <div class="professor-image-area">
+                    <img src="./images/kyouzyuyori.png" alt="嫌気性微生物研究者 国立高等専門学校教授より" class="professor-image">
                 </div>
             </div>
         </div>
@@ -768,6 +762,10 @@
                     <p>はい、マットなシルバーのため、控えめな印象の淡いシルバーです。白を基調としてインテリアにはもちろん、ダークなインテリアともマッチしてお使いいただけます。<br>（トップページの部屋は、ステンレスキッチン、ダークブラウンの背面収納、前面は白の壁、床はコンクリートモルタル仕上げです。どの角度からも相性良く映りました）
                     </p>
                 </details>
+                <details class="faq-item">
+                    <summary>まとめ買いやセールなどの割引はありますか？</summary>
+                    <p>随時割引クーポンなどをLINEで配信いたします。ぜひご登録ください。</p>
+                </details>
             </div>
         </div>
     </section>
@@ -776,9 +774,19 @@
 
     <footer class="footer">
         <div class="container text-center">
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@cospalab" target="_blank" rel="noopener noreferrer"
+                    class="footer-youtube-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                    <span>コスパ研究室 YouTube</span>
+                </a>
+            </div>
             <div class="footer-links">
                 <a href="mailto:cospalab-info@yahoo.co.jp">お問い合わせ</a>
-                <a href="https://www.youtube.com/@cospalab" target="_blank">YouTube</a>
             </div>
             <p class="copyright">&copy; 2025 コスパ研究室(cospalab)</p>
         </div>
