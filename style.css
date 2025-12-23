@@ -615,6 +615,35 @@ p {
     }
 }
 
+/* --- SKETTO Section Image (Second Section) --- */
+.sketto-section-image {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+    background-color: #FFFFFF;
+}
+
+.sketto-section-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- Bacteria Data Section (Full Image) --- */
+.bacteria-image-only {
+    text-align: center;
+}
+
+.bacteria-full-image {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* --- SKETTO Features Section (Background Image with Text Overlay) --- */
 .sketto-features-section {
     width: 100%;
@@ -2168,7 +2197,7 @@ p {
 }
 
 .origin-video-img {
-    max-width: 320px;
+    max-width: 450px;
     height: auto;
     border-radius: 4px;
 }
