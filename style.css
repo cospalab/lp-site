@@ -125,6 +125,15 @@ body {
     margin: 0 auto;
 }
 
+/* Mobile: Use page2sp.png */
+@media (max-width: 767px) {
+    .sketto-features-bg {
+        background-image: url('./images/page2sp.png');
+        aspect-ratio: 750 / 1334;
+        /* Mobile aspect ratio */
+    }
+}
+
 
 .hero-fullscreen {
     position: relative;
@@ -1969,7 +1978,8 @@ body {
 /* --- Story Essay Section (別セクション: 朝、ふと気づく) --- */
 .story-essay-section {
     padding: var(--section-padding) 0;
-    background: linear-gradient(135deg, rgba(180, 220, 180, 0.3) 0%, rgba(200, 230, 200, 0.25) 50%, rgba(220, 240, 220, 0.2) 100%);
+    background-color: #f3f5f6;
+    /* Solid background for PC and mobile */
 }
 
 /* Main Story in Essay Section */
@@ -2252,13 +2262,12 @@ body {
     max-width: 300px;
 }
 
-.bag-recommend h4 {
+.bag-recommend-title {
     font-size: 1rem;
     font-weight: 700;
     color: var(--color-gray);
     margin-bottom: 1em;
     text-align: center;
-    /* Header centered above text? Or left? Image showed centered-ish or left. Let's go Center for the block header. */
 }
 
 .bag-text {
@@ -2504,7 +2513,8 @@ body {
 }
 
 .snow-intro-bold {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    /* Dynamic font to prevent wrapping - scales with viewport */
+    font-size: clamp(0.85rem, 4.5vw, 1.5rem);
     font-weight: 700;
     line-height: 1.8;
     color: var(--color-black);
@@ -2512,7 +2522,8 @@ body {
     text-align: center;
     letter-spacing: 0.05em;
     width: 100%;
-    /* Ensure it takes full width of container */
+    white-space: nowrap;
+    /* Prevent wrapping */
 }
 
 .snow-vertical-text {
@@ -3037,6 +3048,8 @@ body {
     }
 
     /* Body text 0.9rem - Ultra Specific to override everything */
+    /* Apply globally to all paragraphs on mobile */
+    body p,
     body .niigata-text,
     body .bag-change-text,
     body .cooking-text,
@@ -3045,6 +3058,8 @@ body {
     #cospalab .cospalab-content p,
     .founder-bio {
         font-size: 0.9rem !important;
+        margin-bottom: 0.9em !important;
+        /* Standardized paragraph margin */
     }
 
     /* Remove Main Story Padding */
@@ -3052,12 +3067,19 @@ body {
         padding: 0 !important;
     }
 
-    /* Size Section: Stack Bag Recommendations */
+    /* Size Section: Keep Bag Recommendations Side-by-Side */
     .bag-recommend-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+        flex-direction: row;
+        /* Keep horizontal to match image */
+        justify-content: space-around;
+        gap: 15px;
         text-align: center;
+    }
+
+    .bag-recommend {
+        flex: 1;
+        max-width: 45%;
+        /* Ensure two columns fit */
     }
 
     /* Snow Section: Fix Cut-off and Spacing */
@@ -3108,9 +3130,127 @@ body {
         display: none;
     }
 
+    /* Designer Section: Hide Breaks, Reduce Spacing */
+    .designer-text br {
+        display: none;
+    }
+
+    .designer-text p {
+        margin-bottom: 0.5em !important;
+        /* Reduce paragraph spacing */
+    }
+
+    /* Niigata Section: Hide Breaks */
+    .niigata-text br {
+        display: none;
+    }
+
+    /* Bacteria Section: Hide Breaks, Reduce Font */
+    .bacteria-desc br {
+        display: none;
+    }
+
+    .bacteria-desc {
+        font-size: 0.9rem !important;
+        /* Reduce oversized font */
+    }
+
+    /* Features Section: Hide Breaks */
+    .feature-text br {
+        display: none;
+    }
+
+    /* Snow Section: Fix Overflow */
+    .snow-content {
+        margin-top: 150px !important;
+        /* Reduce huge 400px margin for mobile */
+        width: 100% !important;
+        /* Prevent overflow */
+        max-width: 100% !important;
+        padding: 0 15px !important;
+    }
+
+    .snow-intro-bold {
+        width: 100% !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .snow-vertical-text p {
+        line-height: 1.8;
+        /* Tighter line height for mobile vertical text */
+        margin-left: 1em;
+        /* Adjust spacing between vertical lines if needed */
+    }
+
+    /* Founder Profile: Horizontal Name + Icon on Mobile */
+    .founder-header-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .founder-name {
+        text-align: left !important;
+        margin-bottom: 0 !important;
+        flex: 1;
+    }
+
+    .founder-header-mobile .founder-image-wrapper {
+        width: 80px !important;
+        flex-shrink: 0;
+    }
+
+    .founder-body {
+        flex-direction: column !important;
+    }
+
+    .founder-text {
+        width: 100%;
+    }
+
+    /* Hide the image from founder-body on mobile since it's in header */
+    .founder-body .founder-image-wrapper {
+        display: none;
+    }
+
+    /* Standardize Font Sizes to 0.9rem */
+    .voice-text,
+    .story-content p {
+        font-size: 0.9rem !important;
+    }
+
+    /* Remove Essay Margins on Mobile */
+    .story-essay-section .main-story {
+        padding: 0 !important;
+        /* Padding removed as requested */
+    }
+
+    .story-content p {
+        margin-bottom: 0 !important;
+    }
+
+    /* Bag Change Section: Hide Breaks, Reduce Spacing */
+    .bag-change-text br {
+        display: none;
+    }
+
+    .bag-change-text {
+        margin-bottom: 0.5em !important;
+    }
+
+    /* Cooking Section: Reduce Paragraph Margins */
+    .cooking-text {
+        margin-bottom: 0.9em !important;
+        /* Half of desktop 1.8em */
+    }
+
     /* Utility: Mobile-only Line Break */
     .sp-br {
-        display: block;
+        display: inline;
+        /* Show br on mobile */
     }
 }
 
