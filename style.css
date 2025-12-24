@@ -1832,6 +1832,13 @@ body {
     width: 100%;
 }
 
+@media (max-width: 767px) {
+    .bacteria-desc {
+        margin-bottom: 20px !important;
+        /* Force gap override */
+    }
+}
+
 .bacteria-graph-area img {
     width: 100%;
     height: auto;
@@ -2034,7 +2041,8 @@ body {
     /* text-orientation: mixed; Default is usually fine for Japanese */
     font-size: clamp(1.4rem, 3vw, 2rem);
     font-weight: 700;
-    color: var(--color-black);
+    color: var(--color-gray);
+    /* #444444 */
     margin: 0;
     line-height: 1.8;
     letter-spacing: 0.1em;
@@ -2247,7 +2255,6 @@ body {
 
 /* or inline-block */
 /* If inline, text-align handles it. If block, margin handles it. Combining both ensures safety. */
-}
 
 .trademark-symbol {
     font-size: 0.6em;
@@ -2478,6 +2485,8 @@ body {
 
 .closing-headline {
     margin: 1.5em 0;
+    color: var(--color-gray);
+    /* #444444 */
 }
 
 /* --- Snow Message Section --- */
@@ -2599,6 +2608,7 @@ body {
     cursor: pointer;
     position: relative;
     padding-right: 30px;
+    color: var(--color-gray);
 }
 
 .faq-item summary::after {
@@ -2607,6 +2617,7 @@ body {
     right: 0;
     font-size: 1.5rem;
     transition: transform 0.3s;
+    color: var(--color-gray);
 }
 
 .faq-item[open] summary::after {
@@ -2616,6 +2627,7 @@ body {
 .faq-item p {
     padding: 1em 0 0;
     margin: 0;
+    color: var(--color-gray);
 }
 
 
@@ -2657,6 +2669,8 @@ body {
     text-align: center;
     /* Enforce center alignment */
     width: 100%;
+    color: var(--color-gray);
+    /* #444444 */
 }
 
 /* --- Voices Section (Refined Zig-Zag) --- */
@@ -2831,7 +2845,8 @@ body {
 }
 
 .founder-image-wrapper {
-    width: 150px;
+    width: 100px;
+    /* Reduced to 2/3 */
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -3214,7 +3229,8 @@ body {
     }
 
     .founder-image-wrapper {
-        width: 80px !important;
+        width: 55px !important;
+        /* Reduced to ~2/3 of 80px */
         flex-shrink: 0;
     }
 
