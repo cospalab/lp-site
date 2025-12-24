@@ -36,11 +36,6 @@ body {
     font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
     /* Update body font */
     margin: 0;
-    /* Global Padding replacement example - will need multiple targets or regex search/replace if I could, but I must do it via replace_file_content chunk by chunk or a large script.
-Since I have many occurrences, I will replace the most frequent ones first.
-*/
-    padding: var(--section-padding) 0;
-
     /* Color replacements */
     color: var(--color-black);
     /* for var(--color-black), #202020 */
@@ -79,18 +74,27 @@ Since I have many occurrences, I will replace the most frequent ones first.
     background-position: center;
     background-repeat: no-repeat;
 
-    /* Natural Movement Animation */
+    /* Natural Movement Animation: Zoom + Fade In */
     animation: hero-zoom 20s ease-out forwards;
     transform-origin: center center;
+    opacity: 0;
+    /* Start invisible for fade-in */
 }
 
 @keyframes hero-zoom {
     0% {
         transform: scale(1.0);
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+        /* Fade in complete at ~1.6s */
     }
 
     100% {
         transform: scale(1.05);
+        opacity: 1;
     }
 }
 
