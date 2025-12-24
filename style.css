@@ -15,6 +15,10 @@
     --color-bg-base: #FFFFFF;
     /* White typically exception, or use thin gray? Assuming White is canvas */
 
+    /* Typography */
+    --font-sans: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+
     /* Layout */
     --container-width: 750px;
     /* Unified Width matched to Story section */
@@ -47,7 +51,7 @@ body {
 }
 
 body {
-    font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
+    font-family: var(--font-sans);
     /* Color replacements */
     color: var(--color-black);
     background-color: var(--color-bg-base);
@@ -434,9 +438,10 @@ body {
 }
 
 .annotation-text {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.6;
+    font-size: 1rem;
+    /* Match main text size */
+    color: var(--color-black);
+    line-height: 1.8;
 }
 
 .professor-signature {
@@ -934,12 +939,12 @@ body {
 }
 
 .designer-text {
-    font-size: 1.15rem;
+    font-size: 1rem;
+    /* Match other sections */
     line-height: 1.8;
     font-weight: 400;
     color: var(--color-gray);
     margin-bottom: 0;
-    /* Merged P should not have bottom margin if it's the only one */
 }
 
 .designer-name-inline {
