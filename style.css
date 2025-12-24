@@ -82,7 +82,7 @@ body {
     background-repeat: no-repeat;
 
     /* Natural Movement Animation: Zoom + Fade In */
-    animation: hero-zoom 20s ease-out forwards;
+    animation: hero-zoom 2s ease-out forwards;
     transform-origin: center center;
     opacity: 0;
     /* Start invisible for fade-in */
@@ -90,18 +90,15 @@ body {
 
 @keyframes hero-zoom {
     0% {
-        transform: scale(1.0);
         opacity: 0;
-    }
-
-    8% {
-        opacity: 1;
-        /* Fade in complete at ~1.6s */
+        transform: scale(1.1) translateY(-50px);
+        /* Start slightly larger and higher */
     }
 
     100% {
-        transform: scale(1.05);
         opacity: 1;
+        transform: scale(1) translateY(0);
+        /* Settle to natural size and position */
     }
 }
 
@@ -1129,10 +1126,11 @@ body {
 }
 
 .bag-change-text {
-    font-size: 1.05rem;
-    line-height: 1.9;
+    font-size: 1rem;
+    /* Unified to 1rem (approx 16px) */
+    line-height: 2;
+    margin-bottom: 1.5em;
     color: var(--color-gray);
-    margin-bottom: 1.8em;
 }
 
 .bag-change-highlight {
@@ -1484,11 +1482,11 @@ body {
 
 .niigata-text {
     font-size: 1rem;
+    /* Unified to 1rem (approx 16px) */
     line-height: 2;
     color: var(--color-gray);
-    margin-bottom: 30px;
-    font-weight: 500;
-    /* Normal/Medium weight, NOT bold (700) */
+    margin-bottom: 2em;
+    font-weight: normal;
 }
 
 .niigata-text.no-margin {
@@ -2196,6 +2194,10 @@ body {
     gap: 30px;
     justify-content: flex-start;
     /* Left aligned, but elements flow: text -> logo */
+    padding: 0;
+    /* Ensure no extra padding causes shift */
+    margin-left: 0;
+    /* align with container edge */
 }
 
 .cospalab-header .section-title {
@@ -2365,8 +2367,8 @@ body {
 }
 
 .founder-image-wrapper {
-    width: 200px;
-    /* Increased size as requested */
+    width: 400px;
+    /* Doubled size as requested (was 200px) */
     flex-shrink: 0;
     /* Center alignment in column if needed */
     display: flex;
@@ -2399,7 +2401,8 @@ body {
     }
 
     .founder-image-wrapper {
-        width: 120px;
+        width: 160px;
+        /* Match desktop size */
     }
 }
 
@@ -2482,7 +2485,8 @@ body {
     align-items: flex-end;
     /* Align constraints to right */
     width: fit-content;
-    margin: 150px auto 0;
+    margin: 400px auto 0;
+    /* Lowered by additional 150px (Total 400px) */
     padding: 0 20px;
 }
 
@@ -2600,7 +2604,8 @@ body {
     margin-right: auto;
     padding: 0 20px;
     position: relative;
-    left: -180px;
+    left: 0;
+    /* Removed -180px to fix alignment */
 }
 
 .cospalab-logo {
@@ -2762,78 +2767,54 @@ body {
 .cospalab-content {
     text-align: left;
     max-width: 700px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.cospalab-content p {
-    font-size: 1.15rem;
-    line-height: 1.8;
-    margin-bottom: 0.8em;
-    color: var(--color-gray);
-}
-
-.cospalab-video-row {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
-    margin: 1em 0;
-}
-
-.cospalab-text-left {
-    text-align: left;
-}
-
-.cospalab-text-left p {
     margin: 0;
+    /* Align left to match header */
+    padding: 0;
+    /* Remove padding if container handles it, or keep side padding if needed. Container has 20px. */
 }
 
-.video-origin {
-    text-align: left;
-    margin-top: 40px;
-    /* Separation from text above */
-}
-
-.origin-video-img {
-    width: 200px;
-    height: auto;
-    border-radius: 8px;
-}
-
-.origin-text {
-    font-size: 0.9rem;
-    color: var(--color-gray);
-    margin-top: 8px;
-}
+/* ... existing styles ... */
 
 .founder-profile {
     margin-top: 60px;
-    padding: 40px;
-    background-color: var(--color-bg-base);
-    border-radius: 12px;
+    padding: 0;
+    /* User requested removing padding */
+    background-color: transparent;
+    /* Clean look */
+    border: none;
+    /* Removing border */
     text-align: left;
 }
 
 .founder-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.founder-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
+    /* If this class exists, verify usage. Current HTML uses .founder-name direct child */
+    display: none;
+    /* or remove if unused */
 }
 
 .founder-name {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--color-gray);
-    margin: 0;
+    margin-bottom: 20px;
+    text-align: right;
+    /* Keeps name on Right */
+}
+
+.founder-body {
+    display: flex;
+    gap: 20px;
+    /* Gap set to 20px as requested */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.founder-image-wrapper {
+    width: 100px;
+    /* Specific 100px size */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .founder-bio {
