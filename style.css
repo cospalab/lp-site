@@ -1665,15 +1665,16 @@ Since I have many occurrences, I will replace the most frequent ones first.
     max-width: 1000px;
     margin: 0 auto;
     width: 100%;
+    padding: 0 20px;
+    /* Add padding to prevent edge touching */
 }
 
-.logo-link {
+/* Updated selector to match HTML */
+.nav-logo-link {
     display: flex;
     align-items: center;
     text-decoration: none;
-    margin-right: auto;
     height: 100%;
-    /* Ensure vertical alignment context */
 }
 
 /* Ensure logo image fits */
@@ -1684,16 +1685,16 @@ Since I have many occurrences, I will replace the most frequent ones first.
     object-fit: contain;
 }
 
-/* Navigation Links */
+/* Navigation Links Container */
 .nav-links {
     display: flex;
-    gap: 25px;
-    /* Adjust gap if needed */
+    gap: 30px;
+    /* Adjust gap for PC */
     align-items: center;
-    margin-right: 20px;
     flex-wrap: nowrap;
     /* Prevent wrapping */
     height: 100%;
+    /* Removed margin-right: 20px because space-between handles distribution */
 }
 
 .nav-link {

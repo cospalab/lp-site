@@ -39,16 +39,22 @@
 
     <!-- ナビゲーションヘッダー -->
     <nav class="site-nav">
-        <div class="nav-container">
+        <!-- Changed nav-container to container to match CSS expectation, or update CSS. Better to use specific class for safety but flex needs direct children. -->
+        <div class="container">
             <a href="#cospalab" class="nav-logo-link">
                 <img src="./images/cospalab.png" alt="コスパ研究室" class="nav-logo-img">
             </a>
-            <a href="#odor-cause" class="nav-link">ニオワセナイ仕組み</a>
-            <a href="#bacteria-data" class="nav-link">検査データ</a>
-            <a href="#material" class="nav-link">素材</a>
-            <a href="#faq" class="nav-link">Q&A</a>
-            <a href="#voices" class="nav-link">レビュー</a>
-            <a href="#niigata" class="nav-link">製造デザイン</a>
+
+            <!-- Group text links for layout control -->
+            <div class="nav-links">
+                <a href="#odor-cause" class="nav-link">ニオワセナイ仕組み</a>
+                <a href="#bacteria-data" class="nav-link">検査データ</a>
+                <a href="#material" class="nav-link">素材</a>
+                <a href="#faq" class="nav-link">Q&A</a>
+                <a href="#voices" class="nav-link">レビュー</a>
+                <a href="#niigata" class="nav-link">製造デザイン</a>
+            </div>
+
             <a href="https://lin.ee/xxxxxxx" class="nav-line-btn" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path
