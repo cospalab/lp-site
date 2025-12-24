@@ -1253,6 +1253,8 @@ body {
 
     .eco-content {
         padding-left: 0;
+        padding-right: 0;
+        /* Remove right padding */
         text-align: left;
     }
 }
@@ -3045,7 +3047,8 @@ body {
 
 @media (max-width: 767px) {
     :root {
-        --section-padding: 60px;
+        --section-padding: 66px;
+        /* 2/3 of PC's 100px */
     }
 
     .media-layout.media-right .media-element {
@@ -3078,8 +3081,10 @@ body {
     #cospalab .cospalab-content p,
     .founder-bio {
         font-size: 0.9rem !important;
-        margin-bottom: 0.9em !important;
-        /* Standardized paragraph margin */
+        margin-top: 0.3em !important;
+        margin-bottom: 0.3em !important;
+        /* Split evenly */
+        line-height: 1.6 !important;
     }
 
     /* Remove Main Story Padding */
