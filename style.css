@@ -2121,7 +2121,8 @@ body {
 .voices-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 80px;
+    /* Increased gap to replace arrow spacing */
     max-width: 900px;
     margin: 0 auto;
     width: 100%;
@@ -2129,81 +2130,43 @@ body {
 
 .voice-item {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    flex-direction: column;
+    /* align-items is set by voice-left/voice-right */
     width: 100%;
-    /* justify-content is handled by specific classes below */
 }
 
-/* Connect Arrow */
-.voice-arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: -20px 0;
-    z-index: 1;
-}
-
-.arrow-icon {
-    width: 50px;
-    height: 50px;
-    color: #F8B44A;
-    transform: scale(2);
-}
-
-/* Icon Area */
-.voice-icon-area {
+/* Inner Wrapper: Holds Image and Text, always Left Aligned internally */
+.voice-inner-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    /* Ensure Image and Text align Left */
+    gap: 20px;
+    max-width: 500px;
+    /* Constrain width of the block */
+}
+
+/* Icon/Image Area */
+.voice-image-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align image left */
     flex-shrink: 0;
-    width: 120px;
+    width: 240px;
+    /* Increased width (1.2x of 200px) */
 }
 
-.voice-icon-img {
-    width: 100px;
-    height: 100px;
+.voice-composite-img {
+    width: 100%;
+    height: auto;
     object-fit: contain;
-    /* filter: grayscale(100%); Optional: matching the monotone look in design */
-    opacity: 0.8;
 }
 
-.voice-profile-sm {
-    font-size: 0.8rem;
-    color: #666;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-/* Content Area - Fixed width for zig-zag effect */
+/* Content Area */
 .voice-content-area {
     width: 100%;
-    max-width: 480px;
-    /* Limit width so it doesn't span full row */
-    /* flex: 1;  REMOVED to prevent stretching */
-}
-
-.voice-headline {
-    font-family: var(--font-sans);
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.2rem;
-    color: #333;
-}
-
-.voice-rating {
-    color: #FADA59;
-    /* Yellow Stars */
-    font-size: 1.5rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
-}
-
-.voice-profile {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #333;
+    /* max-width removed to let it fill the inner wrapper */
 }
 
 .voice-text {
@@ -2215,15 +2178,14 @@ body {
 
 /* Specific Layouts */
 .voice-left {
-    justify-content: flex-start;
-    /* Push to left */
+    align-items: flex-start;
+    /* Align stack to Left */
 }
 
 .voice-right {
-    justify-content: flex-end;
-    /* Push to right */
-    /* flex-direction: row-reverse;  REMOVED: User requested consistent "Image, Text" order */
-    flex-direction: row;
+    align-items: flex-end;
+    /* Align stack to Right */
+    /* flex-direction: row; REMOVED old row direction */
 }
 
 /* Text alignment */
@@ -2236,19 +2198,8 @@ body {
     text-align: left;
 }
 
-/* Center Bottom Item */
-.voice-center {
-    justify-content: center;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.voice-center-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 600px;
-}
+/* Center Bottom Item (Removed - Now using standard layout) */
+/* .voice-center styles removed */
 
 .voice-icon-wrapper {
     margin: 15px 0;
