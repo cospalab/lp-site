@@ -102,6 +102,17 @@ body {
     }
 }
 
+/* Page 1 (Hero) CSS Background */
+/* ... PC styles ... */
+
+@media (max-width: 767px) {
+    .hero-bg-anim {
+        background-image: url('./images/page1sp.png');
+        aspect-ratio: 750 / 1334;
+        /* Approximate mobile aspect ratio. Adjust if needed. */
+    }
+}
+
 /* Page 2 (Features) CSS Background */
 .sketto-features-bg {
     width: 100%;
@@ -1212,7 +1223,8 @@ body {
     font-size: 1.1rem;
     line-height: 1.8;
     color: var(--color-gray);
-    margin-bottom: 1.8em;
+    margin-bottom: 0;
+    /* Margin removed as requested */
 }
 
 .eco-text:last-child {
@@ -1965,7 +1977,8 @@ body {
     max-width: 100%;
     margin: 0 auto;
     padding: 50px 40px;
-    background: rgba(255, 255, 255, 0.7);
+    background: transparent;
+    /* White BG removed globally */
     border-radius: 16px;
 }
 
@@ -3011,4 +3024,97 @@ body {
     .media-right .text-content {
         text-align: left;
     }
+}
+
+/* Mobile Refinements */
+@media (max-width: 767px) {
+
+    /* Font Scaling 0.8x */
+    .section-title,
+    .section-title-green,
+    .cospalab-header .section-title {
+        font-size: 1.2rem !important;
+    }
+
+    /* Body text 0.9rem - Ultra Specific to override everything */
+    body .niigata-text,
+    body .bag-change-text,
+    body .cooking-text,
+    body .designer-text,
+    body .eco-text,
+    #cospalab .cospalab-content p,
+    .founder-bio {
+        font-size: 0.9rem !important;
+    }
+
+    /* Remove Main Story Padding */
+    .main-story {
+        padding: 0 !important;
+    }
+
+    /* Size Section: Stack Bag Recommendations */
+    .bag-recommend-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        text-align: center;
+    }
+
+    /* Snow Section: Fix Cut-off and Spacing */
+    .snow-content {
+        margin-top: 150px !important;
+        /* Reduce huge 400px margin for mobile */
+    }
+
+    .snow-vertical-text p {
+        line-height: 1.8;
+        /* Tighter line height for mobile vertical text */
+        margin-left: 1em;
+        /* Adjust spacing between vertical lines if needed */
+    }
+
+    /* Voices: Disable forced line breaks on mobile */
+    .voice-text br {
+        display: none;
+    }
+
+    /* Voices: Left Align Text on Mobile */
+    .voice-text,
+    .text-right .voice-text {
+        text-align: left !important;
+    }
+
+    /* Story: Remove White Background on Mobile */
+    .story-essay-section .main-story {
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    /* Eco Section: Image First, No Breaks */
+    .eco-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .eco-image {
+        order: -1;
+        /* Move image to top */
+        justify-content: center;
+        width: 100%;
+    }
+
+    .eco-text br {
+        display: none;
+    }
+
+    /* Utility: Mobile-only Line Break */
+    .sp-br {
+        display: block;
+    }
+}
+
+/* Default: Hide mobile breaks on desktop */
+.sp-br {
+    display: none;
 }
