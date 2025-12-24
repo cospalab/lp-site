@@ -422,6 +422,14 @@ body {
     color: var(--color-black);
 }
 
+.story-content p {
+    margin-bottom: 2em;
+    /* Reduced from default large spacing */
+    font-size: 1rem;
+    line-height: 2;
+    text-align: left;
+}
+
 .professor-annotation-area {
     margin-top: 20px;
     width: 100%;
@@ -2096,7 +2104,7 @@ body {
 
     .story-content {
         max-width: 100%;
-        padding: 0 20px;
+        /* padding: 0 20px; Removed as requested */
     }
 }
 
@@ -2438,6 +2446,16 @@ body {
         text-align: center;
     }
 
+    /* Fix Founder Bio Spacing override global p !important */
+    .founder-bio p {
+        margin-top: 1em !important;
+        margin-bottom: 1em !important;
+    }
+
+    .founder-bio {
+        text-align: left;
+    }
+
     .founder-image-wrapper {
         width: 160px;
         /* Match desktop size */
@@ -2535,7 +2553,7 @@ body {
     font-size: clamp(0.85rem, 4.5vw, 1.5rem);
     font-weight: 700;
     line-height: 1.8;
-    color: var(--color-black);
+    color: var(--color-gray);
     margin-bottom: 50px;
     text-align: center;
     letter-spacing: 0.05em;
@@ -2552,7 +2570,8 @@ body {
     /* Essential for vertical wrap */
     font-size: 1.1rem;
     line-height: 2.2;
-    color: var(--color-black);
+    color: var(--color-gray);
+    font-family: 'Klee One', cursive;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-align: left;
@@ -3153,9 +3172,10 @@ body {
     }
 
     /* Voices: Disable forced line breaks on mobile */
-    .voice-text br {
+    /* Voices: Disable forced line breaks on mobile */
+    /* .voice-text br {
         display: none;
-    }
+    } */
 
     /* Voices: Left Align Text on Mobile */
     .voice-text,
@@ -3188,9 +3208,10 @@ body {
     }
 
     /* Designer Section: Hide Breaks, Reduce Spacing */
-    .designer-text br {
+    /* Designer Section: Hide Breaks, Reduce Spacing */
+    /* .designer-text br {
         display: none;
-    }
+    } */
 
     .designer-text p {
         margin-bottom: 0.5em !important;
@@ -3257,7 +3278,8 @@ body {
 
     /* Standardize Font Sizes to 0.9rem */
     .voice-text,
-    .story-content p {
+    .story-content p,
+    .cospalab-content p {
         font-size: 0.9rem !important;
     }
 
@@ -3267,8 +3289,10 @@ body {
         /* Padding removed as requested */
     }
 
-    .story-content p {
-        margin-bottom: 0 !important;
+    .story-content p,
+    #cospalab .cospalab-content p {
+        margin-bottom: 2em !important;
+        /* Increased spacing for mobile */
     }
 
     /* Bag Change Section: Hide Breaks, Reduce Spacing */
@@ -3393,4 +3417,23 @@ body {
     font-size: 0.8rem;
     font-weight: 400;
     color: var(--color-gray);
+}
+
+/* Odor Title Responsive Switching */
+.odor-title-pc {
+    display: block;
+}
+
+.odor-title-sp {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .odor-title-pc {
+        display: none;
+    }
+
+    .odor-title-sp {
+        display: block;
+    }
 }
