@@ -2065,6 +2065,13 @@ body {
     height: auto;
 }
 
+.connected-dash {
+    display: inline-block;
+    letter-spacing: -0.5em;
+    margin: 0.25em 0.2em;
+    /* Balanced spacing */
+}
+
 .story-content {
     max-width: 500px;
     padding-top: 20px;
