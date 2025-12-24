@@ -751,7 +751,7 @@ body {
 .niigata-section .section-title {
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     margin-bottom: 2em;
-    color: var(--color-black);
+    color: var(--color-gray);
     letter-spacing: 0.1em;
 }
 
@@ -1523,7 +1523,8 @@ body {
     line-height: 2;
     color: var(--color-gray);
     margin-bottom: 2em;
-    font-weight: normal;
+    font-family: 'Klee One', cursive;
+    font-weight: 600;
 }
 
 .niigata-text.no-margin {
@@ -2840,6 +2841,12 @@ body {
     /* Remove padding if container handles it, or keep side padding if needed. Container has 20px. */
 }
 
+.cospalab-content p {
+    color: var(--color-gray);
+    line-height: 2;
+    margin-bottom: 2em;
+}
+
 /* ... existing styles ... */
 
 .founder-profile {
@@ -3435,5 +3442,19 @@ body {
 
     .odor-title-sp {
         display: block !important;
+    }
+}
+
+/* Applying Klee One to Closing Description as well for consistency */
+.closing-desc {
+    font-family: 'Klee One', cursive;
+    font-weight: 600;
+}
+
+@media (max-width: 767px) {
+    .professor-signature {
+        font-weight: normal !important;
+        font-size: 0.75rem !important;
+        /* Smaller than 0.85rem */
     }
 }
