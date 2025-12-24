@@ -2760,13 +2760,14 @@ body {
     align-items: flex-start;
     /* Align image left */
     flex-shrink: 0;
-    width: 280px;
-    /* Increased width to 280px for uniformity */
+    width: auto;
+    /* Changed from fixed 280px */
 }
 
 .voice-composite-img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 120px;
+    /* Fixed height as requested */
     object-fit: contain;
 }
 
