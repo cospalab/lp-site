@@ -2215,18 +2215,17 @@ body {
     margin-bottom: 40px;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
     justify-content: flex-start;
-    /* Left aligned, but elements flow: text -> logo */
     padding: 0;
-    /* Ensure no extra padding causes shift */
     margin-left: 0;
-    /* align with container edge */
 }
 
 .cospalab-header .section-title {
     margin-bottom: 0;
     text-align: left;
+    white-space: nowrap;
+    /* Prevent wrapping */
 }
 
 /* Ensure logo aligns left if it's block */
@@ -2865,8 +2864,9 @@ body {
     }
 
     .cospalab-logo {
-        height: 40px;
-        /* Smaller to fit side-by-side */
+        height: 30px;
+        /* Smaller to fit with title on one line */
+        flex-shrink: 1;
     }
 
     .cospalab-content p {
@@ -3196,17 +3196,18 @@ body {
         /* Adjust spacing between vertical lines if needed */
     }
 
-    /* Founder Profile Mobile Layout */
+    /* Founder Profile Mobile Layout - Text wraps below image */
     .founder-body {
-        flex-direction: row !important;
-        /* Keep horizontal on mobile too */
-        gap: 15px;
-        align-items: flex-start;
+        display: block !important;
+        /* Block layout for text to wrap */
     }
 
     .founder-image-wrapper {
+        float: left;
+        /* Float image left */
         width: 80px !important;
-        /* Smaller on mobile */
+        margin-right: 15px;
+        margin-bottom: 10px;
     }
 
     .founder-name {
@@ -3216,7 +3217,8 @@ body {
     }
 
     .founder-text {
-        flex: 1;
+        overflow: hidden;
+        /* Contain floated element */
     }
 
     /* Standardize Font Sizes to 0.9rem */
