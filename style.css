@@ -1834,7 +1834,7 @@ body {
 
 @media (max-width: 767px) {
     .bacteria-desc {
-        margin-bottom: 20px !important;
+        margin-bottom: 40px !important;
         /* Force gap override */
     }
 }
