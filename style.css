@@ -3246,15 +3246,16 @@ body {
         margin-bottom: 0.9em !important;
         /* Half of desktop 1.8em */
     }
-
-    /* Utility: Mobile-only Line Break */
-    .sp-br {
-        display: inline;
-        /* Show br on mobile */
-    }
 }
 
-/* Default: Hide mobile breaks on desktop */
+/* Default: Hide mobile breaks on desktop (MUST be before mobile query override) */
 .sp-br {
     display: none;
+}
+
+/* Mobile: Show the breaks */
+@media (max-width: 767px) {
+    .sp-br {
+        display: inline !important;
+    }
 }
