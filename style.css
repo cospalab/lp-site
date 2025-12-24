@@ -1042,8 +1042,9 @@ body {
 }
 
 .cooking-text {
-    font-size: 1.05rem;
-    line-height: 1.9;
+    font-size: 1rem;
+    /* 16px - Match other sections */
+    line-height: 1.8;
     color: var(--color-gray);
     margin-bottom: 1.8em;
 }
@@ -1234,11 +1235,11 @@ body {
 }
 
 .eco-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    /* 16px - Match other sections */
     line-height: 1.8;
     color: var(--color-gray);
     margin-bottom: 0;
-    /* Margin removed as requested */
 }
 
 .eco-text:last-child {
@@ -1821,11 +1822,11 @@ body {
 }
 
 .bacteria-desc {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #4A4A4A;
+    font-size: 1rem;
+    /* 16px - Match other sections */
+    line-height: 1.8;
+    color: var(--color-gray);
     font-weight: normal;
-    /* Removed bold */
     margin-bottom: 20px;
     text-align: left;
     width: 100%;
