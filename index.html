@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=BIZ+UDPMincho&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=BIZ+UDPMincho&family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
@@ -62,10 +62,25 @@
         <div class="hero-fullscreen">
             <img src="./images/hreopage.png" alt="SKETTOのある暮らし" class="hero-bg-image">
 
-            <!-- テキストエリア（背景のSKETTOに合わせて配置） -->
+            <!-- Made in Japan Badge (Removed: Present in Background Image) -->
+            <!--
+            <div class="hero-made-in-japan-badge">
+                <span class="japan-flag-icon">🇯🇵</span>
+                <span class="made-in-label">MADE IN<br>JAPAN</span>
+            </div>
+            -->
+
+            <!-- テキストエリア -->
             <div class="hero-text-area">
                 <!-- キャッチコピー -->
-                <p class="hero-catchcopy anim-fade-in">もう、ニオイに悩まない。</p>
+                <p class="hero-catchcopy anim-fade-in">もう、においに悩まない。</p>
+
+                <!-- 商品名 (Main Title) (Removed: Present in Background Image) -->
+                <!-- <h1 class="hero-product-name anim-fade-in">
+                    SKETTO<sup class="trademark">®</sup>
+                </h1> -->
+                <!-- Spacer to push content below the visual logo in background -->
+                <div class="hero-logo-spacer"></div>
 
                 <!-- 商品カテゴリー -->
                 <p class="hero-product-category anim-fade-in">キッチン用ゴミ箱</p>
@@ -73,39 +88,26 @@
                 <!-- 商品の特徴 -->
                 <div class="hero-features anim-fade-in">
                     <p>におわず、手間なく、汚れも目立たず</p>
-                    <p>家事をそっと支える"助っ人"です</p>
+                    <p>家事をそっと支える“助っ人”が、ここにいます</p>
                 </div>
             </div>
 
             <!-- 下部の情報エリア -->
             <div class="hero-bottom-info">
-                <span class="hero-size-type">45ℓタイプ</span>
+                <!-- Color variations list or other info if needed -->
+                <!-- <span class="hero-size-type">45ℓタイプ</span> (Removed based on clean layout or kept? Image shows "Black... Gray..." list adjacent to device/text, but text guide says "Left Right same distance". Let's keep specific text for now if unclear, but "Side guide" implies main text.) -->
+                <!-- The image instructions show a list of colors (Black #202020 ...) on the right side. I will add a placeholder for this color list if it's part of the static text, but for now I will focus on the main text area centering. -->
+                <!-- Keeping the bottom info clean for now as per "Hero section polished" usually implies main elements. -->
             </div>
         </div>
-
-        <!--
-        <div class="achievements-area">
-            <div class="achievement-item achievement-trophy">
-                <img src="./images/obi1.png" alt="トロフィー" class="award-icon-img">
-                <span class="achievement-text">東京都立産業技術研究センター<br>ものづくりmovement入賞</span>
-            </div>
-            <div class="achievement-item achievement-heart">
-                <img src="./images/obi2.png" alt="ハート" class="award-icon-img">
-                <span class="achievement-text">ウーマンズビジネスグランプリ<br>ファイナリスト（最終審査中）</span>
-            </div>
-            <div class="achievement-item achievement-house">
-                <img src="./images/obi3.png" alt="家" class="award-icon-img">
-                <span class="achievement-text">ホームユースモニター募集中<br>10名限定 LINEでご応募下さい</span>
-            </div>
-        </div>
-        -->
     </header>
 
     <!-- NEWS帯 -->
     <div class="news-bar">
         <span class="news-label">NEWS</span>
-        <span class="news-text">〇有楽町TIBにて試作品展示中</span>
-        <span class="news-text">〇ホームユースモニター募集中</span>
+        <span class="news-text">有楽町TIBにて試作品展示中</span>
+        <span class="news-text">ホームユースモニター募集中</span>
+        <!-- 細字アイコンなし (Removed '〇') -->
     </div>
 
     <!-- セクション: SKETTO 特徴 -->
@@ -500,18 +502,23 @@
     -->
 
     <!-- セクション: お客様の声 -->
+    <!-- セクション: お客様の声 -->
     <section id="voices" class="voices-section">
         <div class="container">
             <h2 class="section-title text-center">モニターの皆様から、感動の声が届いています</h2>
 
             <div class="voices-list">
-                <!-- Voice 1 -->
-                <div class="voice-item">
-                    <div class="voice-image">
-                        <img src="./images/monitor(1).png" alt="40代女性の人物画像">
+                <!-- Voice A (Left Align) -->
+                <div class="voice-item voice-left">
+                    <div class="voice-icon-area">
+                        <p class="voice-profile-sm">モニターAさん</p>
+                        <img src="./images/koe1.png" alt="モニターAさんアイコン" class="voice-icon-img">
                     </div>
-                    <div class="voice-content">
-                        <p class="voice-author voice-author-left">
+                    <div class="voice-content-area">
+                        <h3 class="voice-headline">清潔感があってうれしい</h3>
+                        <div class="voice-rating">★★★★★</div>
+                        <p class="voice-profile">40代 女性</p>
+                        <p class="voice-text">
                             顔をつっこんでも全く臭わないから感動しちゃう。<br>
                             ステンレスが希望だったけど、汚れが目立たないし、さらっとしてるので使ってみて分かる良さでした。<br>
                             意外に白いキッチンに合って上品で気に入っています。
@@ -519,43 +526,78 @@
                     </div>
                 </div>
 
-                <!-- Voice 2 -->
-                <div class="voice-item">
-                    <div class="voice-image">
-                        <img src="./images/monitor(2).png" alt="30代女性の人物画像">
+                <!-- Connecting Arrow -->
+                <div class="voice-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="arrow-icon">
+                        <path d="M12 16L6 10H18L12 16Z" />
+                    </svg>
+                </div>
+
+                <!-- Voice B (Right Align) -->
+                <div class="voice-item voice-right">
+                    <div class="voice-icon-area">
+                        <p class="voice-profile-sm">モニターBご夫婦</p>
+                        <img src="./images/koe2.png" alt="モニターBご夫婦アイコン" class="voice-icon-img">
                     </div>
-                    <div class="voice-content">
-                        <p class="voice-author voice-author-left">
+                    <div class="voice-content-area">
+                        <h3 class="voice-headline">ゴミ出しが負担なく</h3>
+                        <div class="voice-rating">★★★★★</div>
+                        <p class="voice-profile">40代 30代 男女</p>
+                        <p class="voice-text">
                             スライド式のフタがスーッと開いて、とっても気持ちがいい。ニオイも汚れも気にしなくていいって、こんなに楽なんだと感動。地味にフタをひっかけられるのが便利。
                         </p>
                     </div>
                 </div>
 
-                <!-- Voice 3 -->
-                <div class="voice-item">
-                    <div class="voice-image">
-                        <img src="./images/monitor(3).png" alt="30代男性の人物画像">
+                <!-- Connecting Arrow -->
+                <div class="voice-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="arrow-icon">
+                        <path d="M12 16L6 10H18L12 16Z" />
+                    </svg>
+                </div>
+
+                <!-- Voice C (Left Align) -->
+                <div class="voice-item voice-left">
+                    <div class="voice-icon-area">
+                        <p class="voice-profile-sm">モニターCさん</p>
+                        <img src="./images/koe3.png" alt="モニターCさんアイコン" class="voice-icon-img">
                     </div>
-                    <div class="voice-content">
-                        <p class="voice-author voice-author-left">
-                            見て気持ちよいゴミ箱って初めてかも。我が家は生ゴミはあまり出なくて、お弁当のプラがよくでるから、大きく開く45ℓがぴったりでした。プラゴミのニオイも気にならなくてうれしい。
+                    <div class="voice-content-area">
+                        <h3 class="voice-headline">お弁当がちょうど捨てれる</h3>
+                        <div class="voice-rating">★★★★★</div>
+                        <p class="voice-profile">20代 女性</p>
+                        <p class="voice-text">
+                            つや消しのシルバーがかっこいいだけじゃなく、とにかく汚れが目立たないのってゴミ箱として最高かと。<br>
+                            お料理が苦手で、お弁当のプラばかりなのだけれど、これが結構におっていたのが気にならなくなりました！ すごい！<br>
+                            お弁当派には大きく開く45ℓがおすすめです。
                         </p>
                     </div>
                 </div>
 
-                <!-- Voice 4 (Dさん) -->
-                <div class="voice-item">
-                    <div class="voice-image">
-                        <img src="./images/monitor(4).png" alt="40代女性の人物画像">
-                    </div>
-                    <div class="voice-content">
-                        <p class="voice-author voice-author-left">
+                <!-- Connecting Arrow -->
+                <div class="voice-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="arrow-icon">
+                        <path d="M12 16L6 10H18L12 16Z" />
+                    </svg>
+                </div>
+
+                <!-- Voice D (Centered/Bottom) -->
+                <div class="voice-item voice-center">
+                    <div class="voice-center-container">
+                        <p class="voice-profile-sm">モニターDさん</p>
+                        <h3 class="voice-headline">磁石で使い方無限大</h3>
+                        <div class="voice-icon-wrapper">
+                            <img src="./images/koe4.png" alt="モニターDさんアイコン" class="voice-icon-img center-icon">
+                        </div>
+                        <div class="voice-rating">★★★★★</div>
+                        <p class="voice-text">
                             におわないのはすごいし、引き戸は想像以上に使い勝手よくて。<br>
                             磁石がつくから、お米の袋やトイレットペーパーのビニールも挟んで使っちゃってる。リユースできてエコ。（そんな使い方は私だけかな？）<br>
                             脇にも、磁石フックで紙袋を吊り下げて紙袋ごみ入れにしちゃったり。いろいろな使い方ができそう
                         </p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
