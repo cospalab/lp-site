@@ -1,50 +1,50 @@
 :root {
-    /* Colors from Canva & requirements */
+    /* 6 Strict Colors */
+    --color-black: #202020;
+    --color-gray: #444444;
+    --color-yellow: #fada59;
+    --color-green: #c4d7b2;
+    --color-lightblue: #bad7fd;
+    --color-thingray: #d9d9d9;
+
+    /* Semantics */
+    --color-text-primary: var(--color-black);
+    --color-text-secondary: var(--color-gray);
+    --color-line: var(--color-green);
+    /* Assuming Green for Line/Accent */
     --color-bg-base: #FFFFFF;
-    --color-bg-light: #F8F8F6;
-    /* #F8F8F6〜#F5F5F3 */
-    --color-bg-story: #F7F7F5;
-    --color-bg-voices: #FAF9F7;
-    --color-bg-footer: #F0F0EE;
-
-    /* Updated colors from design spec */
-    --color-text-primary: #202020;
-    /* Black */
-    --color-text-secondary: #444444;
-    /* Gray */
-    --color-text-light-gray: #d9d9d9;
-    /* Thin Gray */
-
-    --color-accent-green: #c4d7b2;
-    /* Tablet Green */
-    --color-line: #06c755;
-    --color-accent-yellow: #fada59;
-    /* Yellow */
-    --color-accent-light-blue: #bad7fd;
-    /* Light Blue */
-    --color-bg-base: #FFFFFF;
-
-    /* Typography */
-    --font-serif: 'UD Digi Kyokasho N-R', 'Noto Sans JP', sans-serif;
-    --font-sans: 'UD Digi Kyokasho N-R', 'Noto Sans JP', sans-serif;
-    --line-height-body: 1.9;
+    /* White typically exception, or use thin gray? Assuming White is canvas */
 
     /* Layout */
-    --container-width: 1100px;
+    --container-width: 1000px;
+    /* Unified Width */
     --container-width-narrow: 800px;
     --section-padding: 100px;
+    /* Global Padding */
 }
 
 /* --- Base & Typography --- */
-/* --- Base & Typography --- */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
     /* Update body font */
     margin: 0;
-    padding: 0;
-    padding-top: 80px;
+    /* Global Padding replacement example - will need multiple targets or regex search/replace if I could, but I must do it via replace_file_content chunk by chunk or a large script.
+Since I have many occurrences, I will replace the most frequent ones first.
+*/
+    padding: var(--section-padding) 0;
+
+    /* Color replacements */
+    color: var(--color-black);
+    /* for var(--color-black), #202020 */
     /* Increased to avoid header overlap */
-    color: var(--color-text-secondary);
     background-color: var(--color-bg-base);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -96,7 +96,7 @@ body {
     gap: 8px;
     background-color: #FFFFFF;
     padding: 8px 12px;
-    border: 2px solid #000000;
+    border: 2px solid var(--color-black)000;
     /* Black border */
     z-index: 10;
 }
@@ -186,7 +186,7 @@ body {
     position: absolute;
     bottom: 60px;
     right: 30px;
-    background-color: #000;
+    background-color: var(--color-black);
     color: #fff;
     padding: 10px 14px;
     display: flex;
@@ -205,14 +205,14 @@ body {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    border-bottom: 1px solid #E0E0E0;
+    border-bottom: 1px solid var(--color-thingray);
 }
 
 .news-label {
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
-    color: #555;
+    color: var(--color-gray);
     background-color: transparent;
     /* Clean style */
     padding: 0;
@@ -270,7 +270,8 @@ body {
 
 .bacteria-full-image {
     width: 100%;
-    max-width: 900px;
+    max-width: 100%;
+    /* Unified Width */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -370,34 +371,95 @@ body {
     }
 }
 
-/* --- Odor Cause Section --- */
+/* --- Odor Cause Section (Vertical Flow) --- */
 .odor-cause-section {
-    padding: 60px 0 80px 0;
-    background-color: #FFFFFF;
-    overflow: visible;
+    padding: var(--section-padding) 0;
+    background-color: var(--color-bg-base);
+    text-align: center;
 }
 
-.odor-cause-section .container {
-    overflow: visible;
-}
-
-.odor-cause-section .section-title {
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    margin-bottom: 2.5em;
-    color: #4A4A4A;
-    letter-spacing: 0.1em;
-}
-
-/* 2カラムレイアウト - 中央寄せ */
-.odor-cause-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
+.odor-flow-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 0 auto 50px;
-    max-width: 900px;
-    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
+
+.flow-arrow {
+    font-size: 2rem;
+    color: var(--color-yellow);
+    /* Orange/Yellow as spacer */
+    margin: 20px 0;
+}
+
+.odor-diagram-center img {
+    max-width: 80%;
+    /* Resized to 0.8x */
+    height: auto;
+    margin-bottom: 40px;
+    /* Add spacing since arrows are removed */
+}
+
+.odor-main-text {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.odor-main-text p {
+    margin-bottom: 1.5em;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-black);
+}
+
+.professor-annotation-area {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.professor-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: left;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.annotation-text {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.professor-signature {
+    margin-top: 10px;
+    font-weight: 700;
+    text-align: right;
+    font-size: 0.85rem;
+}
+
+.professor-img-wrapper img {
+    width: 120px;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .professor-layout {
+        flex-direction: column-reverse;
+        /* Image top or bottom? usually annotation text is key. Let's keep side by side or stack. Image bottom makes sense for "Signature". Or Image top? Logic: Text -> Sig -> Image. Or Image -> Text. Let's stack. */
+        gap: 20px;
+        text-align: left;
+    }
+
+    .professor-img-wrapper img {
+        width: 100px;
+    }
+}
+
 
 /* 左：図解 */
 .odor-diagram {
@@ -423,14 +485,14 @@ body {
 .odor-intro {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 1.5em;
 }
 
 .odor-detail {
     font-size: 1.15rem;
     line-height: 1.8;
-    color: #5A5A5A;
+    color: var(--color-gray);
     margin-bottom: 1.2em;
 }
 
@@ -440,21 +502,21 @@ body {
 
 /* 注釈エリア */
 .odor-footnote {
-    border-top: 1px solid #DDD;
+    border-top: 1px solid var(--color-thingray);
     padding-top: 30px;
     margin-top: 20px;
 }
 
 .odor-cause-section .small-text {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--color-gray);
     line-height: 1.8;
     margin-bottom: 0.5em;
 }
 
 .odor-cause-section .author-text {
     font-size: 0.9rem;
-    color: #555;
+    color: var(--color-gray);
     text-align: right;
     margin-top: 1em;
     margin-bottom: 0;
@@ -486,13 +548,13 @@ body {
 .footnote-text {
     font-size: 1.15rem;
     line-height: 1.9;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 1em;
 }
 
 .footnote-author {
     font-size: 1rem;
-    color: #555;
+    color: var(--color-gray);
     text-align: center;
     margin: 0;
     font-weight: 500;
@@ -506,7 +568,7 @@ body {
     gap: 40px;
     margin-top: 40px;
     padding: 30px;
-    background-color: #F8F8F6;
+    background-color: var(--color-bg-base);
     border-radius: 8px;
 }
 
@@ -518,13 +580,13 @@ body {
 .professor-text p {
     font-size: 1rem;
     line-height: 1.8;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 1em;
 }
 
 .professor-author {
     font-size: 0.9rem;
-    color: #555;
+    color: var(--color-gray);
     font-weight: 500;
     margin-top: 1em;
 }
@@ -584,21 +646,22 @@ body {
 
 /* --- SKETTO Solution Section --- */
 .sketto-solution-section {
-    padding: 80px 0;
-    background-color: #F5F5F3;
+    padding: var(--section-padding) 0;
+    background-color: var(--color-bg-base);
 }
 
 .sketto-solution-section .section-title {
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     margin-bottom: 2em;
-    color: #4A4A4A;
+    color: var(--color-gray);
     letter-spacing: 0.1em;
 }
 
 .sketto-solution-layout {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
+    gap: 20px;
+    /* Reduced from 50px */
     align-items: center;
     max-width: 950px;
     margin: 0 auto;
@@ -622,7 +685,7 @@ body {
 .sketto-features .feature-text {
     font-size: 1rem;
     line-height: 1.8;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 1.5em;
 }
 
@@ -630,7 +693,7 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     line-height: 1.8;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-top: 1.5em;
     margin-bottom: 0;
 }
@@ -657,14 +720,14 @@ body {
 
 /* --- Niigata Section --- */
 .niigata-section {
-    padding: 80px 0;
-    background-color: #E8E8E8;
+    padding: var(--section-padding) 0;
+    background-color: var(--color-thingray);
 }
 
 .niigata-section .section-title {
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     margin-bottom: 2em;
-    color: #3A3A3A;
+    color: var(--color-black);
     letter-spacing: 0.1em;
 }
 
@@ -740,7 +803,7 @@ body {
 .niigata-text {
     font-size: 1.15rem;
     line-height: 1.9;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 0.8em;
 }
 
@@ -748,7 +811,7 @@ body {
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.8;
-    color: #3A3A3A;
+    color: var(--color-black);
     margin-bottom: 0.8em;
     white-space: nowrap;
 }
@@ -778,14 +841,14 @@ body {
 
 /* --- Designer Section --- */
 .designer-section {
-    padding: 80px 0;
+    padding: var(--section-padding) 0;
     background-color: #FFFFFF;
 }
 
 .designer-section .section-title {
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     margin-bottom: 2em;
-    color: #4A4A4A;
+    color: var(--color-gray);
     letter-spacing: 0.1em;
 }
 
@@ -812,7 +875,7 @@ body {
 .profile-career {
     font-size: 0.75rem;
     line-height: 1.6;
-    color: #5A5A5A;
+    color: var(--color-gray);
     margin-bottom: 1em;
 }
 
@@ -841,7 +904,7 @@ body {
     font-family: var(--font-sans);
     font-size: 2.2rem;
     font-weight: 700;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin: 15px 0 0;
     letter-spacing: 0.02em;
 }
@@ -857,7 +920,7 @@ body {
     font-size: 1.15rem;
     line-height: 1.6;
     font-weight: 400;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 1em;
 }
 
@@ -901,14 +964,14 @@ body {
 
 /* --- Cooking Spec Section --- */
 .cooking-spec-section {
-    padding: 80px 0;
+    padding: var(--section-padding) 0;
     background-color: #FFFFFF;
 }
 
 .section-title-green {
     font-size: clamp(1.6rem, 4vw, 2.2rem);
     margin-bottom: 2em;
-    color: #4A4A4A;
+    color: var(--color-gray);
     letter-spacing: 0.1em;
     text-align: left;
 }
@@ -934,7 +997,7 @@ body {
 
 .image-note {
     font-size: 0.7rem;
-    color: #888;
+    color: var(--color-gray);
     margin-top: 10px;
     line-height: 1.6;
 }
@@ -946,14 +1009,14 @@ body {
 .cooking-text {
     font-size: 1.05rem;
     line-height: 1.9;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 1.8em;
 }
 
 .cooking-note {
     font-size: 0.85rem;
     line-height: 1.8;
-    color: #888;
+    color: var(--color-gray);
     margin-top: 1.5em;
 }
 
@@ -974,8 +1037,8 @@ body {
 
 /* --- Bag Change Section --- */
 .bag-change-section {
-    padding: 80px 0;
-    background-color: #F5F5F3;
+    padding: var(--section-padding) 0;
+    background-color: var(--color-bg-base);
 }
 
 .bag-change-layout {
@@ -1048,7 +1111,7 @@ body {
 .bag-change-text {
     font-size: 1.05rem;
     line-height: 1.9;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 1.8em;
 }
 
@@ -1056,7 +1119,7 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     line-height: 1.9;
-    color: #4A4A4A;
+    color: var(--color-gray);
 }
 
 @media (max-width: 767px) {
@@ -1076,14 +1139,14 @@ body {
 
 /* --- Eco Section --- */
 .eco-section {
-    padding: 80px 0;
-    background-color: #F5F5F3;
+    padding: var(--section-padding) 0;
+    background-color: var(--color-bg-base);
 }
 
 .eco-section .section-title {
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     margin-bottom: 2em;
-    color: #4A4A4A;
+    color: var(--color-gray);
     letter-spacing: 0.08em;
 }
 
@@ -1114,7 +1177,7 @@ body {
 .eco-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #5A5A5A;
+    color: var(--color-gray);
     margin-bottom: 1.8em;
 }
 
@@ -1148,7 +1211,7 @@ body {
 .bacteria-data-section .section-title {
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     margin-bottom: 1em;
-    color: #4A4A4A;
+    color: var(--color-gray);
     letter-spacing: 0.08em;
     text-align: left;
 }
@@ -1175,7 +1238,7 @@ body {
 .bacteria-text {
     font-size: 1.05rem;
     line-height: 1.9;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 2em;
 }
 
@@ -1185,7 +1248,7 @@ body {
 
 .inspection-info p {
     font-size: 0.9rem;
-    color: #5A5A5A;
+    color: var(--color-gray);
     margin-bottom: 0.5em;
 }
 
@@ -1227,7 +1290,7 @@ body {
 
 .chart-item.sketto {
     background-color: #FFFFFF;
-    border: 2px solid #E0E0E0;
+    border: 2px solid var(--color-thingray);
 }
 
 .chart-label {
@@ -1241,7 +1304,7 @@ body {
 .chart-label-sketto {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #4A4A4A;
+    color: var(--color-gray);
     letter-spacing: 0.15em;
 }
 
@@ -1258,7 +1321,7 @@ body {
 .number-label {
     display: block;
     font-size: 0.85rem;
-    color: #7A7A7A;
+    color: var(--color-gray);
     margin-bottom: 5px;
 }
 
@@ -1266,7 +1329,7 @@ body {
     display: block;
     font-size: 1.2rem;
     font-weight: 700;
-    color: #4A4A4A;
+    color: var(--color-gray);
 }
 
 @media (max-width: 767px) {
@@ -1289,26 +1352,105 @@ body {
 }
 
 /* --- Material Comparison Section --- */
+/* --- Material Comparison Section --- */
 .material-section {
-    padding: 80px 0;
-    background-color: #F5F5F3;
+    padding: var(--section-padding) 0;
+    background-color: var(--color-bg-base);
 }
 
-.material-section .section-title {
-    font-size: clamp(1.5rem, 3.5vw, 2rem);
+.material-title {
+    text-align: right;
+    width: 100%;
     margin-bottom: 2em;
-    color: #4A4A4A;
-    letter-spacing: 0.08em;
+    padding-right: 20px;
+    box-sizing: border-box;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    color: var(--color-gray);
+    letter-spacing: 0.1em;
 }
 
 .comparison-image-wrapper {
     text-align: center;
     margin: 0 auto;
+    max-width: 800px;
 }
 
 .comparison-image {
     max-width: 100%;
     height: auto;
+    margin-bottom: 30px;
+}
+
+.material-description {
+    text-align: left;
+    /* Or center? Request: "below image". usually center matches image usually. But japanese text often left. Let's try left aligned within the centered block */
+    display: inline-block;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-gray);
+}
+
+/* --- Niigata Section --- */
+.niigata-section {
+    padding: var(--section-padding) 0;
+    background-color: #EFEFEF;
+    /* Gray Background */
+}
+
+.niigata-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.niigata-full-image {
+    width: 100%;
+    border-radius: 8px;
+    /* Optional styles */
+    height: auto;
+}
+
+.niigata-content {
+    text-align: left;
+}
+
+.niigata-text {
+    font-size: 1rem;
+    line-height: 2;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+}
+
+.niigata-highlight {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+@media (max-width: 767px) {
+    .niigata-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .niigata-content {
+        text-align: center;
+    }
+
+    .material-title {
+        text-align: center;
+        /* Center on mobile usually looks better, or keep right? Request said "Right align in LP display area". I'll keep right or responsive? User implies desktop alignment. */
+        padding-right: 0;
+    }
 }
 
 .comparison-table-wrapper {
@@ -1343,7 +1485,7 @@ body {
 
 .sketto-header {
     background-color: #E8D992;
-    color: #5A5A5A;
+    color: var(--color-gray);
     font-weight: 700;
     font-size: 0.95rem;
     border-radius: 8px 8px 0 0;
@@ -1379,32 +1521,32 @@ body {
 
 .feature-name {
     font-weight: 700;
-    color: #5A5A5A;
+    color: var(--color-gray);
     text-align: center;
     font-size: 0.9rem;
     padding: 18px 15px;
-    background-color: #E8E8E8 !important;
+    background-color: var(--color-thingray) !important;
 }
 
 /* 結果シンボル */
 .result-good {
     font-size: 1.8rem;
-    color: #7A7A7A;
+    color: var(--color-gray);
 }
 
 .result-bad {
     font-size: 1.6rem;
-    color: #7A7A7A;
+    color: var(--color-gray);
 }
 
 .result-fair {
     font-size: 1.6rem;
-    color: #7A7A7A;
+    color: var(--color-gray);
 }
 
 .result-text {
     font-size: 0.85rem;
-    color: #5A5A5A;
+    color: var(--color-gray);
     line-height: 1.5;
 }
 
@@ -1426,6 +1568,70 @@ body {
     .feature-name {
         padding-left: 10px;
         font-size: 0.8rem;
+    }
+}
+
+/* --- Bacteria Data Section --- */
+.bacteria-data-section {
+    padding: var(--section-padding) 0;
+    background-color: var(--color-bg-base);
+}
+
+.bacteria-data-section .section-title {
+    margin-bottom: 3em;
+}
+
+.bacteria-block-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    /* Right side (Table) often wider */
+    gap: 40px;
+    align-items: start;
+    /* Align top */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bacteria-left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.bacteria-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-gray);
+    font-weight: 500;
+    margin-bottom: 40px;
+    /* Space between text and graph */
+}
+
+.bacteria-graph-area img,
+.bacteria-table-area img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* optional border/shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 767px) {
+    .bacteria-block-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .bacteria-desc {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .bacteria-graph-area,
+    .bacteria-table-area {
+        margin: 0 auto;
+        max-width: 100%;
     }
 }
 
@@ -1551,123 +1757,101 @@ body {
 }
 
 /* Main Story in Voices Section */
+/* Main Story in Voices Section (Essay) */
 .main-story {
     max-width: 100%;
     margin: 0 auto 60px;
-    padding: 50px 40px;
-    background: linear-gradient(135deg, rgba(200, 230, 255, 0.3) 0%, rgba(255, 230, 200, 0.2) 50%, rgba(200, 255, 200, 0.2) 100%);
-    border-radius: 16px;
+    padding: 20px 0;
+    /* Background removed as requested */
+    background: transparent;
+    border-radius: 0;
+}
+
+.story-text-area {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Title Right, Content Left */
+    justify-content: center;
+    gap: 80px;
+    /* Space between Vertical Title and Body */
+    width: 100%;
+    /* Use full width of container */
+    max-width: 100%;
+    /* Reset override */
+    margin: 0 auto;
 }
 
 .story-headline {
-    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    writing-mode: vertical-rl;
+    /* Vertical writing */
+    text-orientation: upright;
+    /* Upright characters if needed, usually mixed is better for Japanese but upright for emphasis */
+    /* text-orientation: mixed; Default is usually fine for Japanese */
+    font-size: clamp(1.4rem, 3vw, 2rem);
     font-weight: 700;
-    color: #3A3A3A;
-    margin-bottom: 0.8em;
-    line-height: 1.4;
-    white-space: nowrap;
+    color: var(--color-black);
+    margin: 0;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+    height: auto;
+}
+
+.story-content {
+    max-width: 500px;
+    padding-top: 20px;
+    /* Align slightly with top of title */
 }
 
 .story-content p {
     font-size: 0.95rem;
-    line-height: 1.6;
-    color: #5A5A5A;
-    margin-bottom: 0.8em;
+    line-height: 2.2;
+    /* Lighter line height for essay feel */
+    color: var(--color-gray);
+    margin-bottom: 1.5em;
+    /* More breathing room */
 }
 
 .story-content p:last-child {
     margin-bottom: 0;
 }
 
-/* メインストーリー2カラムレイアウト */
+/* Removed old Layout styles */
 .main-story-layout {
-    display: grid;
-    grid-template-columns: 1fr 0.8fr;
-    gap: 40px;
-    align-items: flex-start;
+    display: block;
+    /* Reset grid */
 }
 
-.story-text-area {
-    flex: 1;
-}
-
+/* Remove unused image area styles */
 .story-image-area {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    display: none;
 }
 
-.story-image-area img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media (max-width: 767px) {
-    .main-story {
-        padding: 30px 25px;
-        margin-bottom: 40px;
+@media (max-width: 768px) {
+    .story-text-area {
+        flex-direction: column;
+        /* Vertical stack on mobile */
+        gap: 30px;
+        align-items: center;
     }
 
     .story-headline {
-        font-size: 1.3rem;
+        writing-mode: horizontal-tb;
+        /* Reset to horizontal on mobile for readability */
+        margin-bottom: 20px;
+        text-align: center;
     }
 
-    .story-content p {
-        font-size: 0.95rem;
-    }
-
-    .main-story-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .story-image-area {
-        order: -1;
+    .story-content {
+        max-width: 100%;
+        padding: 0 20px;
     }
 }
 
-.voices-list {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    margin-top: 3em;
-}
-
-.voice-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    max-width: 500px;
-}
-
-/* 奇数：左寄せ */
-.voice-item:nth-child(odd) {
-    margin-right: auto;
-    margin-left: 0;
-    align-items: center;
-}
-
-/* 偶数：右寄せ */
-.voice-item:nth-child(even) {
-    margin-left: auto;
-    margin-right: 0;
-    align-items: center;
-}
-
-.voice-image {
-    width: 350px;
-    text-align: center;
-}
-
-.voice-image img {
-    max-width: 100%;
-    height: auto;
-}
-
+/* Legacy Voices styles removed to prevent conflicts with new implementation at bottom of file */
 .placeholder-image {
     width: 100%;
     aspect-ratio: 4 / 3;
-    background-color: #e0e0e0;
+    background-color: var(--color-thingray);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -1676,7 +1860,7 @@ body {
 
 .placeholder-image::after {
     content: "Image";
-    color: #999;
+    color: var(--color-gray);
     font-weight: 700;
 }
 
@@ -1693,7 +1877,7 @@ body {
 .voice-author {
     text-align: left;
     font-weight: 400;
-    color: #5A5A5A;
+    color: var(--color-gray);
     font-size: 0.95rem;
     line-height: 1.7;
 }
@@ -1729,103 +1913,122 @@ body {
 }
 
 /* --- Size Section --- */
+/* --- Size Section --- */
 .size-section {
-    padding: 80px 0;
-    background-color: #FFFFFF;
+    padding: var(--section-padding) 0;
+    background-color: var(--color-bg-base);
+    text-align: center;
 }
 
-.size-section .section-title {
+.size-title-left {
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     margin-bottom: 1em;
-    color: #4A4A4A;
+    color: var(--color-gray);
     text-align: left;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    /* Align with content often */
 }
 
-.size-intro {
-    font-size: 1rem;
-    font-style: italic;
-    color: #5A5A5A;
-    line-height: 1.8;
-    margin-bottom: 2em;
+/* Override default centered title if needed globally */
+@media (min-width: 768px) {
+    .size-title-left {
+        text-align: left;
+    }
+}
+
+.size-title-right {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 1em;
+    color: var(--color-gray);
+    text-align: right;
+    /* Changed to Right */
+    margin-bottom: 40px;
+    padding-right: 20px;
+}
+
+/* Override default centered title if needed globally */
+@media (min-width: 768px) {
+    .size-title-right {
+        text-align: right;
+    }
 }
 
 .size-image {
-    text-align: center;
-    margin-bottom: 1.5em;
+    margin-bottom: 15px;
+    /* Reduced margin to keep price close */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .size-image img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
-.size-price {
-    text-align: center;
-    font-size: 1rem;
-    color: #D9534F;
-    margin-bottom: 2.5em;
+.size-price-small {
+    font-size: 0.85rem;
+    /* Small font */
+    color: var(--color-gray);
+    margin-bottom: 40px;
 }
 
 .bag-recommend-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 800px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+    text-align: left;
 }
 
 .bag-recommend {
-    text-align: center;
+    flex: 1;
+    max-width: 300px;
 }
 
 .bag-recommend h4 {
     font-size: 1rem;
-    color: #4A4A4A;
+    font-weight: 700;
+    color: var(--color-gray);
     margin-bottom: 1em;
-    font-weight: 700;
+    text-align: center;
+    /* Header centered above text? Or left? Image showed centered-ish or left. Let's go Center for the block header. */
 }
 
-.bag-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-}
-
-.bag-table td {
-    padding: 10px 15px;
-    border-bottom: 1px solid #E0E0E0;
-    text-align: left;
-    color: #5A5A5A;
-    line-height: 1.6;
-}
-
-.bag-table td:first-child {
-    font-weight: 700;
-    width: 40%;
+.bag-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-black);
+    font-weight: 500;
+    text-align: center;
 }
 
 @media (max-width: 767px) {
     .bag-recommend-wrapper {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
     }
 
-    .bag-table td {
-        padding: 8px 10px;
-        font-size: 0.85rem;
+    .size-title-left {
+        text-align: center;
+        /* Center on mobile usually? User said "Left align" but specifically for the section. Let's keep it Left unless mobile demands otherwise, but user usually wants strict adherence. I'll keep it left. */
+        padding-left: 0;
     }
 }
 
 /* --- Cospalab Section --- */
 .cospalab-section {
-    padding: 80px 0;
+    padding: var(--section-padding) 0;
     background-color: #FAFAFA;
 }
 
 .cospalab-section .section-title {
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     margin-bottom: 2em;
-    color: #4A4A4A;
+    color: var(--color-gray);
     text-align: left;
 }
 
@@ -1875,7 +2078,7 @@ body {
 
 .origin-text {
     font-size: 0.8rem;
-    color: #7A7A7A;
+    color: var(--color-gray);
     margin-top: 8px;
 }
 
@@ -1886,7 +2089,7 @@ body {
 .founder-profile h4 {
     font-size: 1.2rem;
     font-weight: 700;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 10px;
 }
 
@@ -1897,7 +2100,7 @@ body {
 
 .founder-bio {
     font-size: 0.8rem;
-    color: #6A6A6A;
+    color: var(--color-gray);
     line-height: 1.8;
     margin-top: 10px;
 }
@@ -1905,7 +2108,7 @@ body {
 .cospalab-right p {
     font-size: 1rem;
     line-height: 2;
-    color: #5A5A5A;
+    color: var(--color-gray);
     margin-bottom: 1.5em;
 }
 
@@ -1973,7 +2176,7 @@ body {
 .snow-text {
     font-size: 1.35rem;
     line-height: 2.2;
-    color: #3A3A3A;
+    color: var(--color-black);
     margin-bottom: 1.8em;
     letter-spacing: 0.08em;
 }
@@ -1982,7 +2185,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 2.2;
-    color: #2A2A2A;
+    color: var(--color-black);
     margin-bottom: 0;
     letter-spacing: 0.08em;
 }
@@ -2019,7 +2222,7 @@ body {
 }
 
 .faq-item {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--color-thingray);
     padding: 20px 0;
 }
 
@@ -2050,7 +2253,7 @@ body {
 
 /* --- Size Section --- */
 .size-section {
-    padding: 60px 0;
+    padding: var(--section-padding) 0;
     background-color: #FFFFFF;
 }
 
@@ -2073,7 +2276,7 @@ body {
     text-align: center;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin-bottom: 2em;
 }
 
@@ -2153,8 +2356,8 @@ body {
     align-items: flex-start;
     /* Align image left */
     flex-shrink: 0;
-    width: 240px;
-    /* Increased width (1.2x of 200px) */
+    width: 280px;
+    /* Increased width to 280px for uniformity */
 }
 
 .voice-composite-img {
@@ -2172,7 +2375,7 @@ body {
 .voice-text {
     font-size: 0.95rem;
     line-height: 1.8;
-    color: #555;
+    color: var(--color-gray);
     text-align: left;
 }
 
@@ -2250,7 +2453,7 @@ body {
     font-size: 1.15rem;
     line-height: 1.8;
     margin-bottom: 0.8em;
-    color: #4A4A4A;
+    color: var(--color-gray);
 }
 
 .cospalab-video-row {
@@ -2283,14 +2486,14 @@ body {
 
 .origin-text {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--color-gray);
     margin-top: 8px;
 }
 
 .founder-profile {
     margin-top: 60px;
     padding: 40px;
-    background-color: #F8F8F6;
+    background-color: var(--color-bg-base);
     border-radius: 12px;
     text-align: left;
 }
@@ -2312,14 +2515,14 @@ body {
 .founder-name {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #4A4A4A;
+    color: var(--color-gray);
     margin: 0;
 }
 
 .founder-bio {
     font-size: 1rem;
     line-height: 1.9;
-    color: #5A5A5A;
+    color: var(--color-gray);
     margin: 0;
 }
 
@@ -2379,17 +2582,44 @@ body {
     align-items: center;
     gap: 10px;
     padding: 12px 24px;
-    background-color: #FF0000;
+    background-color: var(--color-black);
     color: #FFFFFF;
+}
+
+.nav-link {
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: background-color 0.3s, transform 0.2s;
+    color: var(--color-black);
+    font-weight: 500;
+    font-size: 15px;
+    /* Updated to 15px */
+    transition: color 0.3s;
+    letter-spacing: 0.05em;
+    padding: 5px 0;
+}
+
+.nav-link:hover {
+    color: var(--color-green);
+    /* Green accent */
+}
+
+.nav-logo-link {
+    display: flex;
+    /* Fix alignment */
+    align-items: center;
+    margin-right: auto;
+    /* Push links to right */
+    height: 100%;
+}
+
+.nav-logo-img {
+    height: 48px;
+    /* Slightly larger logo */
+    width: auto;
+    object-fit: contain;
 }
 
 .footer-youtube-btn:hover {
-    background-color: #CC0000;
+    background-color: var(--color-black);
     transform: scale(1.02);
 }
 
@@ -2399,7 +2629,7 @@ body {
 
 .copyright {
     font-size: 0.9rem;
-    color: #888;
+    color: var(--color-gray);
     margin-top: 20px;
 }
 
