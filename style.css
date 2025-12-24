@@ -923,7 +923,7 @@ Since I have many occurrences, I will replace the most frequent ones first.
 }
 
 .designer-content {
-    padding-top: 20px;
+    padding-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -931,10 +931,11 @@ Since I have many occurrences, I will replace the most frequent ones first.
 
 .designer-text {
     font-size: 1.15rem;
-    line-height: 1.6;
+    line-height: 1.8;
     font-weight: 400;
     color: var(--color-gray);
-    margin-bottom: 1em;
+    margin-bottom: 0;
+    /* Merged P should not have bottom margin if it's the only one */
 }
 
 .designer-name-inline {
@@ -991,8 +992,7 @@ Since I have many occurrences, I will replace the most frequent ones first.
     margin-bottom: 2em;
     color: var(--color-gray);
     letter-spacing: 0.1em;
-    text-align: right;
-    /* Requested: Right matches "Cooking" */
+    /* text-align removed to allow utility classes (text-left/right) to control it */
 }
 
 .cooking-layout {
@@ -1441,7 +1441,8 @@ Since I have many occurrences, I will replace the most frequent ones first.
     color: var(--color-gray);
     letter-spacing: 0.1em;
     width: 100%;
-    max-width: 900px;
+    max-width: 750px;
+    /* Matched to .niigata-layout width for alignment */
     margin-left: auto;
     margin-right: auto;
 }
@@ -2151,8 +2152,19 @@ Since I have many occurrences, I will replace the most frequent ones first.
 .size-price-small {
     font-size: 0.85rem;
     /* Small font */
-    color: var(--color-gray);
+}
+
+/* Main visual for Cospa Lab */
+.cospalab-header {
     margin-bottom: 40px;
+}
+
+.trademark-symbol {
+    font-size: 0.6em;
+    /* Smaller font relative to parent */
+    vertical-align: super;
+    /* Superscript alignment */
+    margin-left: 2px;
 }
 
 .bag-recommend-wrapper {
