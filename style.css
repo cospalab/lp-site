@@ -24,29 +24,36 @@
 }
 
 /* --- Base & Typography --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 .container {
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 20px;
-    box-sizing: border-box;
 }
 
 body {
     font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
-    /* Update body font */
-    margin: 0;
     /* Color replacements */
     color: var(--color-black);
-    /* for var(--color-black), #202020 */
-    /* Increased to avoid header overlap */
     background-color: var(--color-bg-base);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: var(--line-height-body);
-    overflow-x: hidden;
-    width: 100%;
-    max-width: 100vw;
 }
 
 /* ... (Existing styles) ... */
@@ -1166,30 +1173,41 @@ body {
 }
 
 .eco-layout {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    display: flex;
     gap: 20px;
-    /* Reduced gap from 60px to 20px as requested "Eliminate gap" */
-    align-items: center;
+    align-items: stretch;
+    /* Match heights */
+    justify-content: space-between;
     max-width: 850px;
     margin: 0 auto;
 }
 
-.eco-image {
+.eco-content {
+    flex: 1;
+    /* Take remaining space */
+    padding-right: 20px;
     display: flex;
-    justify-content: flex-end;
-    /* Push image to the right (towards text) to close gap */
-    padding-right: 0;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* Center text vertically */
+}
+
+.eco-image {
+    flex: 0 0 40%;
+    /* Fixed width proportion */
+    max-width: 350px;
+    position: relative;
+    padding: 0;
+    margin: 0;
 }
 
 .eco-image img {
-    max-width: 220px;
-    height: auto;
-}
-
-.eco-content {
-    padding-left: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Ensure full image is visible, never clipped */
+    border-radius: 8px;
+    /* Optional for aesthetics */
 }
 
 .eco-text {
@@ -2173,6 +2191,29 @@ body {
 /* Main visual for Cospa Lab */
 .cospalab-header {
     margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: flex-start;
+    /* Left aligned, but elements flow: text -> logo */
+}
+
+.cospalab-header .section-title {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* Ensure logo aligns left if it's block */
+.cospalab-logo {
+    margin: 0;
+    max-width: 200px;
+    /* Adjusted size */
+    height: auto;
+    transition: opacity 0.3s;
+}
+
+/* or inline-block */
+/* If inline, text-align handles it. If block, margin handles it. Combining both ensures safety. */
 }
 
 .trademark-symbol {
@@ -2291,26 +2332,75 @@ body {
 }
 
 .founder-profile {
-    margin-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--color-thingray);
+    /* Optional separation */
+    padding-top: 30px;
 }
 
-.founder-profile h4 {
-    font-size: 1.2rem;
+.founder-name {
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--color-gray);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+    /* Name aligned to right */
 }
 
-.founder-image {
-    max-width: 350px;
-    height: auto;
+.founder-body {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.founder-text {
+    flex: 1;
 }
 
 .founder-bio {
-    font-size: 0.8rem;
+    /* Removed explicit font-size to use global default (1rem) */
     color: var(--color-gray);
-    line-height: 1.8;
-    margin-top: 10px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.founder-image-wrapper {
+    width: 200px;
+    /* Increased size as requested */
+    flex-shrink: 0;
+    /* Center alignment in column if needed */
+    display: flex;
+    justify-content: center;
+}
+
+.founder-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    /* Circular */
+    object-fit: cover;
+    border: 2px solid #fff;
+    /* Optional definition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+    .founder-body {
+        flex-direction: column-reverse;
+        /* Image on top? or Text on bottom? Standard is column. Let's do Standard Column but Image first maybe? User didn't specify, standard is usually Image Top or Follow Flow. Flow is Text then Image. Let's keep Text then Image or Image floats? 
+        Actually, mobile usually centers image. */
+        align-items: center;
+        text-align: center;
+    }
+
+    .founder-name {
+        text-align: center;
+    }
+
+    .founder-image-wrapper {
+        width: 120px;
+    }
 }
 
 .cospalab-right p {
@@ -2364,56 +2454,88 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 550px;
+    /* Removed fixed height, let content dictate padding */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* White tone overlay */
+.snow-message-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Slight white tone */
+    z-index: 1;
+}
+
 .snow-content {
-    text-align: center;
-    padding: 60px 50px;
-    max-width: 850px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    /* Text above overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Align constraints to right */
+    width: fit-content;
+    margin: 150px auto 0;
+    padding: 0 20px;
 }
 
-.snow-text {
-    font-size: 1.35rem;
-    line-height: 2.2;
-    color: var(--color-black);
-    margin-bottom: 1.8em;
-    letter-spacing: 0.08em;
-}
-
-.snow-text-highlight {
-    font-size: 1.5rem;
+.snow-intro-bold {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: 700;
+    line-height: 1.8;
+    color: var(--color-black);
+    margin-bottom: 50px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    width: 100%;
+    /* Ensure it takes full width of container */
+}
+
+.snow-vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    /* or mixed, upright ensures Japanese chars stand up */
+    height: 400px;
+    /* Essential for vertical wrap */
+    font-size: 1.1rem;
     line-height: 2.2;
     color: var(--color-black);
-    margin-bottom: 0;
-    letter-spacing: 0.08em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-align: left;
+    /* Vertical text aligns to top (start) */
+    width: fit-content;
+    /* Center container */
+}
+
+.snow-vertical-text p {
+    margin: 0 1.5em 0 0;
+    /* Spacing between columns */
+    /* Physical margin-right adds space between lines in RL mode? No, margin-left is bottom. */
+    /* In vertical-rl: 
+       margin-block-start = right
+       margin-block-end = left
+    */
 }
 
 @media (max-width: 767px) {
     .snow-message-section {
-        padding: 60px 20px;
-        min-height: 450px;
+        padding: 60px 0;
     }
 
-    .snow-content {
-        padding: 40px 25px;
-    }
-
-    .snow-text {
-        font-size: 1.1rem;
-    }
-
-    .snow-text-highlight {
-        font-size: 1.2rem;
+    .snow-vertical-text {
+        height: auto;
+        min-height: 300px;
+        max-height: 50vh;
+        /* Prevent screen overflow */
+        font-size: 1rem;
     }
 }
 
@@ -2459,34 +2581,7 @@ body {
     margin: 0;
 }
 
-/* --- Size Section --- */
-.size-section {
-    padding: var(--section-padding) 0;
-    background-color: #FFFFFF;
-}
 
-.size-section .section-title {
-    text-align: center;
-    margin-bottom: 2em;
-}
-
-.size-image {
-    text-align: center;
-    margin: 0 auto 30px;
-}
-
-.size-image img {
-    max-width: 80%;
-    height: auto;
-}
-
-.size-price {
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--color-gray);
-    margin-bottom: 2em;
-}
 
 /* --- Cospalab Section --- */
 .cospalab-section {
@@ -2695,9 +2790,9 @@ body {
 }
 
 .video-origin {
-    text-align: center;
-    flex-shrink: 0;
-    margin-right: -150px;
+    text-align: left;
+    margin-top: 40px;
+    /* Separation from text above */
 }
 
 .origin-video-img {
@@ -2822,6 +2917,74 @@ body {
 .nav-link:hover {
     color: var(--color-green);
     /* Green accent */
+}
+
+/* --- Footer --- */
+.footer {
+    padding: 60px 0 30px;
+    background-color: #FFFFFF;
+    border-top: 1px solid var(--color-thingray);
+    /* Optional */
+}
+
+.footer-layout {
+    margin-bottom: 30px;
+}
+
+.footer-icons-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    max-width: 160px;
+    height: auto;
+    display: block;
+}
+
+.footer-icon-link {
+    color: var(--color-gray);
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-icon-link:hover {
+    opacity: 0.7;
+}
+
+.email-link {
+    /* Standard color inherits */
+}
+
+.youtube-link-icon {
+    color: #FF0000;
+    /* Red for YouTube */
+}
+
+.footer-contact-text {
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    margin-top: 10px;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+@media (max-width: 767px) {
+    .footer-icons-row {
+        gap: 20px;
+    }
+
+    .footer-logo {
+        max-width: 120px;
+    }
 }
 
 .nav-logo-link {
