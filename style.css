@@ -1523,8 +1523,7 @@ body {
     line-height: 2;
     color: var(--color-gray);
     margin-bottom: 2em;
-    font-family: 'Klee One', cursive;
-    font-weight: 600;
+    font-weight: normal;
 }
 
 .niigata-text.no-margin {
@@ -3447,8 +3446,7 @@ body {
 
 /* Applying Klee One to Closing Description as well for consistency */
 .closing-desc {
-    font-family: 'Klee One', cursive;
-    font-weight: 600;
+    /* Using default font */
 }
 
 @media (max-width: 767px) {
