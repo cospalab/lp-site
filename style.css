@@ -3029,6 +3029,17 @@ body {
     .footer-icons-row {
         gap: 20px;
     }
+}
+
+/* Utility: PC-only break */
+.pc-br {
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .pc-br {
+        display: none;
+    }
 
     .footer-logo {
         max-width: 120px;
