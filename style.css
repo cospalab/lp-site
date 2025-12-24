@@ -962,7 +962,8 @@ body {
 
 @media (max-width: 767px) {
     .designer-layout {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
         gap: 20px;
     }
 
@@ -1193,6 +1194,13 @@ body {
 .eco-section {
     padding: var(--section-padding) 0;
     background-color: var(--color-bg-base);
+}
+
+.eco-note {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-gray);
+    margin-top: 1em;
 }
 
 .eco-section .section-title {
