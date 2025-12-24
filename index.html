@@ -95,437 +95,282 @@
             <!-- 下部の情報エリア -->
             <div class="hero-bottom-info">
                 <!-- Color variations list or other info if needed -->
-                <!-- <span class="hero-size-type">45ℓタイプ</span> (Removed based on clean layout or kept? Image shows "Black... Gray..." list adjacent to device/text, but text guide says "Left Right same distance". Let's keep specific text for now if unclear, but "Side guide" implies main text.) -->
-                /* --- Header / Navigation --- */
-                .site-nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 80px;
-                background-color: var(--color-bg-base);
-                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-                z-index: 1000;
-                display: flex;
-                align-items: center;
-                }
+            </div>
+        </div>
+    </header>
 
-                .nav-container {
-                width: 100%;
-                max-width: var(--container-width);
-                margin: 0 auto;
-                padding: 0 20px;
-                display: flex;
-                justify-content: space-between; /* Logo Left, Nav Right */
-                align-items: center;
-                height: 100%;
-                }
+    <!-- NEWS帯 -->
+    <div class="news-bar">
+        <span class="news-label">NEWS</span>
+        <span class="news-text">有楽町TIBにて試作品展示中</span>
+        <span class="news-text">ホームユースモニター募集中</span>
+        <!-- 細字アイコンなし (Removed '〇') -->
+    </div>
 
-                .nav-logo-link {
-                display: flex;
-                align-items: center;
-                height: 100%;
-                text-decoration: none;
-                }
+    <!-- セクション: SKETTO 特徴 -->
+    <section id="sketto-features" class="sketto-features-section">
+        <div class="sketto-features-content">
+            <p class="sketto-catchcopy">もう、においに悩まない。</p>
+            <div class="sketto-logo-wrapper">
+                <img src="./images/SKETTO.png" alt="SKETTO" class="sketto-logo-img">
+                <sup class="sketto-trademark">®</sup>
+            </div>
+            <ul class="sketto-features-list">
+                <li>ゴミ箱のフタを開けるのが、怖くなくなります</li>
+                <li>手間をかけずに、清潔を保てます</li>
+                <li>袋の交換もスムーズで、家事の時短に</li>
+                <li>暮らしになじむ、控えめなデザインもうれしい</li>
+                <li>末永くお使いいただける、安心の日本製です</li>
+            </ul>
+        </div>
+    </section>
 
-                .nav-logo-img {
-                height: 40px; /* Adjust as needed */
-                width: auto;
-                }
+    <section id="odor-cause" class="odor-cause-section">
+        <div class="container">
+            <h2 class="section-title text-center">生ゴミが臭う本当の理由、知っていますか？</h2>
 
-                /* Nav Links Group (if wrapped, but HTML shows flat list) */
-                /* We might need a wrapper for links if we want to separate logo from a group of links, but flat Flex
-                Space-Between works if we group links.
-                Wait, HTML in Step 368 had:
-                <a logo>
-                    <a link>
-                        <a link>
-                            ...
-                            <a line>
+            <div class="odor-flow-container">
 
-                                If they are all direct children of nav-container, space-between will spread them ALL
-                                out.
-                                Logo .. link .. link .. link .. line.
-                                User probably wants Logo [SPACE] Link Link Link Line.
-                                I should wrap the links in a specific div in HTML or use `margin-left: auto` on the
-                                first link.
+                <!-- 1. Diagram Image -->
+                <div class="odor-diagram-center">
+                    <img src="./images/genninnn2.png" alt="生ゴミの臭いの原因図解">
+                </div>
 
-                                I will use `margin-left: auto` on the FIRST `.nav-link` or group them.
-                                HTML modification is safer to group them.
+                <!-- 2. Main Explanation Text -->
+                <div class="odor-main-text">
+                    <p>
+                        生ゴミのニオイの原因は、実は嫌気性微生物によるいたずら※。<br>
+                        「酸素が少ないこと」は彼らの好きな環境の大きな一つ。<br>
+                        そう、常識である「密閉」は逆効果です。
+                    </p>
+                    <p>
+                        そして、プラスチックはニオイを吸着するため、どんどんニオイは取れなくなってしまうのです。
+                    </p>
+                </div>
 
-                                Let's check HTML again.
+                <!-- 3. Professor / Annotation Section -->
+                <div class="professor-annotation-area">
+                    <div class="professor-layout">
+                        <!-- Annotation Text -->
+                        <div class="annotation-text">
+                            <p>
+                                ※においの素＝生ゴミの成分の分解物です。<br>
+                                酸素が少ない状況下になると嫌気性微生物<br>
+                                （バクテリア）による発酵（腐敗）が進み<br>
+                                生ゴミの成分が分解され<br>
+                                においの素となる有機酸や硫化水素が生じます。
+                            </p>
+                            <p class="professor-signature">嫌気性微生物研究者 国立高等専門学校教授より</p>
+                        </div>
 
-                                <nav class="site-nav">
-                                    <div class="nav-container">
-                                        <a href="#cospalab" class="nav-logo-link">...</a>
-                                        <a href="#odor-cause" class="nav-link">...</a>
-                                        ...
-                                    </div>
-                                </nav>
+                        <!-- Professor Image -->
+                        <div class="professor-img-wrapper">
+                            <img src="./images/kyouzyuyori.png" alt="教授のイラスト">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                I will use a trick: `.nav-logo-link { margin-right: auto; }` will push everything else
-                                to the right? No, `flex` items.
-                                Yes, `margin-right: auto` on the Logo will push the remaining items to the right group.
-                                */
+    <!-- セクション3: におう原因を排除したSKETTO -->
+    <section id="sketto-solution" class="sketto-solution-section">
+        <div class="container">
+            <h2 class="section-title text-center">におう原因を排除したSKETTO</h2>
 
-                                .nav-logo-link {
-                                margin-right: auto; /* Pushes subsequent siblings to the right */
-                                }
+            <div class="sketto-solution-layout">
+                <!-- 左：SKETTO画像 -->
+                <div class="sketto-image">
+                    <img src="./images/niowanai.png" alt="SKETTOの通気構造 - 特許出願中">
+                </div>
 
-                                .nav-link {
-                                text-decoration: none;
-                                color: var(--color-gray);
-                                font-weight: 500;
-                                font-size: 15px;
-                                margin-left: 20px; /* Spacing between links */
-                                transition: color 0.3s;
-                                }
+                <!-- 右：説明テキスト -->
+                <div class="sketto-features">
+                    <p class="feature-text">
+                        SKETTOは計算された通気構造により<br>（特許出願中）水分の蒸発が起こり<br>庫内に自然換気が発生するため<br>熱がこもりません。
+                    </p>
 
-                                .nav-link:hover {
-                                color: var(--color-green);
-                                }
+                    <p class="feature-text">さらに熱伝導率が高さから<br>庫内の温度が下がります。</p>
 
-                                .nav-line-btn {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                width: 40px;
-                                height: 40px;
-                                margin-left: 20px;
-                                color: #06c755; /* LINE Brand Green or Custom */
-                                /* If user wants a button look: */
-                                /* background-color: #06c755; color: white; border-radius: 50%; */
-                                /* But current SVG is likely filled. Let's inspect SVG path. If fill is currentcolor,
-                                setting color works. */
-                                }
+                    <p class="feature-text">生ゴミを腐らせないため<br>コバエの発生も防げます。</p>
 
-                                /* Fix for broken LINE icon if it's blue blob? User implies "weird". */
-                                .nav-line-btn svg {
-                                width: 40px;
-                                height: 40px;
-                                fill: #06c755; /* LINE Green */
-                                }
+                    <p class="feature-text">もちろん、ニオイも吸着しません。</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                @media (max-width: 768px) {
-                                .nav-link {
-                                display: none; /* Hide links on mobile? hamburger? User requirements didn't specify
-                                mobile menu yet, just "Header broken". Safe to hide text links and keep Logo + LINE? */
-                                /* Or minimal padding */
-                                font-size: 12px;
-                                margin-left: 10px;
-                                }
+    <!-- セクション: 嫌気性微生物検査データ -->
+    <section id="bacteria-data" class="bacteria-data-section">
+        <div class="container">
+            <h2 class="section-title text-center">においの元を抑制する効果を確認</h2>
 
-                                .nav-container {
-                                padding: 0 15px;
-                                }
-                                }
+            <div class="bacteria-block-layout">
+                <!-- Left Column: Text + Graph -->
+                <div class="bacteria-left-col">
+                    <div class="bacteria-left-wrapper">
+                        <p class="bacteria-desc">
+                            SKETTOは、臭いの元を作る可能<br>性がある嫌気性細菌の数を<br>
+                            フタ付き樹脂製ゴミ箱より<br>
+                            大幅に下げることができました。
+                        </p>
+                        <div class="bacteria-graph-area">
+                            <img src="./images/graph.png" alt="嫌気性細菌数比較グラフ">
+                        </div>
+                    </div>
+                </div>
 
-                                <!-- NEWS帯 -->
-                                <div class="news-bar">
-                                    <span class="news-label">NEWS</span>
-                                    <span class="news-text">有楽町TIBにて試作品展示中</span>
-                                    <span class="news-text">ホームユースモニター募集中</span>
-                                    <!-- 細字アイコンなし (Removed '〇') -->
-                                </div>
+                <!-- Right Column: Table/Petri Data -->
+                <div class="bacteria-right-col">
+                    <div class="bacteria-table-area">
+                        <img src="./images/kenkibiseibutu (2).png" alt="微生物検査結果表と写真">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                <!-- セクション: SKETTO 特徴 -->
-                                <section id="sketto-features" class="sketto-features-section">
-                                    <div class="sketto-features-content">
-                                        <p class="sketto-catchcopy">もう、においに悩まない。</p>
-                                        <div class="sketto-logo-wrapper">
-                                            <img src="./images/SKETTO.png" alt="SKETTO" class="sketto-logo-img">
-                                            <sup class="sketto-trademark">®</sup>
-                                        </div>
-                                        <ul class="sketto-features-list">
-                                            <li>ゴミ箱のフタを開けるのが、怖くなくなります</li>
-                                            <li>手間をかけずに、清潔を保てます</li>
-                                            <li>袋の交換もスムーズで、家事の時短に</li>
-                                            <li>暮らしになじむ、控えめなデザインもうれしい</li>
-                                            <li>末永くお使いいただける、安心の日本製です</li>
-                                        </ul>
-                                    </div>
-                                </section>
+    <!-- セクション: SKETTOは「強くて、ラクな素材」 -->
+    <section id="material" class="material-section">
+        <div class="container container-wide">
+            <h2 class="section-title text-right material-title">SKETTOは「強くて、ラクな素材」</h2>
 
-                                <section id="odor-cause" class="odor-cause-section">
-                                    <div class="container">
-                                        <h2 class="section-title text-center">生ゴミが臭う本当の理由、知っていますか？</h2>
+            <!-- 比較表画像 -->
+            <div class="comparison-image-wrapper">
+                <img src="./images/sozai.png" alt="素材比較表" class="comparison-image">
+                <p class="material-description">
+                    落ち着いたシルバーは控えめに存在していてほしいゴミ箱にはぴったり。<br>
+                    汚れや手垢、水垢も気にならず、さびにも強い素材です。
+                </p>
+            </div>
+        </div>
+    </section>
 
-                                        <div class="odor-flow-container">
+    <!-- セクション: 一生モノを新潟から。 -->
+    <section id="niigata" class="niigata-section">
+        <div class="container container-wide">
+            <h2 class="section-title text-left niigata-title">一生モノを新潟から。</h2>
 
-                                            <!-- 1. Diagram Image -->
-                                            <div class="odor-diagram-center">
-                                                <img src="./images/genninnn2.png" alt="生ゴミの臭いの原因図解">
-                                            </div>
+            <div class="niigata-layout">
+                <!-- 左：説明テキスト -->
+                <div class="niigata-content">
+                    <p class="niigata-text no-margin">
+                        燕三条のおとなりにある足立<br>
+                        製作所で、細かなところまで<br>
+                        丁寧に作り上げています。<br>
+                        いわば<br>
+                        「ザ、日本の職人仕事」<br>
+                        頼もしいながらも<br>
+                        「日本の道具のやさしさ」を<br>
+                        感じられるSKETTOです。
+                    </p>
+                </div>
 
-                                            <!-- 2. Main Explanation Text -->
-                                            <div class="odor-main-text">
-                                                <p>
-                                                    生ゴミのニオイの原因は、実は嫌気性微生物によるいたずら※。<br>
-                                                    「酸素が少ないこと」は彼らの好きな環境の大きな一つ。<br>
-                                                    そう、常識である「密閉」は逆効果です。
-                                                </p>
-                                                <p>
-                                                    そして、プラスチックはニオイを吸着するため、どんどんニオイは取れなくなってしまうのです。
-                                                </p>
-                                            </div>
+                <!-- 右：職人画像 -->
+                <div class="niigata-image-area">
+                    <img src="./images/niigata.png" alt="足立製作所の職人" class="niigata-full-image">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                            <!-- 3. Professor / Annotation Section -->
-                                            <div class="professor-annotation-area">
-                                                <div class="professor-layout">
-                                                    <!-- Annotation Text -->
-                                                    <div class="annotation-text">
-                                                        <p>
-                                                            ※においの素＝生ゴミの成分の分解物です。<br>
-                                                            酸素が少ない状況下になると嫌気性微生物<br>
-                                                            （バクテリア）による発酵（腐敗）が進み<br>
-                                                            生ゴミの成分が分解され<br>
-                                                            においの素となる有機酸や硫化水素が生じます。
-                                                        </p>
-                                                        <p class="professor-signature">嫌気性微生物研究者 国立高等専門学校教授より</p>
-                                                    </div>
+    <!-- セクション: キッチンに溶け込むデザイン -->
+    <section id="designer" class="designer-section">
+        <div class="container">
+            <h2 class="section-title text-right">キッチンに溶け込むデザイン</h2>
 
-                                                    <!-- Professor Image -->
-                                                    <div class="professor-img-wrapper">
-                                                        <img src="./images/kyouzyuyori.png" alt="教授のイラスト">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+            <div class="designer-layout">
+                <!-- 左：デザイナー画像 -->
+                <div class="designer-profile">
+                    <img src="./images/hiroshi.png" alt="関博旨氏" class="designer-image">
+                </div>
 
-                                <!-- セクション3: におう原因を排除したSKETTO -->
-                                <section id="sketto-solution" class="sketto-solution-section">
-                                    <div class="container">
-                                        <h2 class="section-title text-center">におう原因を排除したSKETTO</h2>
+                <!-- 右：説明テキスト -->
+                <div class="designer-content">
+                    <p class="designer-text">デザインは元無印良品を手がけていらした<br>關博旨さんが担当</p>
 
-                                        <div class="sketto-solution-layout">
-                                            <!-- 左：SKETTO画像 -->
-                                            <div class="sketto-image">
-                                                <img src="./images/niowanai.png" alt="SKETTOの通気構造 - 特許出願中">
-                                            </div>
+                    <p class="designer-text">どんなキッチンにも自然になじみ<br>空間にとけこむ美しさを目指しました</p>
 
-                                            <!-- 右：説明テキスト -->
-                                            <div class="sketto-features">
-                                                <p class="feature-text">
-                                                    SKETTOは計算された通気構造により<br>（特許出願中）水分の蒸発が起こり<br>庫内に自然換気が発生するため<br>熱がこもりません。
-                                                </p>
+                    <p class="designer-text">どんなサイズのゴミ袋でも使いやすいよう<br>細かいところまで研究を重ねています</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                                <p class="feature-text">さらに熱伝導率が高さから<br>庫内の温度が下がります。</p>
+    <!-- セクション: 袋交換、お手入れラクラク -->
+    <section id="bag-change" class="bag-change-section">
+        <div class="container">
+            <h2 class="section-title-green">袋交換、お手入れラクラク</h2>
 
-                                                <p class="feature-text">生ゴミを腐らせないため<br>コバエの発生も防げます。</p>
+            <div class="bag-change-layout">
+                <!-- 左：YouTube動画サムネイル -->
+                <div class="video-thumbnail">
+                    <a href="https://youtu.be/woYo84Rj-gE" target="_blank" rel="noopener noreferrer">
+                        <img src="https://img.youtube.com/vi/woYo84Rj-gE/hqdefault.jpg" alt="SKETTOの袋交換動画">
+                        <span class="play-button">▶</span>
+                    </a>
+                </div>
 
-                                                <p class="feature-text">もちろん、ニオイも吸着しません。</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                <!-- 右：説明テキスト -->
+                <div class="bag-change-content">
+                    <p class="bag-change-text">ずり落ち知らずの磁石付き袋止め</p>
 
-                                <!-- セクション: 嫌気性微生物検査データ -->
-                                <section id="bacteria-data" class="bacteria-data-section">
-                                    <div class="container">
-                                        <h2 class="section-title text-center">においの元を抑制する効果を確認</h2>
+                    <p class="bag-change-text">消臭剤もフィルターも不要<br>お手入れは袋を替えるだけ</p>
 
-                                        <div class="bacteria-block-layout">
-                                            <!-- Left Column: Text + Graph -->
-                                            <div class="bacteria-left-col">
-                                                <p class="bacteria-desc">
-                                                    SKETTOは、臭いの元を作る可能性がある嫌気性細菌の数を<br>
-                                                    フタ付き樹脂製ゴミ箱より<br>
-                                                    大幅に下げることができました。
-                                                </p>
-                                                <div class="bacteria-graph-area">
-                                                    <!-- Using kenkibiseibutu (2).png as the Graph based on file availability -->
-                                                    <img src="./images/kenkibiseibutu (2).png" alt="嫌気性細菌数比較グラフ">
-                                                </div>
-                                            </div>
+                    <p class="bag-change-text">手垢が目立ちにくい素材で<br>「ラクして清潔」を叶えます</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                            <!-- Right Column: Table/Petri Data -->
-                                            <div class="bacteria-right-col">
-                                                <div class="bacteria-table-area">
-                                                    <img src="./images/kensadate.png" alt="微生物検査結果表と写真">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+    <!-- セクション: 調理に寄り添う仕様 -->
+    <section id="cooking-spec" class="cooking-spec-section">
+        <div class="container">
+            <h2 class="section-title-green">調理に寄り添う仕様</h2>
 
-                                <!-- セクション: SKETTOは「強くて、ラクな素材」 -->
-                                <section id="material" class="material-section">
-                                    <div class="container container-wide">
-                                        <h2 class="section-title text-right material-title">SKETTOは<br>「強くて、ラクな素材」</h2>
+            <div class="cooking-layout">
+                <!-- 左：SKETTO画像 -->
+                <div class="cooking-image">
+                    <img src="./images/yorisou.png" alt="SKETTOのサイズ感">
+                </div>
 
-                                        <!-- 比較表画像 -->
-                                        <div class="comparison-image-wrapper">
-                                            <img src="./images/sozai.png" alt="素材比較表" class="comparison-image">
-                                            <th class="plastic-header">プラスチック</th>
-                                            <th class="stainless-header">ステンレス</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="highlight-row">
-                                                    <td class="feature-name">シミがつかない<br>（着色）</td>
-                                                    <td class="result-good">◎</td>
-                                                    <td class="result-bad">✕</td>
-                                                    <td class="result-good">◎</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="feature-name">においがつかない</td>
-                                                    <td class="result-good">◎</td>
-                                                    <td class="result-bad">✕</td>
-                                                    <td class="result-good">◎</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="feature-name">汚れが目立たない</td>
-                                                    <td class="result-good">◎</td>
-                                                    <td class="result-bad">✕</td>
-                                                    <td class="result-fair">△</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="feature-name">見た目</td>
-                                                    <td class="result-text">落ち着いた<br>シルバー</td>
-                                                    <td class="result-text">バラエティに<br>富む</td>
-                                                    <td class="result-text">光沢感のある<br>シルバー</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="feature-name">耐久性</td>
-                                                    <td class="result-good">◎</td>
-                                                    <td class="result-fair">△</td>
-                                                    <td class="result-good">◎</td>
-                                                </tr>
-                                            </tbody>
-                                            </table>
-                                        </div>
-                                        -->
-                                    </div>
-                                </section>
+                <!-- 右：説明テキスト -->
+                <div class="cooking-content">
+                    <p class="cooking-text">SKETTOの高さは、かがまず、ゴミが捨てられるサイズ感</p>
 
-                                <!-- セクション: 一生モノを新潟から。 -->
-                                <section id="niigata" class="niigata-section">
-                                    <div class="container">
-                                        <h2 class="section-title text-center">一生モノを新潟から。</h2>
+                    <p class="cooking-text">ロック付き滑らかなキャスターで、調理時はスッと脇へ<br>いつでも最適ポジションに</p>
 
-                                        <div class="niigata-layout">
-                                            <!-- 左：職人画像 -->
-                                            <div class="niigata-image-area">
-                                                <img src="./images/niigata.png" alt="足立製作所の職人"
-                                                    class="niigata-full-image">
-                                            </div>
+                    <p class="cooking-text">フタは片側開けでも全開でも、邪魔にならないから<br>自分仕様にお使いいただけます</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                            <!-- 右：説明テキスト -->
-                                            <div class="niigata-content">
-                                                <p class="niigata-text">SKETTOは、燕三条のおとなりにある足立製作所で<br>細かなところまで丁寧に作り上げています
-                                                </p>
+    <!-- セクション: お財布にも環境にも優しい -->
+    <section id="eco" class="eco-section">
+        <div class="container">
+            <h2 class="section-title text-left">お財布にも環境にも優しい</h2>
 
-                                                <p class="niigata-highlight">いわば、「ザ、日本の職人仕事」</p>
+            <div class="eco-layout">
+                <!-- 左：説明テキスト -->
+                <div class="eco-content">
+                    <p class="eco-text">消臭材も電気も使わず、ごみのかさが減って袋代も節約。</p>
+                    <p class="eco-text">水分を抑えて焼却炉の負担も軽くします。</p>
+                    <p class="eco-text">ムリなく続けられる 環境へのやさしい選択をSKETTOからはじめませんか。</p>
+                </div>
 
-                                                <p class="niigata-text">頼もしいながらも</p>
+                <!-- 右：SDGs画像 -->
+                <div class="eco-image">
+                    <img src="./images/kankyouniyasasii.png" alt="環境にやさしい">
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                                <p class="niigata-highlight">「日本の道具のやさしさ」を感じられるSKETTOです</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+    <main>
+    </main>
 
-                                <!-- セクション: キッチンに溶け込むデザイン -->
-                                <section id="designer" class="designer-section">
-                                    <div class="container">
-                                        <h2 class="section-title text-center">キッチンに溶け込むデザイン</h2>
-
-                                        <div class="designer-layout">
-                                            <!-- 左：デザイナー画像 -->
-                                            <div class="designer-profile">
-                                                <img src="./images/hiroshi.png" alt="関博旨氏" class="designer-image">
-                                            </div>
-
-                                            <!-- 右：説明テキスト -->
-                                            <div class="designer-content">
-                                                <p class="designer-text">デザインは元無印良品を手がけていらした<br>關博旨さんが担当</p>
-
-                                                <p class="designer-text">どんなキッチンにも自然になじみ<br>空間にとけこむ美しさを目指しました</p>
-
-                                                <p class="designer-text">どんなサイズのゴミ袋でも使いやすいよう<br>細かいところまで研究を重ねています</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <!-- セクション: 袋交換、お手入れラクラク -->
-                                <section id="bag-change" class="bag-change-section">
-                                    <div class="container">
-                                        <h2 class="section-title-green">袋交換、お手入れラクラク</h2>
-
-                                        <div class="bag-change-layout">
-                                            <!-- 左：YouTube動画サムネイル -->
-                                            <div class="video-thumbnail">
-                                                <a href="https://youtu.be/woYo84Rj-gE" target="_blank"
-                                                    rel="noopener noreferrer">
-                                                    <img src="https://img.youtube.com/vi/woYo84Rj-gE/hqdefault.jpg"
-                                                        alt="SKETTOの袋交換動画">
-                                                    <span class="play-button">▶</span>
-                                                </a>
-                                            </div>
-
-                                            <!-- 右：説明テキスト -->
-                                            <div class="bag-change-content">
-                                                <p class="bag-change-text">ずり落ち知らずの磁石付き袋止め</p>
-
-                                                <p class="bag-change-text">消臭剤もフィルターも不要<br>お手入れは袋を替えるだけ</p>
-
-                                                <p class="bag-change-text">手垢が目立ちにくい素材で<br>「ラクして清潔」を叶えます</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <!-- セクション: 調理に寄り添う仕様 -->
-                                <section id="cooking-spec" class="cooking-spec-section">
-                                    <div class="container">
-                                        <h2 class="section-title-green">調理に寄り添う仕様</h2>
-
-                                        <div class="cooking-layout">
-                                            <!-- 左：SKETTO画像 -->
-                                            <div class="cooking-image">
-                                                <img src="./images/yorisou.png" alt="SKETTOのサイズ感">
-                                            </div>
-
-                                            <!-- 右：説明テキスト -->
-                                            <div class="cooking-content">
-                                                <p class="cooking-text">SKETTOの高さは、かがまず、ゴミが捨てられるサイズ感</p>
-
-                                                <p class="cooking-text">ロック付き滑らかなキャスターで、調理時はスッと脇へ<br>いつでも最適ポジションに</p>
-
-                                                <p class="cooking-text">フタは片側開けでも全開でも、邪魔にならないから<br>自分仕様にお使いいただけます</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <!-- セクション: お財布にも環境にも優しい -->
-                                <section id="eco" class="eco-section">
-                                    <div class="container">
-                                        <h2 class="section-title text-center">お財布にも環境にも優しい</h2>
-
-                                        <div class="eco-layout">
-                                            <!-- 左：説明テキスト -->
-                                            <div class="eco-content">
-                                                <p class="eco-text">消臭材も電気も使わず、ごみのかさが減って袋代も節約。</p>
-                                                <p class="eco-text">水分を抑えて焼却炉の負担も軽くします。</p>
-                                                <p class="eco-text">ムリなく続けられる 環境へのやさしい選択をSKETTOからはじめませんか。</p>
-                                            </div>
-
-                                            <!-- 右：SDGs画像 -->
-                                            <div class="eco-image">
-                                                <img src="./images/kankyouniyasasii.png" alt="環境にやさしい">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <main>
-                                </main>
-
-                                <!--
+    <!--
     <section id="story" class="story-section">
         <div class="container">
             <div class="story-layout">
@@ -546,7 +391,7 @@
     </section>
     -->
 
-                                <!--
+    <!--
     <section id="features" class="features-section">
         <div class="container">
             <h2 class="section-title text-center">SKETTOが叶える、5つの快適</h2>
@@ -626,228 +471,221 @@
     </section>
     -->
 
-                                <!-- セクション: お客様の声 -->
-                                <!-- セクション: お客様の声 -->
-                                <section id="voices" class="voices-section">
-                                    <div class="container">
-                                        <h2 class="section-title text-center">モニターの皆様から、感動の声が届いています</h2>
+    <!-- セクション: お客様の声 -->
+    <!-- セクション: お客様の声 -->
+    <section id="voices" class="voices-section">
+        <div class="container">
+            <h2 class="section-title text-center">モニターの皆様から、感動の声が届いています</h2>
 
-                                        <div class="voices-list">
-                                            <!-- Voice A (Left Align) -->
-                                            <div class="voice-item voice-left">
-                                                <div class="voice-inner-wrapper">
-                                                    <div class="voice-image-area">
-                                                        <img src="./images/monitor1.png" alt="モニターAさん評価"
-                                                            class="voice-composite-img">
-                                                    </div>
-                                                    <div class="voice-content-area">
-                                                        <p class="voice-text">
-                                                            顔をつっこんでも全く臭わないから感動しちゃう。<br>
-                                                            ステンレスが希望だったけど、汚れが目立たないし<br>
-                                                            さらっとしてるので使ってみて分かる良さでした。<br>
-                                                            ギラギラ感がなく、上品で気に入っています。<br>
-                                                            母にプレゼントしたいと思っています。
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+            <div class="voices-list">
+                <!-- Voice A (Left Align) -->
+                <div class="voice-item voice-left">
+                    <div class="voice-inner-wrapper">
+                        <div class="voice-image-area">
+                            <img src="./images/monitor1.png" alt="モニターAさん評価" class="voice-composite-img">
+                        </div>
+                        <div class="voice-content-area">
+                            <p class="voice-text">
+                                顔をつっこんでも全く臭わないから感動しちゃう。<br>
+                                ステンレスが希望だったけど、汚れが目立たないし<br>
+                                さらっとしてるので使ってみて分かる良さでした。<br>
+                                ギラギラ感がなく、上品で気に入っています。<br>
+                                母にプレゼントしたいと思っています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                                            <!-- Voice B (Right Align) -->
-                                            <div class="voice-item voice-right">
-                                                <div class="voice-inner-wrapper">
-                                                    <div class="voice-image-area">
-                                                        <img src="./images/monitor2.png" alt="モニターBご夫婦評価"
-                                                            class="voice-composite-img">
-                                                    </div>
-                                                    <div class="voice-content-area">
-                                                        <p class="voice-text">
-                                                            スライド式のフタがスーッと開いて、とっても気持ちがいい。<br>
-                                                            ニオイも汚れも気にしなくていいって、すごく楽。<br>
-                                                            地味に気に入っているのが、ゴミの出し入れの時に、フタをひっかけられること。<br>
-                                                            楽だから「ゴミ出しお願い」も気軽に言える気がしてます（笑）
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                <!-- Voice B (Right Align) -->
+                <div class="voice-item voice-right">
+                    <div class="voice-inner-wrapper">
+                        <div class="voice-image-area">
+                            <img src="./images/monitor2.png" alt="モニターBご夫婦評価" class="voice-composite-img">
+                        </div>
+                        <div class="voice-content-area">
+                            <p class="voice-text">
+                                スライド式のフタがスーッと開いて、とっても気持ちがいい。<br>
+                                ニオイも汚れも気にしなくていいって、すごく楽。<br>
+                                地味に気に入っているのが、ゴミの出し入れの時に、フタをひっかけられること。<br>
+                                楽だから「ゴミ出しお願い」も気軽に言える気がしてます（笑）
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                                            <!-- Voice C (Left Align) -->
-                                            <div class="voice-item voice-left">
-                                                <div class="voice-inner-wrapper">
-                                                    <div class="voice-image-area">
-                                                        <img src="./images/monitor3.png" alt="モニターCさん評価"
-                                                            class="voice-composite-img">
-                                                    </div>
-                                                    <div class="voice-content-area">
-                                                        <p class="voice-text">
-                                                            つや消しのシルバーがかっこいいだけじゃなく、とにかく汚れが目立たないのってゴミ箱として最高かと。<br>
-                                                            お料理が苦手で、お弁当のプラばかりなのだけれど、これが結構におっていたのが気にならなくなりました！ すごい！<br>
-                                                            お弁当派には大きく開く45ℓがおすすめです。
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                <!-- Voice C (Left Align) -->
+                <div class="voice-item voice-left">
+                    <div class="voice-inner-wrapper">
+                        <div class="voice-image-area">
+                            <img src="./images/monitor3.png" alt="モニターCさん評価" class="voice-composite-img">
+                        </div>
+                        <div class="voice-content-area">
+                            <p class="voice-text">
+                                つや消しのシルバーがかっこいいだけじゃなく、とにかく汚れが目立たないのってゴミ箱として最高かと。<br>
+                                お料理が苦手で、お弁当のプラばかりなのだけれど、これが結構におっていたのが気にならなくなりました！ すごい！<br>
+                                お弁当派には大きく開く45ℓがおすすめです。
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                                            <!-- Voice D (Right Align - Standardized) -->
-                                            <div class="voice-item voice-right">
-                                                <div class="voice-inner-wrapper">
-                                                    <div class="voice-image-area">
-                                                        <img src="./images/monitor4.png" alt="モニターDさん評価"
-                                                            class="voice-composite-img">
-                                                    </div>
-                                                    <div class="voice-content-area">
-                                                        <p class="voice-text">
-                                                            におわないのはすごいし、引き戸は想像以上に使い勝手◎<br>
-                                                            磁石がつくから、お米の袋やトイレットペーパーのビニールも挟んで使っちゃってる。リユースできてエコ。（そんな使い方は私だけかな？）<br>
-                                                            脇にも、磁石フックで紙袋を吊り下げて紙袋ごみ入れにしちゃったり。いろいろな使い方ができそう。
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                <!-- Voice D (Right Align - Standardized) -->
+                <div class="voice-item voice-right">
+                    <div class="voice-inner-wrapper">
+                        <div class="voice-image-area">
+                            <img src="./images/monitor4.png" alt="モニターDさん評価" class="voice-composite-img">
+                        </div>
+                        <div class="voice-content-area">
+                            <p class="voice-text">
+                                におわないのはすごいし、引き戸は想像以上に使い勝手◎<br>
+                                磁石がつくから、お米の袋やトイレットペーパーのビニールも挟んで使っちゃってる。リユースできてエコ。（そんな使い方は私だけかな？）<br>
+                                脇にも、磁石フックで紙袋を吊り下げて紙袋ごみ入れにしちゃったり。いろいろな使い方ができそう。
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                                        </div>
-                                    </div>
-                                </section>
+            </div>
+        </div>
+    </section>
 
-                                <!-- セクション: 朝、ふと気づく（エッセイ） -->
-                                <section id="story-essay" class="story-essay-section">
-                                    <div class="container">
-                                        <div class="main-story">
-                                            <div class="main-story-layout">
-                                                <div class="story-text-area">
-                                                    <h3 class="story-headline">朝、ふと気づく —— あっ、匂わない。</h3>
+    <!-- セクション: 朝、ふと気づく（エッセイ） -->
+    <section id="story-essay" class="story-essay-section">
+        <div class="container">
+            <div class="main-story">
+                <div class="main-story-layout">
+                    <div class="story-text-area">
+                        <h3 class="story-headline">朝、ふと気づく —— あっ、匂わない。</h3>
 
-                                                    <div class="story-content">
-                                                        <p>昨晩、ゴミを入れっぱなしだったのに。<br>気持ちよく料理を始められて、ちょっとうれしい。</p>
+                        <div class="story-content">
+                            <p>昨晩、ゴミを入れっぱなしだったのに。<br>気持ちよく料理を始められて、ちょっとうれしい。</p>
 
-                                                        <p>息を止めて、そっとゴミを捨てていた日々。<br>そんな小さな気合が、もういらない。</p>
+                            <p>息を止めて、そっとゴミを捨てていた日々。<br>そんな小さな気合が、もういらない。</p>
 
-                                                        <p>もう、コバエの心配も、消臭剤を交換する手間もない。<br>密閉していたのが、逆効果だったなんて、早く知りたかったな。
-                                                        </p>
+                            <p>もう、コバエの心配も、消臭剤を交換する手間もない。<br>密閉していたのが、逆効果だったなんて、早く知りたかったな。
+                            </p>
 
-                                                        <p>思えば、自分は"ゴミ箱ジプシー"だった。<br>デザイン、ニオイ、使いやすさ——どこかがしっくりこない。<br>でも、このゴミ箱に出会ってからは、そんな迷いがすっと消えた。
-                                                        </p>
+                            <p>思えば、自分は"ゴミ箱ジプシー"だった。<br>デザイン、ニオイ、使いやすさ——どこかがしっくりこない。<br>でも、このゴミ箱に出会ってからは、そんな迷いがすっと消えた。
+                            </p>
 
-                                                        <p>どっしりとした金属の質感は、どこか昭和の日本のものづくりを思い出させる。<br>うちのココア（愛犬4歳）が突撃しても倒れない。
-                                                        </p>
+                            <p>どっしりとした金属の質感は、どこか昭和の日本のものづくりを思い出させる。<br>うちのココア（愛犬4歳）が突撃しても倒れない。
+                            </p>
 
-                                                        <p>丁寧で、誠実で、長く使える道具がそこにある安心感。<br>キッチンに立つたびに、ちょっとほっとする。</p>
+                            <p>丁寧で、誠実で、長く使える道具がそこにある安心感。<br>キッチンに立つたびに、ちょっとほっとする。</p>
 
-                                                        <p>控えめなデザインで主張しないのに<br>毎日の家事をそっと支えてくれる存在。</p>
+                            <p>控えめなデザインで主張しないのに<br>毎日の家事をそっと支えてくれる存在。</p>
 
-                                                        <p>だから、SKETTO。<br>うん、まさに、家事の助っ人。</p>
+                            <p>だから、SKETTO。<br>うん、まさに、家事の助っ人。</p>
 
-                                                        <p>そして、もーついいこと。そうか、生ゴミは小さくなるのね。<br>これって焼却炉の負担を結構減らすんですって。</p>
+                            <p>そして、もーついいこと。そうか、生ゴミは小さくなるのね。<br>これって焼却炉の負担を結構減らすんですって。</p>
 
-                                                        <p>楽してるのに、いいことしてるみたいで、うれしいなんて。<br>ちょっとずるいかな。</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                            <p>楽してるのに、いいことしてるみたいで、うれしいなんて。<br>ちょっとずるいかな。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                <!-- セクション: サイズ展開 -->
-                                <section id="size" class="size-section">
-                                    <div class="container">
-                                        <h2 class="section-title size-title-right">サイズ展開</h2>
+    <!-- セクション: サイズ展開 -->
+    <section id="size" class="size-section">
+        <div class="container">
+            <h2 class="section-title size-title-right">サイズ展開</h2>
 
-                                        <div class="size-image">
-                                            <img src="./images/saizu.png" alt="SKETTOサイズ展開">
-                                        </div>
+            <div class="size-image">
+                <img src="./images/saizu.png" alt="SKETTOサイズ展開">
+            </div>
 
-                                        <p class="size-price-small">予定価格は2〜3万円（税込み）です。</p>
+            <p class="size-price-small">予定価格は2〜3万円（税込み）です。</p>
 
-                                        <div class="bag-recommend-wrapper">
-                                            <div class="bag-recommend">
-                                                <h4>おすすめのビニール袋</h4>
-                                                <p class="bag-text">
-                                                    30ℓ四角タイプ<br>
-                                                    自治体レジ袋タイプ30ℓ
-                                                </p>
-                                            </div>
+            <div class="bag-recommend-wrapper">
+                <div class="bag-recommend">
+                    <h4>おすすめのビニール袋</h4>
+                    <p class="bag-text">
+                        30ℓ四角タイプ<br>
+                        自治体レジ袋タイプ30ℓ
+                    </p>
+                </div>
 
-                                            <div class="bag-recommend">
-                                                <h4>おすすめのビニール袋</h4>
-                                                <p class="bag-text">
-                                                    45ℓ四角タイプ<br>
-                                                    自治体レジ袋タイプ40ℓ
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                <div class="bag-recommend">
+                    <h4>おすすめのビニール袋</h4>
+                    <p class="bag-text">
+                        45ℓ四角タイプ<br>
+                        自治体レジ袋タイプ40ℓ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                <!-- セクション: コスパ研究室とは -->
-                                <section id="cospalab" class="cospalab-section">
-                                    <div class="container">
-                                        <!-- ヘッダー：ロゴとタイトル -->
-                                        <div class="cospalab-header">
-                                            <a href="https://www.youtube.com/@cospalab" target="_blank"
-                                                rel="noopener noreferrer">
-                                                <img src="./images/cospalab.png" alt="cospalab ロゴ"
-                                                    class="cospalab-logo">
-                                            </a>
-                                            <h2 class="section-title cospalab-title">コスパ研究室とは</h2>
-                                        </div>
+    <!-- セクション: コスパ研究室とは -->
+    <section id="cospalab" class="cospalab-section">
+        <div class="container">
+            <!-- ヘッダー：ロゴとタイトル -->
+            <div class="cospalab-header">
+                <a href="https://www.youtube.com/@cospalab" target="_blank" rel="noopener noreferrer">
+                    <img src="./images/cospalab.png" alt="cospalab ロゴ" class="cospalab-logo">
+                </a>
+                <h2 class="section-title cospalab-title">コスパ研究室とは</h2>
+            </div>
 
-                                        <!-- メインコンテンツ：テキスト中央寄せ -->
-                                        <div class="cospalab-content">
-                                            <p>家事のノウハウ、自分の暮らしから見つけた<br>"本当にいいもの" を伝えてきたYouTubeチャンネルです。</p>
+            <!-- メインコンテンツ：テキスト中央寄せ -->
+            <div class="cospalab-content">
+                <p>家事のノウハウ、自分の暮らしから見つけた<br>"本当にいいもの" を伝えてきたYouTubeチャンネルです。</p>
 
-                                            <p>「ここなら信じられる」<br>と思ってもらえる場所でありたい——</p>
+                <p>「ここなら信じられる」<br>と思ってもらえる場所でありたい——</p>
 
-                                            <p>その想いから、「案件」はお受けしていません。</p>
+                <p>その想いから、「案件」はお受けしていません。</p>
 
-                                            <p>本当に自分が使ってきて「良い」と判断したものしか<br>誰かに薦めることはできない、そう考えています。</p>
+                <p>本当に自分が使ってきて「良い」と判断したものしか<br>誰かに薦めることはできない、そう考えています。</p>
 
-                                            <p>SKETTOの開発も、その延長にあります。</p>
+                <p>SKETTOの開発も、その延長にあります。</p>
 
-                                            <p>「これだ」と思えるゴミ箱に出会えず<br>傘立てを加工していました。</p>
+                <p>「これだ」と思えるゴミ箱に出会えず<br>傘立てを加工していました。</p>
 
-                                            <p>"密閉"は間違えなのに、とやきもき。<br>市場に増えるのは、樹脂製品や、ハイスペック系。<br>機能は増えても<br>暮らしの快適さはどこか置き去りになっている——<br>そんな気がしていました。
-                                            </p>
+                <p>"密閉"は間違えなのに、とやきもき。<br>市場に増えるのは、樹脂製品や、ハイスペック系。<br>機能は増えても<br>暮らしの快適さはどこか置き去りになっている——<br>そんな気がしていました。
+                </p>
 
-                                            <!-- 通気するゴミ箱と動画画像を横並び -->
-                                            <div class="cospalab-video-row">
-                                                <div class="cospalab-text-left">
-                                                    <p>通気するゴミ箱、あったらいいのに。<br>理想的なゴミ箱、作ってみたいな。</p>
-                                                </div>
-                                                <div class="video-origin">
-                                                    <img src="./images/cospakentoha.png" alt="コスパ研究室とは動画"
-                                                        class="origin-video-img">
-                                                </div>
-                                            </div>
+                <!-- 通気するゴミ箱と動画画像を横並び -->
+                <div class="cospalab-video-row">
+                    <div class="cospalab-text-left">
+                        <p>通気するゴミ箱、あったらいいのに。<br>理想的なゴミ箱、作ってみたいな。</p>
+                    </div>
+                    <div class="video-origin">
+                        <img src="./images/cospakentoha.png" alt="コスパ研究室とは動画" class="origin-video-img">
+                    </div>
+                </div>
 
-                                            <p>それが、SKETTOの第一歩です。</p>
+                <p>それが、SKETTOの第一歩です。</p>
 
-                                            <p>「密閉という悪循環を終わりにする」</p>
+                <p>「密閉という悪循環を終わりにする」</p>
 
-                                            <p>そんな使命感を持って、ゴミ箱を開発しています。</p>
+                <p>そんな使命感を持って、ゴミ箱を開発しています。</p>
 
-                                            <p>動画の反響に背中を押していただき<br>開発に挑戦することができました。</p>
+                <p>動画の反響に背中を押していただき<br>開発に挑戦することができました。</p>
 
-                                            <p>フォロワーのみなさん、いいねくださった方、コメントくださった方、心から感謝しています。</p>
+                <p>フォロワーのみなさん、いいねくださった方、コメントくださった方、心から感謝しています。</p>
 
-                                            <!-- ケチエプロフィール（一番下） -->
-                                            <div class="founder-profile">
-                                                <div class="founder-header">
-                                                    <img src="./images/ketie.png" alt="ケチエ" class="founder-image">
-                                                    <h3 class="founder-name">ケチエkechie</h3>
-                                                </div>
-                                                <p class="founder-bio">
-                                                    幼いころから常識に疑問を抱き、立教大学でメディア論を学ぶ中で「情報の怖さ」を知る。<br>
-                                                    以来、自分の感覚を大切に生きるように。<br>
-                                                    子育て期に「常識にとらわれない家事」をYouTubeで発信し共感を集める。<br>
-                                                    2023年からものづくりに挑戦、2025年「ものづくりムーブメント」で入賞。<br>
-                                                    "ケチの知恵"をヒントに、ムダなく心地よい暮らしを探求している。
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                <!-- ケチエプロフィール（一番下） -->
+                <div class="founder-profile">
+                    <div class="founder-header">
+                        <img src="./images/ketie.png" alt="ケチエ" class="founder-image">
+                        <h3 class="founder-name">ケチエkechie</h3>
+                    </div>
+                    <p class="founder-bio">
+                        幼いころから常識に疑問を抱き、立教大学でメディア論を学ぶ中で「情報の怖さ」を知る。<br>
+                        以来、自分の感覚を大切に生きるように。<br>
+                        子育て期に「常識にとらわれない家事」をYouTubeで発信し共感を集める。<br>
+                        2023年からものづくりに挑戦、2025年「ものづくりムーブメント」で入賞。<br>
+                        "ケチの知恵"をヒントに、ムダなく心地よい暮らしを探求している。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-                                <!--
+    <!--
     <section id="closing" class="closing-section">
         <div class="container text-center">
             <p class="closing-text">丁寧に、日本でつくっています。<br>
@@ -864,73 +702,73 @@
     </section>
     -->
 
-                                <!-- 雪景色ポエムセクション -->
-                                <section id="snow-message" class="snow-message-section">
-                                    <div class="snow-content">
-                                        <p class="snow-text">燕三条のおとなりで、丁寧に端の処理をし<br>しっかり組み立てた完成品で届きます。</p>
+    <!-- 雪景色ポエムセクション -->
+    <section id="snow-message" class="snow-message-section">
+        <div class="snow-content">
+            <p class="snow-text">燕三条のおとなりで、丁寧に端の処理をし<br>しっかり組み立てた完成品で届きます。</p>
 
-                                        <p class="snow-text">だから、少しお値段はします。<br>けれど、一生モノと考えたら、１日あたり、ほんの数円。</p>
+            <p class="snow-text">だから、少しお値段はします。<br>けれど、一生モノと考えたら、１日あたり、ほんの数円。</p>
 
-                                        <p class="snow-text">そう考えると、高くはない。<br>そう、心からそう思える道具です。</p>
+            <p class="snow-text">そう考えると、高くはない。<br>そう、心からそう思える道具です。</p>
 
-                                        <p class="snow-text-highlight">ぜひ、あなたのキッチンにも。<br>"SKETTO"を迎えてみませんか?</p>
-                                    </div>
-                                </section>
+            <p class="snow-text-highlight">ぜひ、あなたのキッチンにも。<br>"SKETTO"を迎えてみませんか?</p>
+        </div>
+    </section>
 
-                                <section id="faq" class="faq-section">
-                                    <div class="container narrow">
-                                        <h2 class="section-title text-center">よくあるご質問</h2>
-                                        <div class="faq-list">
-                                            <details class="faq-item">
-                                                <summary>発売時期はいつですか？</summary>
-                                                <p>2026年7月頃のMakuakeでの先行発売を予定しています。最新情報はLINE公式アカウントにてお知らせいたしますので、ぜひご登録ください。
-                                                </p>
-                                            </details>
-                                            <details class="faq-item">
-                                                <summary>試作品のモニターに応募したいです</summary>
-                                                <p>モニター募集はLINE公式アカウントにて不定期に行っております。募集の際は改めて告知いたします。</p>
-                                            </details>
-                                            <details class="faq-item">
-                                                <summary>実際に商品を見れますか？</summary>
-                                                <p>2025年12月5日～2026年2月5日まで東京イノベーションベースで試作品を展示しております。また、2026年5月頃に蔦屋家電＋さんでの展示も予定しています。
-                                                </p>
-                                            </details>
-                                            <details class="faq-item">
-                                                <summary>どんな色味のキッチンに合いますか？</summary>
-                                                <p>はい、マットなシルバーのため、控えめな印象の淡いシルバーです。白を基調としてインテリアにはもちろん、ダークなインテリアともマッチしてお使いいただけます。<br>（トップページの部屋は、ステンレスキッチン、ダークブラウンの背面収納、前面は白の壁、床はコンクリートモルタル仕上げです。どの角度からも相性良く映りました）
-                                                </p>
-                                            </details>
-                                            <details class="faq-item">
-                                                <summary>まとめ買いやセールなどの割引はありますか？</summary>
-                                                <p>随時割引クーポンなどをLINEで配信いたします。ぜひご登録ください。</p>
-                                            </details>
-                                        </div>
-                                    </div>
-                                </section>
+    <section id="faq" class="faq-section">
+        <div class="container narrow">
+            <h2 class="section-title text-center">よくあるご質問</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>発売時期はいつですか？</summary>
+                    <p>2026年7月頃のMakuakeでの先行発売を予定しています。最新情報はLINE公式アカウントにてお知らせいたしますので、ぜひご登録ください。
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>試作品のモニターに応募したいです</summary>
+                    <p>モニター募集はLINE公式アカウントにて不定期に行っております。募集の際は改めて告知いたします。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>実際に商品を見れますか？</summary>
+                    <p>2025年12月5日～2026年2月5日まで東京イノベーションベースで試作品を展示しております。また、2026年5月頃に蔦屋家電＋さんでの展示も予定しています。
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>どんな色味のキッチンに合いますか？</summary>
+                    <p>はい、マットなシルバーのため、控えめな印象の淡いシルバーです。白を基調としてインテリアにはもちろん、ダークなインテリアともマッチしてお使いいただけます。<br>（トップページの部屋は、ステンレスキッチン、ダークブラウンの背面収納、前面は白の壁、床はコンクリートモルタル仕上げです。どの角度からも相性良く映りました）
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>まとめ買いやセールなどの割引はありますか？</summary>
+                    <p>随時割引クーポンなどをLINEで配信いたします。ぜひご登録ください。</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
-                                </main>
+    </main>
 
-                                <footer class="footer">
-                                    <div class="container text-center">
-                                        <div class="footer-social">
-                                            <a href="https://www.youtube.com/@cospalab" target="_blank"
-                                                rel="noopener noreferrer" class="footer-youtube-btn">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-                                                    viewBox="0 0 24 24" fill="currentColor">
-                                                    <path
-                                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                                                </svg>
-                                                <span>コスパ研究室 YouTube</span>
-                                            </a>
-                                        </div>
-                                        <div class="footer-links">
-                                            <a href="mailto:cospalab-info@yahoo.co.jp">お問い合わせ</a>
-                                        </div>
-                                        <p class="copyright">&copy; 2025 コスパ研究室(cospalab)</p>
-                                    </div>
-                                </footer>
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer-social">
+                <a href="https://www.youtube.com/@cospalab" target="_blank" rel="noopener noreferrer"
+                    class="footer-youtube-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                        fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                    <span>コスパ研究室 YouTube</span>
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:cospalab-info@yahoo.co.jp">お問い合わせ</a>
+            </div>
+            <p class="copyright">&copy; 2025 コスパ研究室(cospalab)</p>
+        </div>
+    </footer>
 
-                                <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
