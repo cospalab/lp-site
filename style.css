@@ -2352,7 +2352,8 @@ body {
 }
 
 .origin-video-img {
-    max-width: 450px;
+    max-width: 300px;
+    /* Reduced to 2/3 */
     height: auto;
     border-radius: 4px;
 }
@@ -2896,9 +2897,8 @@ body {
 
     .origin-video-img {
         width: 360px;
-        /* Doubled from 180px */
+        /* Keep original mobile size */
         max-width: 100%;
-        /* Prevent overflow */
     }
 }
 
@@ -3309,4 +3309,61 @@ body {
         padding: 10px 16px;
         font-size: 0.8rem;
     }
+}
+
+/* Utility: Hide price section (remove this class to show) */
+.price-hidden {
+    display: none;
+}
+
+/* Thin decorative divider bar */
+.section-divider {
+    border: none;
+    height: 1px;
+    background-color: var(--color-thingray);
+    margin: 20px 0 30px 0;
+    width: 100%;
+}
+
+/* Official Price Area */
+.official-price-area {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.official-price-label {
+    font-size: 0.9rem;
+    color: var(--color-gray);
+    margin-bottom: 8px;
+}
+
+.official-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-black);
+    margin: 0;
+}
+
+.official-price .price-tax {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-gray);
+}
+
+/* Per-size price display */
+.bag-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-black);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.bag-price .price-tax {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-gray);
 }
