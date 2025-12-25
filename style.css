@@ -713,6 +713,13 @@ body {
     /* Remove fixed margin, let justify-content handle it */
 }
 
+.sketto-note {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--color-gray);
+    margin-top: 1em;
+}
+
 .sketto-features .feature-highlight {
     font-size: 1.1rem;
     font-weight: 700;
@@ -739,6 +746,10 @@ body {
     .sketto-features {
         padding-left: 0;
         text-align: left;
+    }
+
+    .sketto-note {
+        font-size: 12px !important;
     }
 }
 
@@ -1197,7 +1208,7 @@ body {
 }
 
 .eco-note {
-    font-size: 15px;
+    font-size: 12px;
     line-height: 1.6;
     color: var(--color-gray);
     margin-top: 1em;
@@ -1274,10 +1285,12 @@ body {
     }
 
     .eco-content {
-        padding-left: 0;
-        padding-right: 0;
         /* Remove right padding */
         text-align: left;
+    }
+
+    .eco-note {
+        font-size: 12px !important;
     }
 }
 
@@ -2217,16 +2230,27 @@ body {
     font-size: clamp(1.5rem, 3.5vw, 2rem);
     margin-bottom: 1em;
     color: var(--color-gray);
-    text-align: right;
-    /* Changed to Right */
+    text-align: center;
+    /* Changed to Center */
+    margin-bottom: 15px;
+    padding-right: 0;
+}
+
+.size-recommendation {
+    text-align: center;
+    /* Changed to Center */
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-gray);
+    /* Reverted to #444444 */
     margin-bottom: 40px;
-    padding-right: 20px;
+    padding-right: 0;
 }
 
 /* Override default centered title if needed globally */
 @media (min-width: 768px) {
     .size-title-right {
-        text-align: right;
+        text-align: center;
     }
 }
 
