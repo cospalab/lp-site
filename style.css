@@ -111,7 +111,7 @@ body {
 
 @media (max-width: 767px) {
     .hero-bg-anim {
-        background-image: url('./images/page1sp.png'.png');
+        background-image: url('./images/page1sp.png');
         aspect-ratio: 750 / 1334;
         /* Approximate mobile aspect ratio. Adjust if needed. */
     }
