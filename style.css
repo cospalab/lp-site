@@ -2790,7 +2790,7 @@ body {
 
 .voice-composite-img {
     width: auto;
-    height: 180px;
+    height: 200px;
     /* Fixed height as requested */
     object-fit: contain;
 }
