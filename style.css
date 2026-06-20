@@ -3377,9 +3377,9 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: #FFED00;
+    background-color: #06C755;
     /* LINE Green */
-    color: #454545;
+    color: white;
     padding: 14px 24px;
     border-radius: 50px;
     text-decoration: none;
