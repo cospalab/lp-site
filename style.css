@@ -3391,17 +3391,22 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: #06C755;
-    /* LINE Green */
-    color: white;
+    background-color: #FFED00;
+    /* Makuake Yellow */
+    color: #454545;
     padding: 14px 24px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
-    box-shadow: 0 4px 15px rgba(6, 199, 85, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 237, 0, 0.4);
     z-index: 9999;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-line-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 237, 0, 0.5);
 }
 
 .floating-line-btn:hover {
