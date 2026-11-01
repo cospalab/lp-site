@@ -1780,7 +1780,7 @@ body {
 /* Navigation Links Container */
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 15px;
     /* Adjust gap for PC */
     align-items: center;
     flex-wrap: nowrap;
