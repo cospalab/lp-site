@@ -3542,7 +3542,7 @@ body {
   .site-nav .container { max-width: 1320px; gap: 24px; }
   .site-nav .nav-logo-link { margin-right: 0; }
   .site-nav .nav-links { flex: 0 1 auto; justify-content: flex-start; gap: clamp(10px, 1.2vw, 20px); }
-  .site-nav .nav-links .nav-link { font-size: 13px; }
+  .site-nav .nav-links .nav-link { font-size: 14px; }
   .site-nav .nav-makuake { margin-left: auto; order: 0; }
   .site-nav .nav-links { order: 1; }
 }
@@ -3565,3 +3565,7 @@ body {
 @media (max-width: 900px) {
   .mobile-nav-items a.mobile-makuake { background: #fff2a6; font-weight: 700; color: #333; }
 }
+
+/* Final two adjustments: desktop menu text / mobile-only NEWS break */
+.news-mobile-break { display: none; }
+@media (max-width: 767px) { .news-mobile-break { display: inline; } }
