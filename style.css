@@ -3569,3 +3569,18 @@ body {
 /* Final two adjustments: desktop menu text / mobile-only NEWS break */
 .news-mobile-break { display: none; }
 @media (max-width: 767px) { .news-mobile-break { display: inline; } }
+
+/* 2026-11-02: Mobile-only review overflow fix */
+@media (max-width: 767px) {
+  #voices, #voices .container, #voices .voices-list, #voices .voice-item,
+  #voices .voice-inner-wrapper, #voices .voice-image-area,
+  #voices .voice-content-area { min-width: 0; max-width: 100%; box-sizing: border-box; }
+  #voices .voice-inner-wrapper { width: 100%; }
+  #voices .voice-composite-img { display: block; width: 100%; max-width: 100%; height: auto; object-fit: contain; }
+  #voices .voice-text { overflow-wrap: anywhere; }
+}
+.quality-price-note, .general-sale-notice { max-width: 720px; margin: 36px auto; padding: 0 18px; box-sizing: border-box; text-align: left; }
+.quality-price-note h3, .general-sale-notice h3 { font-size: 1.3rem; line-height: 1.5; margin-bottom: 20px; }
+.quality-price-note p, .general-sale-notice p { line-height: 1.9; margin: 0 0 16px; }
+.general-sale-notice { padding-top: 24px; border-top: 1px solid #ddd; }
+.general-sale-link { display: inline-block; background: #ffed00; color: #333; padding: 13px 20px; border-radius: 8px; font-weight: bold; text-decoration: none; }
